@@ -1,0 +1,15 @@
+.idea
+.git
+
+wp-admin
+wp-includes
+wp-config.php
+index.php
+wp-content/uploads
+!wp-content/themes/resta-wp/index.php
+wp-content/themes/twentytwenty
+
+wp-content/upgrade
+wp-content/updraft
+wp-content/debug.log
+wp-content/plugins/
