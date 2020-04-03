@@ -6,7 +6,7 @@ wp-includes
 wp-config.php
 index.php
 wp-content/uploads
-!wp-content/themes/resta-wp/index.php
+!wp-content/themes/resta/index.php
 wp-content/themes/twentytwenty
 
 wp-content/upgrade

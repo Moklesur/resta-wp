@@ -1,802 +1,857 @@
 /*!
 Theme Name: Resta
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
-Description: Description
-Version: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
+Theme URI: https://www.themetim.com/wordpress-themes/resta/
+Author: themetim
+Author URI: https://www.themetim.com/
+Description: When it comes to a restaurants WordPress theme, you know you have got a superb choice in modern and clean design Resta theme. It uses amazing Hero Banner in order to demonstrate your business goals. There are both boxed and full width layouts available in this theme. An effective toolkit plugin adorns its feature line. Your customer can find out a specific or desired page thanks to Breadcrumbs option. It has advanced theme option and unique blog layout. Elementor page builder has been fully integrated. It actually eases any customization process of your website. An eye catching social share icons and post type widgets, testimonial widget, pricing widget, text type widget, etc. It brings you Bootstrap along with left right and full width template. Advance typography setting and color setting has uplifted this theme into another level. You will identify its uniqueness all the way from its header to footer. This is the ultimate solution for any business or corporate type website.
+Version: 1.0
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: resta
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-Resta is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+Tags: blog, custom-background, custom-colors, custom-menu, translation-ready, theme-options, threaded-comments, custom-logo, footer-widgets, custom-header, featured-image-header, full-width-template, left-sidebar, right-sidebar
 */
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-/* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 
-/* Document
-	 ========================================================================== */
-
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-
-html {
-	line-height: 1.15; /* 1 */
-	-webkit-text-size-adjust: 100%; /* 2 */
+.text-orange {
+    color: #f96a0e;
 }
 
-/* Sections
-	 ========================================================================== */
+a.text-orange:hover, a.text-orange:focus {
+    color: #f96a0e;
+    opacity: .7;
+}
 
-/**
- * Remove the margin in all browsers.
- */
+.text-black {
+    color: #000000;
+}
 
+.text-black- {
+    color: #222222;
+}
+
+.text-light {
+    color: #989898;
+}
+
+.text-dark {
+    color: #626262;
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.text-dark-light {
+    color: #b6b6b6;
+}
+
+.text-bright {
+    color: #d3d3d3;
+}
+
+.bg-primary {
+    background-color: #f96a0e;
+}
+
+.bg-secondary {
+    background-color: #222222;
+}
+
+.bg-black {
+    background-color: #000000;
+}
+
+.bg-dark {
+    background-color: #626262;
+}
+
+.bg-whitesmoke {
+    background-color: #fff9f8;
+}
+
+.bg-black-mute {
+    background-color: #141719;
+}
+
+.font-playball {
+    font-family: "Playball", cursive;
+}
+
+.font-popins {
+    font-family: "Poppins", sans-serif;
+}
+
+.font-playfair {
+    font-family: "Playfair Display", serif;
+}
+
+.font-weight-light {
+    font-weight: 300 !important;
+}
+
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+.font-weight-extra-bold {
+    font-weight: 800 !important;
+}
+
+/*
+*
+* ==========================================
+* 1. Template default CSS
+* ==========================================
+*
+*/
 body {
-	margin: 0;
-}
-
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
-}
-
-/* Grouping content
-	 ========================================================================== */
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-
-hr {
-	box-sizing: content-box; /* 1 */
-	height: 0; /* 1 */
-	overflow: visible; /* 2 */
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-pre {
-	font-family: monospace, monospace; /* 1 */
-	font-size: 1em; /* 2 */
-}
-
-/* Text-level semantics
-	 ========================================================================== */
-
-/**
- * Remove the gray background on active links in IE 10.
- */
-
-a {
-	background-color: transparent;
-}
-
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-
-abbr[title] {
-	border-bottom: none; /* 1 */
-	text-decoration: underline; /* 2 */
-	text-decoration: underline dotted; /* 2 */
-}
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-
-b,
-strong {
-	font-weight: bolder;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-code,
-kbd,
-samp {
-	font-family: monospace, monospace; /* 1 */
-	font-size: 1em; /* 2 */
-}
-
-/**
- * Add the correct font size in all browsers.
- */
-
-small {
-	font-size: 80%;
-}
-
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-
-sub,
-sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-
-sub {
-	bottom: -0.25em;
-}
-
-sup {
-	top: -0.5em;
-}
-
-/* Embedded content
-	 ========================================================================== */
-
-/**
- * Remove the border on images inside links in IE 10.
- */
-
-img {
-	border-style: none;
-}
-
-/* Forms
-	 ========================================================================== */
-
-/**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
-
-button,
-input,
-optgroup,
-select,
-textarea {
-	font-family: inherit; /* 1 */
-	font-size: 100%; /* 1 */
-	line-height: 1.15; /* 1 */
-	margin: 0; /* 2 */
-}
-
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-
-button,
-input { /* 1 */
-	overflow: visible;
-}
-
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-
-button,
-select { /* 1 */
-	text-transform: none;
-}
-
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-	-webkit-appearance: button;
-}
-
-/**
- * Remove the inner border and padding in Firefox.
- */
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
-}
-
-/**
- * Restore the focus styles unset by the previous rule.
- */
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-	outline: 1px dotted ButtonText;
-}
-
-/**
- * Correct the padding in Firefox.
- */
-
-fieldset {
-	padding: 0.35em 0.75em 0.625em;
-}
-
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *		`fieldset` elements in all browsers.
- */
-
-legend {
-	box-sizing: border-box; /* 1 */
-	color: inherit; /* 2 */
-	display: table; /* 1 */
-	max-width: 100%; /* 1 */
-	padding: 0; /* 3 */
-	white-space: normal; /* 1 */
-}
-
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-
-progress {
-	vertical-align: baseline;
-}
-
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
-
-textarea {
-	overflow: auto;
-}
-
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-
-[type="checkbox"],
-[type="radio"] {
-	box-sizing: border-box; /* 1 */
-	padding: 0; /* 2 */
-}
-
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-	height: auto;
-}
-
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-
-[type="search"] {
-	-webkit-appearance: textfield; /* 1 */
-	outline-offset: -2px; /* 2 */
-}
-
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
-
-[type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
-}
-
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-
-::-webkit-file-upload-button {
-	-webkit-appearance: button; /* 1 */
-	font: inherit; /* 2 */
-}
-
-/* Interactive
-	 ========================================================================== */
-
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-
-details {
-	display: block;
-}
-
-/*
- * Add the correct display in all browsers.
- */
-
-summary {
-	display: list-item;
-}
-
-/* Misc
-	 ========================================================================== */
-
-/**
- * Add the correct display in IE 10+.
- */
-
-template {
-	display: none;
-}
-
-/**
- * Add the correct display in IE 10.
- */
-
-[hidden] {
-	display: none;
-}
-
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
-body,
-button,
-input,
-select,
-optgroup,
-textarea {
-	color: #404040;
-	font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1rem;
-	line-height: 1.5;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.857;
+    font-family: "Poppins", sans-serif;
+    color: #626262;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	clear: both;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    color: #222222;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 65px;
+    line-height: 1.154;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 54px;
+    line-height: 1.204;
+}
+
+h3 {
+    font-size: 35px;
+    line-height: 0.771;
+}
+
+h4 {
+    font-size: 25px;
+    line-height: 1.4;
+}
+
+h5 {
+    font-size: 22px;
+    line-height: 1.227;
+}
+
+h6 {
+    font-size: 20px;
+    line-height: 1.71;
 }
 
 p {
-	margin-bottom: 1.5em;
+    margin-bottom: 16px;
 }
 
-dfn, cite, em, i {
-	font-style: italic;
+p:last-child {
+    margin-bottom: 0;
 }
 
-blockquote {
-	margin: 0 1.5em;
+a, button {
+    color: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-address {
-	margin: 0 0 1.5em;
+a, button, img, input, span {
+    transition: all .3s ease 0s;
 }
 
-pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.6em;
-}
-
-code, kbd, tt, var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
-}
-
-abbr, acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
-}
-
-mark, ins {
-	background: #fff9c0;
-	text-decoration: none;
-}
-
-big {
-	font-size: 125%;
-}
-
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-html {
-	box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
-}
-
-body {
-	background: #fff;
-	/* Fallback for when there is no custom background color defined. */
-}
-
-hr {
-	background-color: #ccc;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
-}
-
-ul, ol {
-	margin: 0 0 1.5em 3em;
-}
-
-ul {
-	list-style: disc;
-}
-
-ol {
-	list-style: decimal;
-}
-
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
-}
-
-dt {
-	font-weight: bold;
-}
-
-dd {
-	margin: 0 1.5em 1.5em;
-}
-
-img {
-	height: auto;
-	/* Make sure images are scaled correctly. */
-	max-width: 100%;
-	/* Adhere to container width. */
-}
-
-figure {
-	margin: 1em 0;
-	/* Extra wide images within figure tags don't overflow the content area. */
-}
-
-table {
-	margin: 0 0 1.5em;
-	width: 100%;
-}
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
-	font-size: 12px;
-	font-size: 0.75rem;
-	line-height: 1;
-	padding: .6em 1em .4em;
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-}
-
-button:active, button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	padding: 3px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="color"]:focus,
-textarea:focus {
-	color: #111;
-}
-
-select {
-	border: 1px solid #ccc;
-}
-
-textarea {
-	width: 100%;
-}
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
-a {
-	color: royalblue;
-}
-
-a:visited {
-	color: purple;
-}
-
-a:hover, a:focus, a:active {
-	color: midnightblue;
+*:focus {
+    outline: none !important;
 }
 
 a:focus {
-	outline: thin dotted;
+    color: inherit;
+    outline: none;
+    text-decoration: none;
 }
 
-a:hover, a:active {
-	outline: 0;
+a:hover {
+    text-decoration: none;
+    color: #f96a0e;
+    transition: all .3s ease 0s;
 }
 
-/*--------------------------------------------------------------
-## Menus
---------------------------------------------------------------*/
+button, input[type="submit"] {
+    cursor: pointer;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+.btn, .rtl-btn, .wp-block-button__link, input[type='submit'], .wpcf7-form-control.wpcf7-submit {
+    border-radius: 2px;
+    padding: 28px;
+    font-size: 14px;
+    line-height: 14px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    background-color: #f96a0e;
+    color: #ffffff;
+    border: 2px solid #f96a0e;
+    box-shadow: none;
+    transition: .5s all ease-out;
+}
+
+.btn:hover, .rtl-btn:hover, .wp-block-button__link:hover, input[type='submit']:hover, .wpcf7-form-control.wpcf7-submit:hover, .btn:focus, .rtl-btn:focus, .wp-block-button__link:focus, input[type='submit']:focus, .wpcf7-form-control.wpcf7-submit:focus {
+    border: 2px solid #222222;
+    box-shadow: none;
+    color: #ffffff;
+    background-color: #222222;
+    transition: .5s all ease-in;
+}
+
+.rtl-btn {
+    border: 2px solid #222222;
+    background-color: #222222;
+    color: #ffffff;
+    transition: .5s all ease-in;
+}
+
+.rtl-btn:hover, .rtl-btn:focus {
+    border: 2px solid #f96a0e;
+    box-shadow: none;
+    color: #ffffff;
+    background-color: #f96a0e;
+    transition: .5s all ease-in;
+}
+
+.comments-area input {
+    width: 100%;
+}
+
+.comments-area textarea {
+    border: 1px solid #8A919C;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.comments-area .submit {
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    padding: 28px;
+    width: auto;
+    height: auto;
+    border-radius: 50px;
+    line-height: 16px;
+    background-color: #f96a0e;
+    border: 1px solid transparent;
+    color: #ffffff;
+    transition: .5s all ease-in;
+    text-transform: uppercase;
+}
+
+.comments-area .submit:hover, .comments-area .submit:focus {
+    border: 1px solid #222222;
+    box-shadow: none;
+    color: #ffffff;
+    background-color: #222222;
+    transition: .5s all ease-in;
+}
+
+.img-fill {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+/*
+*
+* ==========================================
+* Common Classes
+* ==========================================
+*
+*/
+.fix {
+    overflow: hidden;
+}
+
+.clear {
+    clear: both;
+}
+
+.section {
+    float: left;
+    width: 100%;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.bg-img {
+    background-position: center center;
+    background-size: cover;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+/*
+*
+* ==========================================
+* Margin bottom
+* ==========================================
+*
+*/
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-12 {
+    margin-bottom: 12px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-25 {
+    margin-bottom: 25px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mb-35 {
+    margin-bottom: 35px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.mb-45 {
+    margin-bottom: 45px;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.mb-55 {
+    margin-bottom: 55px;
+}
+
+.mb-60 {
+    margin-bottom: 60px;
+}
+
+.mb-65 {
+    margin-bottom: 65px;
+}
+
+.mb-70 {
+    margin-bottom: 70px;
+}
+
+.mb-75 {
+    margin-bottom: 75px;
+}
+
+.mb-80 {
+    margin-bottom: 80px;
+}
+
+.mb-90 {
+    margin-bottom: 90px;
+}
+
+.mb-95 {
+    margin-bottom: 95px;
+}
+
+.mb-100 {
+    margin-bottom: 100px;
+}
+.mr-20{
+    margin-right: 20px;
+}
+/*
+*
+* ==========================================
+* Input Placeholder
+* ==========================================
+*
+*/
+input:-moz-placeholder, textarea:-moz-placeholder {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+input[type=text], input[type=search], .form-control {
+    background: #ffffff;
+    box-shadow: none;
+    padding: 20px 15px;
+    height: 50px;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    color: #626262;
+    border-radius: 2px;
+}
+
+input[type=text]:focus, input[type=search]:focus, .form-control:focus {
+    background: #ffffff;
+    border: 1px solid #f96a0e;
+    outline: none;
+    box-shadow: none;
+}
+
+input[type=text]::placeholder, input[type=search]::placeholder, .form-control::placeholder,
+input[type=text]::-webkit-input-placeholder, input[type=search]::-webkit-input-placeholder, .form-control::-webkit-input-placeholder ,
+input[type=text]::-moz-placeholder, input[type=search]::-moz-placeholder, .form-control::-moz-placeholder ,
+input[type=text]::-ms-input-placeholder, input[type=search]::-ms-input-placeholder, .form-control::-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+.form-inline input[type=text], .form-inline input[type=search], .form-inline .form-control {
+    width: auto;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.comment-form-cookies-consent input {
+    border-radius: 15px;
+    width: auto;
+    height: auto;
+}
+
+select {
+    width: 100%;
+    background: transparent;
+    border: 0px solid #eceff8;
+    box-shadow: none;
+    font-size: 14px;
+    color: #333;
+}
+
+option {
+    background: #fff;
+    border: 0px solid #626262;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+input:focus {
+    background: transparent;
+}
+
+textarea {
+    resize: vertical;
+    border: 1px solid #e3e6ea;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+}
+
+textarea:focus {
+    background: transparent;
+    border-bottom: 1px solid #f96a0e;
+    outline: none;
+}
+
+.input-group.divcenter.input-group .form-control {
+    padding-left: 0px;
+}
+
+span.wpcf7-not-valid-tip {
+    padding-top: 20px;
+}
+
+.widget-title {
+    color: #626262;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.entry-title {
+    margin-bottom: 10px;
+}
+
+.entry-meta {
+    padding: 15px 0;
+}
+
+.post-thumbnail {
+    margin-bottom: 20px;
+    display: block;
+}
+
+.post-thumbnail img {
+    border: 0;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+}
+
+.entry-footer {
+    padding: 30px 0;
+    clear: both;
+}
+
+.cat-links {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.navigation.post-navigation {
+    padding: 30px 0;
+}
+
+h2.screen-reader-text {
+    font-weight: 600;
+}
+
+.search-form .screen-reader-text {
+    margin-bottom: 20px;
+    display: block;
+}
+
+.search-form label {
+    display: block;
+    margin-bottom: 20px !important;
+}
+
+.search-form {
+    margin-bottom: 30px;
+}
+
+.widget-area .widget-title {
+    color: #f96a0e;
+    margin-bottom: 20px !important;
+}
+
+.wpcf7-form-control.wpcf7-submit {
+    padding: 0 35px !important;
+    height: 50px;
+}
+
+.single-post .page-title {
+    font-size: 40px;
+    text-transform: capitalize;
+}
+
+.title {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #222222;
+}
+
+.mt--80 {
+    margin-top: -80px;
+}
+
+#scroll {
+    position: fixed;
+    z-index: 1;
+    right: 0px;
+    bottom: 0px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: #f96a0e;
+    text-indent: -9999px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#scroll span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -12px;
+    height: 0;
+    width: 0;
+    border: 8px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+#scroll:hover {
+    background-color: #222222;
+    opacity: 1;
+    filter: "alpha(opacity=100)";
+    -ms-filter: "alpha(opacity=100)";
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.comments-area textarea {
+    border-radius: 5px;
+}
+
+.comments-area .submit {
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    padding: 16px 35px;
+    width: auto;
+    height: auto;
+    border-radius: 50px;
+    line-height: 16px;
+    background-color: #f96a0e;
+    border: 1px solid transparent;
+    color: #ffffff;
+    transition: .5s all ease-in;
+}
+
+.comments-area .submit:hover, .comments-area .submit:focus {
+    border: 1px solid #222222;
+    background-color: #222222;
+    color: #ffffff;
+    transition: .5s all ease-in;
+}
+
+/*
+*
+* ==========================================
+* main-navigation wordpress default classes
+* ==========================================
+*
+*/
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+    clear: both;
+    display: block;
+    float: left;
+    width: 100%;
 }
 
 .main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    float: left;
+    position: absolute;
+    top: 100%;
+    left: -999em;
+    z-index: 99999;
 }
 
 .main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
+    left: -999em;
+    top: 0;
 }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
+.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+    left: 100%;
 }
 
 .main-navigation ul ul a {
-	width: 200px;
+    width: 200px;
 }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
+.main-navigation ul li:hover > ul, .main-navigation ul li.focus > ul {
+    left: auto;
 }
 
 .main-navigation li {
-	float: left;
-	position: relative;
+    float: left;
+    position: relative;
 }
 
 .main-navigation a {
-	display: block;
-	text-decoration: none;
+    display: block;
+    text-decoration: none;
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+/*
+*
+* ==========================================
+* Small menu
+* ==========================================
+*
+*/
+.menu-toggle, .main-navigation.toggled ul {
+    display: block;
 }
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
+.site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation {
+    margin: 0 0 1.5em;
+    overflow: hidden;
 }
 
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
+.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
+    float: left;
+    width: 50%;
 }
 
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
+.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
+    float: right;
+    text-align: right;
+    width: 50%;
 }
 
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
-}
-
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-/* Text meant only for screen readers. */
+/*
+*
+* ==========================================
+*    Accessibility
+* ==========================================
+*
+*/
 .screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	clip-path: none;
-	color: #21759b;
-	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: bold;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000;
-	/* Above WP toolbar. */
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    clip-path: none;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
 }
 
 /* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus {
-	outline: 0;
+    outline: 0;
 }
 
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
+/*
+*
+* ==========================================
+* Alignments
+* ==========================================
+*
+*/
 .alignleft {
-	display: inline;
-	float: left;
-	margin-right: 1.5em;
-	margin-bottom: 1.5em;
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 .alignright {
-	display: inline;
-	float: right;
-	margin-left: 1.5em;
-	margin-bottom: 1.5em;
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 .aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 1.5em;
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
 }
 
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
+/*
+*
+* ==========================================
+* Clearings
+* ==========================================
+*
+*/
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -809,9 +864,9 @@ a:hover, a:active {
 .site-content:after,
 .site-footer:before,
 .site-footer:after {
-	content: "";
-	display: table;
-	table-layout: fixed;
+    content: "";
+    display: table;
+    table-layout: fixed;
 }
 
 .clear:after,
@@ -820,169 +875,1591 @@ a:hover, a:active {
 .site-header:after,
 .site-content:after,
 .site-footer:after {
-	clear: both;
+    clear: both;
 }
 
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
+/*
+*
+* ==========================================
+* Widgets
+* ==========================================
+*
+*/
 .widget {
-	margin: 0 0 1.5em;
-	/* Make sure select elements fit in widgets. */
+    margin: 0 0 1.5em;
+    /* Make sure select elements fit in widgets. */
 }
 
 .widget select {
-	max-width: 100%;
+    max-width: 100%;
 }
 
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Posts and pages
---------------------------------------------------------------*/
+
+/*
+*
+* ==========================================
+* Posts and pages
+* ==========================================
+*
+*/
 .sticky {
-	display: block;
+    display: block;
 }
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+    margin: 0 0 1.5em;
 }
 
 .updated:not(.published) {
-	display: none;
+    display: none;
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+    margin: 1.5em 0 0;
 }
 
 .page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+    clear: both;
+    margin: 0 0 1.5em;
 }
-
-/*--------------------------------------------------------------
-## Comments
---------------------------------------------------------------*/
+/*
+*
+* ==========================================
+* Comments
+* ==========================================
+*
+*/
 .comment-content a {
-	word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .bypostauthor {
-	display: block;
+    display: block;
 }
 
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
+/*
+*
+* ==========================================
+* Infinite scroll
+* ==========================================
+*
+*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-	/* Theme Footer (when set to scrolling) */
-	display: none;
+    /* Theme Footer (when set to scrolling) */
+    display: none;
 }
 
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
-	display: block;
+    display: block;
 }
 
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
+/*
+*
+* ==========================================
+* Media
+* ==========================================
+*
+*/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
 }
 
 /* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
 object {
-	max-width: 100%;
+    max-width: 100%;
 }
 
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
-	display: inline-block;
+    display: inline-block;
 }
 
-/*--------------------------------------------------------------
-## Captions
---------------------------------------------------------------*/
+/*
+*
+* ==========================================
+* Captions
+* ==========================================
+*
+*/
 .wp-caption {
-	margin-bottom: 1.5em;
-	max-width: 100%;
+    margin-bottom: 1.5em;
+    max-width: 100%;
 }
 
 .wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+    margin: 0.8075em 0;
 }
 
 .wp-caption-text {
-	text-align: center;
+    text-align: center;
 }
-
-/*--------------------------------------------------------------
-## Galleries
---------------------------------------------------------------*/
+/*
+*
+* ==========================================
+* Galleries
+* ==========================================
+*
+*/
 .gallery {
-	margin-bottom: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 .gallery-item {
-	display: inline-block;
-	text-align: center;
-	vertical-align: top;
-	width: 100%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
 }
 
 .gallery-columns-2 .gallery-item {
-	max-width: 50%;
+    max-width: 50%;
 }
 
 .gallery-columns-3 .gallery-item {
-	max-width: 33.33%;
+    max-width: 33.33%;
 }
 
 .gallery-columns-4 .gallery-item {
-	max-width: 25%;
+    max-width: 25%;
 }
 
 .gallery-columns-5 .gallery-item {
-	max-width: 20%;
+    max-width: 20%;
 }
 
 .gallery-columns-6 .gallery-item {
-	max-width: 16.66%;
+    max-width: 16.66%;
 }
 
 .gallery-columns-7 .gallery-item {
-	max-width: 14.28%;
+    max-width: 14.28%;
 }
 
 .gallery-columns-8 .gallery-item {
-	max-width: 12.5%;
+    max-width: 12.5%;
 }
 
 .gallery-columns-9 .gallery-item {
-	max-width: 11.11%;
+    max-width: 11.11%;
 }
 
 .gallery-caption {
-	display: block;
+    display: block;
+}
+
+.search-form input[type='submit'] {
+    width: 100%;
+    background-color: #f96a0e;
+    border: 1px solid #f96a0e;
+    color: #ffffff;
+}
+
+.search-form input[type='submit']:hover {
+    background-color: #222222;
+    color: #ffffff;
+    border: 1px solid #222222;
+}
+
+.nav-links .nav-previous {
+    font-weight: 700;
+    max-width: 50%;
+    word-break: break-word;
+}
+
+.nav-links .nav-next {
+    font-weight: 700;
+    max-width: 50%;
+    word-break: break-word;
+}
+
+.wp-block-cover-image .wp-block-cover-image-text, .wp-block-cover .wp-block-cover-text, section.wp-block-cover-image > h2 {
+    font-size: 40px;
+    line-height: 48px;
+    z-index: 1;
+    margin-bottom: 0;
+    max-width: 610px;
+    padding: 14px;
+    text-align: center;
+    color: #fff !important;
+}
+
+.wp-block-button {
+    margin-bottom: 30px;
+}
+
+input[type='submit'] {
+    width: auto;
+}
+
+input[type='password'] {
+    width: 100%;
+}
+
+.blocks-gallery-grid .blocks-gallery-image, .blocks-gallery-grid .blocks-gallery-item, .wp-block-gallery .blocks-gallery-image, .wp-block-gallery .blocks-gallery-item {
+    width: calc((100% - 16px) / 2) !important;
+}
+
+.blocks-gallery-grid.columns-3 .blocks-gallery-image, .blocks-gallery-grid.columns-3 .blocks-gallery-item, .wp-block-gallery.columns-3 .blocks-gallery-image, .wp-block-gallery.columns-3 .blocks-gallery-item {
+    margin: 0 !important;
+}
+
+.blocks-gallery-grid, .wp-block-gallery {
+    margin: 0 15px 20px 0px;
+}
+
+.widget-area ul > li > a {
+    font-weight: 700;
+}
+
+.wpcf7 label {
+    width: 100%;
+}
+
+.wpcf7-form-control.wpcf7-submit {
+    width: auto;
+}
+
+.tags-links {
+    margin-right: 5px;
+}
+
+.edit-link {
+    padding: 0 10px;
+}
+
+label {
+    width: 100%;
+}
+
+.entry-title, .page-title {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+img {
+    max-width: 100%;
+}
+
+.comment-form label {
+    width: auto;
+}
+
+/*
+*
+* ==========================================
+*  2. slick Style
+* ==========================================
+*
+*/
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 1;
+}
+
+.slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 30px 0 0;
+}
+
+.slick-list:focus {
+    outline: none;
+}
+
+.slick-list.dragging {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track, .slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slick-track:before, .slick-track:after {
+    content: "";
+    display: table;
+}
+
+.slick-track:after {
+    clear: both;
+}
+
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    display: none;
+}
+
+[dir="rtl"] .slick-slide {
+    float: right;
+}
+
+.slick-slide img {
+    display: inline-block;
+}
+
+.slick-slide.slick-loading img {
+    display: none;
+}
+
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+.slick-dots {
+    display: flex !important;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.slick-dots li > button {
+    border-radius: 40px;
+    border: 1px solid transparent;
+    background-color: #ffc3c2;
+    width: 12px;
+    height: 14px;
+    text-align: center;
+    color: #626262;
+    font-size: 14px;
+    display: block;
+    line-height: 10px;
+    margin: 0 7px;
+    text-indent: -9999999999px;
+}
+
+.slick-dots li > button:hover {
+    border: 1px solid #f96a0e;
+    background-color: #f96a0e;
+    color: #ffffff;
+}
+
+.slick-dots li.slick-active button {
+    border: 1px solid #f96a0e;
+    background-color: #f96a0e;
+    color: #ffffff;
+}
+
+.slick-arrow {
+    background-color: #f96a0e;
+    border: 2px solid transparent;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: -40%;
+    z-index: 1;
+    height: 70px;
+    width: 70px;
+    color: #ffffff;
+}
+
+.slick-arrow:hover {
+    background-color: #222222;
+    border: 2px solid #ffffff;
+}
+
+.slick-prev {
+    right: 7%;
+}
+
+.slick-next {
+    right: 0;
+}
+
+/*
+*
+* ==========================================
+*   3. top-bar style
+* ==========================================
+*
+*/
+.absolute-top-bar {
+    position: absolute !important;
+    background-color: transparent !important;
+    width: 100%;
+}
+
+.top-bar {
+    position: relative;
+    background-color: #222222;
+    padding: 14px 0;
+    z-index: 1;
+}
+
+.top-bar ul li > a > i {
+    color: #f96a0e;
+}
+
+.top-bar ul li > a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.top-bar ul li > a:hover {
+    color: #f96a0e;
+}
+
+/*
+*
+* ==========================================
+* 3. Header Style
+* ==========================================
+*
+*/
+.site-header {
+    position: relative;
+    width: 100%;
+    display: block;
+    background-color: #000000;
+    box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.05), -1px -1px 50px rgba(0, 0, 0, 0.05);
+    padding: 0;
+    z-index: 99;
+    transition: .32s;
+}
+
+.absolute-header {
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute !important;
+    top: 53px;
+}
+
+.navbar-fixed {
+    top: 0;
+    position: fixed !important;
+    background-color: #000000 !important;
+    box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.05), -1px -1px 50px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    transition: .32s;
+    z-index: 99;
+}
+
+.inner-header {
+    position: relative;
+    padding: 50px 0;
+    margin-bottom: 30px;
+    background-color: #fff9f8;
+}
+
+.navbar-toggler {
+    color: #f96a0e;
+}
+
+.navbar-expand-lg .navbar-nav .nav-item {
+    padding: 0 15px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 30px 0px;
+    font-size: 14px;
+    line-height: 14px;
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link:hover, .navbar-expand-lg .navbar-nav .nav-link:focus {
+    color: #ffffff;
+    border-bottom: 2px solid #f96a0e;
+}
+
+.navbar {
+    padding: 0;
+    position: relative;
+}
+
+.navbar-brand, .navbar-brand a {
+    padding: 0;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+    color: #222222;
+    margin-right: 50px;
+    max-height: 79px;
+}
+
+.navbar-brand:hover, .navbar-brand a:hover {
+    color: #f96a0e;
+}
+
+.site-branding {
+    margin-right: 5%;
+}
+
+.reservation-btn {
+    padding: 20px 15px;
+}
+.reservation-btn span {
+    position: relative;
+    margin-left: 15px;
+    padding-left: 15px;
+}
+
+.reservation-btn span:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -6px;
+    height: 35px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.251);
+}
+.mini-cart{
+    position: relative;
+    font-size: 20px;
+}
+.count{
+    position: absolute;
+    top: 0px;
+    right: -6px;
+    width: 15px;
+    height: 15px;
+    background: #f96a0e;
+    font-size: 12px;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    color: #fff;
+    line-height: 15px;
+    border-radius: 50%;
+}
+/*
+*
+* ==========================================
+*   4. banner style
+* ==========================================
+*
+*/
+.hero-banner {
+    position: relative;
+    padding: 338px 0 188px 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*
+*
+* ==========================================
+* 6. support style
+* ==========================================
+*
+*/
+.support-area {
+    position: relative;
+    padding: 130px 0;
+    background-color: #ffffff;
+}
+
+.support-area ul.support-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.support-area ul.support-list li.list-inline-item:not(:last-child) {
+    margin-right: 0;
+    position: relative;
+}
+
+.support-area ul.support-list li.list-inline-item:not(:last-child):before {
+    content: '';
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    background: url("../img/feature-icon/arrow.png") no-repeat center center;
+    -webkit-background-size: auto;
+    -moz-background-size: auto;
+    background-size: auto;
+    left: 100%;
+    top: 35%;
+    z-index: 1;
+}
+
+.support-item {
+    max-width: 220px;
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.08);
+    transition: .5s all ease-out;
+    -moz-transition: .5s all ease-out;
+    -webkit-transition: .5s all ease-out;
+    -o-transition: .5s all ease-out;
+}
+
+.support-item:hover {
+    background-color: #f96a0e;
+}
+
+.support-item:hover,
+.support-item:hover h5, .support-item:hover p {
+    transition: .5s all ease-in;
+    -moz-transition: .5s all ease-in;
+    -webkit-transition: .5s all ease-in;
+    -o-transition: .5s all ease-in;
+}
+
+.support-item:hover h5, .support-item:hover p {
+    color: #ffffff;
+}
+
+.feature-icon {
+    border: 1px solid #f4f4f4;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.06);
+    width: 109px;
+    height: 109px;
+    line-height: 7;
+    text-align: center;
+    margin: 0 auto 20px auto;
+}
+
+/*
+*
+* ==========================================
+*  7. about-us style
+* ==========================================
+*
+*/
+.about-us {
+    position: relative;
+    padding: 0 0 130px;
+}
+
+.batch {
+    position: absolute;
+    top: 36%;
+    left: 36%;
+}
+
+.burger-img {
+    position: absolute;
+    top: 0%;
+    right: 3%;
+}
+
+/*
+*
+* ==========================================
+*   8. special style
+* ==========================================
+*
+*/
+.specialties {
+    position: relative;
+    padding: 130px 0;
+    background: url("../img/specialities/special_bg.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.special-offer {
+    padding-left: 30px;
+    position: relative;
+}
+
+.special-offer:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #f96a0e;
+}
+
+.special-offer li.active > a {
+    color: #f96a0e;
+}
+
+.special-offer li > a {
+    font-size: 20px;
+    color: #222222;
+    font-weight: 700;
+    font-family: "Playfair Display", serif;
+}
+
+.special-offer li > a:hover {
+    color: #f96a0e;
+}
+
+.special-feature-img {
+    max-width: 500px;
+    margin: 0 0 0 auto;
+}
+
+.hot-feature-img {
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+}
+
+.hot-feature-img .img-thumbnail {
+    border: 0;
+    border-radius: 0;
+}
+
+/*
+*
+* ==========================================
+*   9. top item product style
+* ==========================================
+*
+*/
+.top-product {
+    position: relative;
+    padding: 125px 0;
+    background: url("../img/product/product-bg.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+#filters li .button {
+    font-size: 18px;
+    font-family: "Playfair Display", serif;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px dashed #ffffff;
+    border-radius: 6px;
+}
+
+#filters li .button:hover, #filters li .button.is-checked {
+    color: #f96a0e;
+    border: 1px dashed #f96a0e;
+}
+
+.product {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.product-thumb {
+    position: relative;
+}
+
+.product-thumb img {
+    border-radius: 6px;
+}
+
+.product-details {
+    border: 1px dashed #ffffff;
+    border-left: 0;
+    padding: 10px 25px;
+    max-width: 300px;
+}
+
+.product-details p {
+    color: #adadad;
+}
+
+span.price {
+    font-size: 35px;
+}
+
+.align-sup {
+    vertical-align: super;
+}
+
+.add-to-cart-btn {
+    background-color: #f96a0e;
+    padding: 10px 15px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    border-radius: 40px;
+    color: #ffffff;
+    transition: .5s all ease-out;
+    -moz-transition: .5s all ease-out;
+    -webkit-transition: .5s all ease-out;
+    -o-transition: .5s all ease-out;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #222222;
+    color: #ffffff;
+    transition: .5s all ease-in;
+    -moz-transition: .5s all ease-in;
+    -webkit-transition: .5s all ease-in;
+    -o-transition: .5s all ease-in;
+}
+
+/*
+*
+* ==========================================
+*  10. Gallery style
+* ==========================================
+*
+*/
+.gallery-area {
+    position: relative;
+    padding: 130px 0 100px 0;
+}
+
+.gallery-item {
+    display: inline-block;
+}
+
+.gallery-item img {
+    border-radius: 4px;
+}
+
+.black-title-shape {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    background-color: #f96a0e;
+    width: 10px;
+    height: 6px;
+    border-radius: 30px;
+}
+
+.black-title-shape:before {
+    content: '';
+    position: absolute;
+    background-color: #f96a0e;
+    width: 25px;
+    height: 6px;
+    border-radius: 30px;
+    left: -35px;
+    top: 0;
+}
+
+.black-title-shape:after {
+    content: '';
+    position: absolute;
+    background-color: #f96a0e;
+    width: 25px;
+    height: 6px;
+    border-radius: 30px;
+    right: -35px;
+    top: 0;
+}
+
+.white-title-shape {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    background-color: #ffffff;
+    width: 10px;
+    height: 6px;
+    border-radius: 30px;
+}
+
+.white-title-shape:before {
+    content: '';
+    position: absolute;
+    background-color: #ffffff;
+    width: 25px;
+    height: 6px;
+    border-radius: 30px;
+    left: -35px;
+    top: 0;
+}
+
+.white-title-shape:after {
+    content: '';
+    position: absolute;
+    background-color: #ffffff;
+    width: 25px;
+    height: 6px;
+    border-radius: 30px;
+    right: -35px;
+    top: 0;
+}
+
+/*
+*
+* ==========================================
+* 11. Chefs style
+* ==========================================
+*
+*/
+.chefs {
+    position: relative;
+    padding-bottom: 130px;
+}
+
+.chef-item {
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.08);
+    border: 1px solid transparent;
+    padding: 30px;
+}
+
+.chef-item:hover {
+    border: 1px solid #f96a0e;
+}
+
+.chef-profile {
+    text-align: center;
+}
+
+.chef-profile img {
+    box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.08);
+}
+
+.chef-item, .social-list li > a {
+    transition: .5s all ease-out;
+    -moz-transition: .5s all ease-out;
+    -webkit-transition: .5s all ease-out;
+    -o-transition: .5s all ease-out;
+}
+
+.chef-item:hover, .social-list li > a:hover {
+    transition: .5s all ease-in;
+    -moz-transition: .5s all ease-in;
+    -webkit-transition: .5s all ease-in;
+    -o-transition: .5s all ease-in;
+}
+
+.social-list li > a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    border: 1px solid #d2d2d2;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.social-list li > a:hover {
+    background-color: #f96a0e;
+    border: 1px solid #f96a0e;
+    color: #ffffff;
+}
+
+.maker-slider .slick-list {
+    padding: 25px 3px;
+}
+
+.maker-slider .slick-arrow {
+    background-color: #f96a0e;
+    border: 2px solid transparent;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: -20%;
+    z-index: 1;
+    height: 70px;
+    width: 70px;
+    color: #ffffff;
+}
+
+.maker-slider .slick-arrow:hover {
+    background-color: #222222;
+    border: 2px solid #222222;
+}
+
+.maker-slider .slick-prev {
+    right: 7%;
+}
+
+.maker-slider .slick-next {
+    right: 0;
+}
+
+/*
+*
+* ==========================================
+* 12. video style
+* ==========================================
+*
+*/
+.video-area {
+    position: relative;
+}
+
+.mfp-bg {
+    opacity: .9;
+}
+
+.promo-video {
+    position: relative;
+    margin: 0;
+}
+
+.play-btn {
+    display: block;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: #f96a0e;
+    color: #ffffff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40%;
+}
+
+.play-btn:hover, .play-btn:focus {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+.m--100 {
+    margin-top: -100px;
+}
+
+
+/*
+*
+* ==========================================
+* 13. testimonial style
+* ==========================================
+*
+*/
+.m--192 {
+    margin-top: -192px;
+}
+
+.testimonials {
+    padding: 130px 0 0px 0;
+    position: relative;
+    background: url("../img/testimonials/testimonial-bg.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.testimonial-item {
+    padding: 110px 45px 55px 45px;
+    position: relative;
+    border: 1.22px dashed rgba(255, 255, 255, 0.349);
+    margin-bottom: 0;
+    z-index: 1;
+    background-color: rgba(7, 8, 7, 0.949);
+}
+
+.testimonial-item, .testimonial-item .icon img:last-child,
+.testimonial-item p.description,
+.testimonial-item h4,
+.testimonial-item .review li,
+.testimonial-item .review li.active {
+    transition: .5s all ease-out;
+    -moz-transition: .5s all ease-out;
+    -webkit-transition: .5s all ease-out;
+    -o-transition: .5s all ease-out;
+}
+
+.testimonial-item:hover, .testimonial-item:hover .icon img:first-child,
+.testimonial-item:hover .icon img:last-child,
+.testimonial-item:hover .review li,
+.testimonial-item:hover .review li.active,
+.testimonial-item:hover p.description,
+.testimonial-item:hover h4 {
+    transition: .5s all ease-in;
+    -moz-transition: .5s all ease-in;
+    -webkit-transition: .5s all ease-in;
+    -o-transition: .5s all ease-in;
+}
+
+.testimonial-item .icon {
+    position: absolute;
+    top: -5%;
+}
+
+.testimonial-item .icon img:last-child {
+    object-fit: contain;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+}
+
+.testimonial-item p.description {
+    color: #b6b6b6;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(54, 58, 60, 0.502);
+}
+
+.testimonial-item h4 {
+    color: #ffffff;
+}
+
+.testimonial-item p.designation {
+    color: #f96a0e;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+.testimonial-item .review li {
+    color: #705443;
+}
+
+.testimonial-item .review li.active {
+    color: #f96a0e;
+}
+
+.testimonial-item footer {
+    padding-top: 30px;
+}
+
+.testimonial-item:hover {
+    background-color: rgba(249, 106, 14, 0.949);
+    border: 1.22px dashed rgba(255, 255, 255, 0.8);
+}
+
+.testimonial-item:hover .icon img:first-child {
+    opacity: 0;
+}
+
+.testimonial-item:hover .icon img:last-child {
+    opacity: 1;
+}
+
+.testimonial-item:hover .review li {
+    color: #fcaf7e;
+}
+
+.testimonial-item:hover .review li.active {
+    color: #ffffff;
+}
+
+.testimonial-item:hover p.description {
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.251);
+}
+
+.testimonial-item:hover h4, .testimonial-item:hover p.designation {
+    color: #ffffff;
+}
+
+
+/*
+*
+* ==========================================
+* 14. book-table style
+* ==========================================
+*
+*/
+.book-table {
+    position: relative;
+    padding: 275px 0 130px 0;
+    background: url("../img/booktable/book-table-bg.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.book-table input[type=text], .book-table input[type=search], .book-table .form-control {
+    background: transparent;
+    box-shadow: none;
+    padding: 28px 15px;
+    color: #ffffff;
+}
+
+.book-table input[type=text]:focus, .book-table input[type=search]:focus, .book-table .form-control:focus {
+    border: 1px solid #222222;
+}
+
+.book-table input[type=text]::placeholder, .book-table input[type=search]::placeholder, .book-table .form-control::placeholder,
+.book-table input[type=text]::-webkit-input-placeholder, .book-table input[type=search]::-webkit-input-placeholder,
+.book-table .form-control::-webkit-input-placeholder,
+.book-table input[type=text]::-moz-placeholder, .book-table input[type=search]::-moz-placeholder,
+.book-table .form-control::-moz-placeholder,
+.book-table input[type=text]::-ms-input-placeholder, .book-table input[type=search]::-ms-input-placeholder,
+.book-table .form-control::-ms-input-placeholder {
+    color: #ffffff;
+}
+
+.inline-icon {
+    position: absolute;
+    right: 15px;
+    top: 28%;
+    color: #ffffff;
+}
+
+.book-btn {
+    padding: 20px 15px;
+    width: 100%;
+    background-color: #222222;
+}
+
+.book-btn:hover {
+    background-color: #f96a0e;
+}
+
+.book-btn span {
+    position: relative;
+    margin-left: 100px;
+    padding-left: 15px;
+}
+
+.book-btn span:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -6px;
+    height: 35px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.251);
+}
+
+/*
+*
+* ==========================================
+* 15. blog style
+* ==========================================
+*
+*/
+.blog-area {
+    position: relative;
+    padding: 130px 0;
+    background-color: #ffffff;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(7, 8, 7, 0.702); /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, rgba(7, 8, 7, 0.702), rgba(7, 8, 7, 0.1)); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, rgba(7, 8, 7, 0.702), rgba(7, 8, 7, 0.1)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    z-index: 0;
+    opacity: 0.8;
+}
+
+.blog-thumb {
+    position: relative;
+    border: 3px solid transparent;
+    padding: 150px 50px 50px 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: table-cell;
+    vertical-align: bottom;
+    z-index: 1;
+}
+.no-thumbs{
+    display: block;
+}
+.blog-thumb a {
+    display: inline-block;
+}
+
+.blog-thumb .blog-title {
+    color: #ffffff;
+}
+
+.blog-thumb ul.author-nfo, .blog-thumb ul.comment-nfo {
+    color: #ffffff;
+}
+
+.blog-thumb .content {
+    margin-bottom: -100px;
+}
+.no-thumbs .content {
+    margin-bottom: 0;
+}
+
+.blog-thumb:hover,
+.no-thumbs {
+    border: 3px solid #f96a0e;
+    padding: 50px;
+    overflow: hidden;
+}
+
+.blog-thumb:hover:before {
+    display: none;
+}
+
+.blog-thumb:hover .overlay {
+    display: none;
+}
+
+.blog-thumb:hover img {
+    visibility: hidden;
+}
+
+.blog-thumb:hover .blog-title,
+.no-thumbs .blog-title{
+    color: #222222;
+}
+
+.blog-thumb:hover .content {
+    margin: 0;
+}
+
+.blog-thumb:hover .more-btn,
+.no-thumbs .more-btn{
+    visibility: visible;
+    transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+}
+
+.blog-thumb:hover ul.author-nfo,
+.blog-thumb:hover ul.comment-nfo,
+.no-thumbs ul.author-nfo,
+.no-thumbs ul.comment-nfo{
+    color: #222222;
+}
+
+.post-date {
+    background-color: #f96a0e;
+    border-radius: 50px;
+    padding: 9px 15px;
+    color: #ffffff;
+}
+
+.post-date:hover {
+    color: #ffffff;
+    background-color: #222222;
+}
+
+.comment-nfo li.list-inline-item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.more-btn{
+    padding: 20px 15px;
+    margin-top: 40px;
+    visibility: hidden;
+    transform: translate(0px, 108px);
+    -moz-transform: translate(0px, 108px);
+    -webkit-transform: translate(0px, 108px);
+}
+
+.more-btn span {
+    position: relative;
+    margin-left: 15px;
+    padding-left: 15px;
+}
+
+.more-btn span:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -6px;
+    height: 35px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.251);
+}
+
+/*
+*
+* ==========================================
+* 16. footer Style
+* ==========================================
+*
+*/
+.footer-area {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.footer-area:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.859);
+}
+
+.footer-area .social-list li > a {
+    color: #ffffff;
+}
+
+.footer-area p {
+    color: #b6b6b6;
+}
+
+.footer-logo {
+    position: absolute;
+    z-index: 0;
+    top: -5%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.widget-menu li, .menu li {
+    margin-bottom: 20px;
+}
+
+.widget-menu li > a, .menu li > a {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+    color: #b6b6b6;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.widget-menu li > a:hover, .menu li > a:hover {
+    color: #f96a0e;
+}
+
+.gallery-list a {
+    display: inline-block;
+    margin-right: 13px;
+    margin-bottom: 13px;
+    position: relative;
+}
+
+.gallery-list a:last-child {
+    margin-right: 0;
+}
+
+.gallery-list a img {
+    border-radius: 5px;
+    height: 70px;
+    width: 70px;
+}
+
+.gallery-list a:hover .overlay-icon {
+    opacity: 1;
+}
+
+.gallery-list .overlay-icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgba(254, 90, 14, 0.902);
+    opacity: 0;
+    line-height: 70px;
+    color: #ffffff;
+}
+
+.footer-top {
+    padding: 190px 0 130px 0;
+    position: relative;
+}
+
+.footer-bottom {
+    padding: 25px 0;
+    overflow: hidden;
+    background-color: rgba(40, 40, 40, 0.502);
+    position: relative;
+}
+
+.call-nfo h6 {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.call-nfo a {
+    font-family: "Poppins", sans-serif;
+}
+
+.subscribe-form input[type=text], .subscribe-form input[type=search], .subscribe-form .form-control {
+    width: 80%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.subscribe-form button {
+    padding: 20px;
+    background-color: #f96a0e;
+    border: 0;
+    padding: 13px;
+    height: 50px;
+    display: inline-block;
+    color: #ffffff;
+    border-radius: 2px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }

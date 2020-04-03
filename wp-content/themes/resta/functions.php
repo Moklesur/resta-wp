@@ -114,14 +114,48 @@ function resta_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
+$args_footer_widgets = array(
+    'name'          => esc_html__( 'Footer %d', 'resta' ),
+    'id'            => 'footer-widget',
+    'description'   => esc_html__( 'Add widgets here.', 'resta' ),
+    'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4 class="footer-widget-title text-uppercase">',
+    'after_title'   => '</h4>'
+);
+
+register_sidebars( 4, $args_footer_widgets );
+
 add_action( 'widgets_init', 'resta_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
 function resta_scripts() {
-	wp_enqueue_style( 'resta-style', get_stylesheet_uri() );
 
+    wp_enqueue_style('resta-body-fonts', '//fonts.googleapis.com/css?family=Playfair+Display:300,700,800');
+    wp_enqueue_style('resta-heading-fonts', '//fonts.googleapis.com/css?family=Poppins:300,700,800');
+
+    // Plugin CSS
+    wp_enqueue_style( 'icofont', get_template_directory_uri() . '/css/icofont.min.css', array(), '4.7.0' );
+    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '4.4.1' );
+    // Main Stylesheet
+    wp_enqueue_style( 'resta-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' )  );
+    // Responsive
+    wp_enqueue_style( 'resta-responsive', get_template_directory_uri() . '/css/responsive.css', array(), wp_get_theme()->get( 'Version' ) );
+    wp_enqueue_style( 'resta-plugin', get_template_directory_uri() . '/css/plugin.css', array(), wp_get_theme()->get( 'Version' ) );
+
+    // Plugin JS
+    wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.8.0', true );
+    wp_enqueue_script( 'jquery-popper', get_template_directory_uri() . '/js/popper.min.js', array('jquery'), '1.12.5', true );
+    wp_enqueue_script( 'jquery-isotope', get_template_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery'), '3.0.6', true );
+    wp_enqueue_script( 'jquery-magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', array('jquery'), '1.1.0', true );
+    wp_enqueue_script( 'jquery-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '4.4.1', true );
+    // Main JS
+    wp_enqueue_script( 'resta-elementor-slider', get_template_directory_uri() . '/js/elementor-slider.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
+    wp_enqueue_script( 'resta-main', get_template_directory_uri() . '/js/main.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
+
+    
 	wp_enqueue_script( 'resta-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'resta-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -131,6 +165,34 @@ function resta_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'resta_scripts' );
+
+/**
+ * Elementor widgets
+ */
+function resta_elementor_widgets() {
+
+    if ( defined('ELEMENTOR_PATH') && class_exists('Elementor\Widget_Base') ) {
+        require get_template_directory() . '/plugin/slideshow.php';
+    }
+}
+add_action( 'elementor/widgets/widgets_registered', 'resta_elementor_widgets' );
+
+/**
+ * @param $elements_manager
+ * elementor Category Name
+ */
+function resta_elementor_widget_categories( $elements_manager ) {
+
+    $elements_manager->add_category(
+        'resta_elementor_categories',
+        array(
+            'title' => __( 'Resta Widgets', 'resta' ),
+            'icon' => 'fa fa-plug',
+        )
+    );
+
+}
+add_action( 'elementor/elements/categories_registered', 'resta_elementor_widget_categories' );
 
 /**
  * Implement the Custom Header feature.
@@ -159,3 +221,27 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * TGM Plugin activation.
+ */
+require_once dirname( __FILE__ ) . '/inc/class-tgm-plugin-activation.php';
+
+add_action( 'tgmpa_register', 'resta_active_plugins' );
+
+function resta_active_plugins() {
+
+    $plugins = array(
+        array(
+            'name'      => __( 'Contact Form 7', 'resta' ),
+            'slug'      => 'contact-form-7',
+            'required'  => false,
+        ),
+        array(
+            'name'      => __( 'Elementor Page Builder', 'resta' ),
+            'slug'      => 'elementor',
+            'required'  => false,
+        )
+    );
+
+    tgmpa( $plugins );
+}
