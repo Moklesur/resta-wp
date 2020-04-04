@@ -26,7 +26,7 @@
 <div id="page" class="wrapper site">
 
     <!--/.top-bar start-->
-    <section class="top-bar">
+    <section class="top-bar absolute-top-bar">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 text-lg-left text-md-left text-center">
@@ -51,7 +51,7 @@
     <!--/.top-bar end-->
 
     <!--/.header start -->
-    <header class="site-header" id="header">
+    <header class="site-header absolute-header navbar-fixed" id="header">
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <div class="navbar-brand">
@@ -78,10 +78,10 @@
                     <i class="fa icofont-navigation-menu"></i>
                 </button>
                     <?php
-                    wp_nav_menu( array(
-                        'theme_location' => 'menu-1',
-                        'menu_id'        => 'primary-menu',
-                    ) );
+//                    wp_nav_menu( array(
+//                        'theme_location' => 'menu-1',
+//                        'menu_id'        => 'primary-menu',
+//                    ) );
                     ?>
                     <div class="my-2 my-lg-0 ml-lg-auto">
                         <a href="" class="mr-3 d-inline-block mini-cart"><i class="icofont-cart text-white"></i> <span class="count">2</span></a>

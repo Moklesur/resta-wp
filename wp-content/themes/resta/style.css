@@ -11,7 +11,8 @@ Text Domain: resta
 Tags: blog, custom-background, custom-colors, custom-menu, translation-ready, theme-options, threaded-comments, custom-logo, footer-widgets, custom-header, featured-image-header, full-width-template, left-sidebar, right-sidebar
 */
 
-.text-orange {
+.text-orange,
+.hero-banner h1 span{
     color: #f96a0e;
 }
 
@@ -918,12 +919,38 @@ h2.screen-reader-text {
 .page-content,
 .entry-content,
 .entry-summary {
-    margin: 1.5em 0 0;
+    margin: 0 0 0;
 }
 
 .page-links {
     clear: both;
     margin: 0 0 1.5em;
+}
+.pagination-fix{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.pagination-fix .navigation.pagination{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.pagination-fix .pagination a.page-numbers,
+.pagination-fix .pagination span{
+    display: inline-block;
+    background: #f9f9f9;
+    padding: 4px 18px;
+    text-align: center;
+    line-height: 30px;
+    color: #000;
+    margin: 1px;
+}
+
+.pagination-fix .pagination .current,
+.pagination-fix .pagination a.page-numbers:hover,
+.pagination-fix .pagination span:hover{
+    color: #ffffff;
+    background: #f96a0e;
 }
 /*
 *

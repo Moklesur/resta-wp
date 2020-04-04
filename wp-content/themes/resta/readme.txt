@@ -12,7 +12,7 @@ Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, translat
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2.
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-bring back WordPress Theme, Copyright 2020 themetim
+resta WordPress Theme, Copyright 2020 themetim
 resta is distributed under the terms of the GNU GPL
 
 == Description ==

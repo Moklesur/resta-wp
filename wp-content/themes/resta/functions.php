@@ -133,6 +133,7 @@ add_action( 'widgets_init', 'resta_widgets_init' );
  */
 function resta_scripts() {
 
+    wp_enqueue_style('resta-body-fonts', '//fonts.googleapis.com/css?family=Playball:400');
     wp_enqueue_style('resta-body-fonts', '//fonts.googleapis.com/css?family=Playfair+Display:300,700,800');
     wp_enqueue_style('resta-heading-fonts', '//fonts.googleapis.com/css?family=Poppins:300,700,800');
 
@@ -155,7 +156,6 @@ function resta_scripts() {
     wp_enqueue_script( 'resta-elementor-slider', get_template_directory_uri() . '/js/elementor-slider.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
     wp_enqueue_script( 'resta-main', get_template_directory_uri() . '/js/main.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
 
-    
 	wp_enqueue_script( 'resta-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'resta-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -173,6 +173,7 @@ function resta_elementor_widgets() {
 
     if ( defined('ELEMENTOR_PATH') && class_exists('Elementor\Widget_Base') ) {
         require get_template_directory() . '/plugin/slideshow.php';
+        require get_template_directory() . '/plugin/hero-banner.php';
     }
 }
 add_action( 'elementor/widgets/widgets_registered', 'resta_elementor_widgets' );
