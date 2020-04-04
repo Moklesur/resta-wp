@@ -1,0 +1,260 @@
+/*--------------------------------------------------------------------------------
+
+    Responsive
+
+--------------------------------------------------------------------------------*/
+
+
+/*  ================================================
+
+    // Large devices (desktops, less than 1366px)
+
+    ================================================ */
+
+@media (max-width: 1366.98px) {
+
+    .burger-img {
+        right: 0%;
+    }
+
+    .burger-img img {
+        max-width: 120px;
+    }
+
+    /*  ======= about-area End ======= */
+
+}
+
+/*  ================================================
+
+    // Large devices (desktops, less than 1200px)
+
+    ================================================ */
+
+@media (max-width: 1199.98px) {
+
+    .support-area ul.support-list li.list-inline-item:not(:last-child):before {
+        left: 89%;
+    }
+
+    /*  ======= support-area End ======= */
+    .burger-img {
+        right: 0%;
+    }
+
+    .burger-img img {
+        max-width: 120px;
+    }
+
+    /*  ======= about-area End ======= */
+    .hot-feature-img img:first-child {
+        margin: 0;
+    }
+
+    /*  ======= special  End ======= */
+
+}
+
+/*  ================================================
+
+    // Medium devices (tablets, less than 992px)
+
+    ================================================ */
+
+@media (max-width: 991.98px) {
+
+    .mb-80 {
+        margin-bottom: 60px;
+    }
+
+    .mb-100 {
+        margin-bottom: 50px;
+    }
+
+    .m--100 {
+        margin-top: -50px;
+    }
+
+    /*  ======= padding  End ======= */
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 40px;
+        line-height: 1.2;
+    }
+
+    /*  ======= Basic heading End ======= */
+    .top-bar ul li {
+        display: block;
+    }
+
+    /*  ======= top bar End ======= */
+    .absolute-header {
+        top: 110px;
+    }
+    .navbar-fixed{
+        top: 0px;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding: 15px 0;
+    }
+    .navbar-expand-lg .navbar-nav .nav-item {
+        padding: 0px;
+    }
+
+    /*  ======= header End ======= */
+    .support-area ul.support-list {
+        justify-content: space-around;
+    }
+
+    .support-area ul.support-list li.list-inline-item:not(:last-child) {
+        margin-bottom: 40px;
+    }
+
+    .support-area ul.support-list li.list-inline-item:not(:last-child):before {
+        display: none;
+    }
+    /*  ======= support-area End ======= */
+    .about-us-img {
+        margin-bottom: 30px;
+    }
+
+    .batch {
+        width: 28%;
+    }
+
+    .burger-img {
+        display: none;
+    }
+
+    /*  ======= about-area End ======= */
+    .special-feature-img {
+        margin: 20px 0;
+    }
+
+    .hot-feature-img {
+        position: relative;
+    }
+
+    .hot-feature-img img:first-child {
+        margin: 20px auto;
+    }
+
+    /*  ======= special  End ======= */
+    #filters li {
+        margin-bottom: 20px;
+    }
+
+    /*  ======= top item product  End ======= */
+    .chef-item {
+        margin-bottom: 30px;
+    }
+
+    .maker-slider .slick-prev {
+        right: 10%;
+    }
+
+    /*  ======= chef item  End ======= */
+    .play-btn {
+        top: 35%;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+    }
+
+    /*  ======= video  End ======= */
+    .testimonials h1 {
+        font-size: 36px;
+    }
+
+    .testimonial-item {
+        padding: 110px 40px 55px 40px;
+    }
+
+    /*  ======= testimonials  End ======= */
+    .blog-area .blog-item {
+        margin-bottom: 30px;
+    }
+
+    /*  ======= blog-area  End ======= */
+    .footer-logo {
+        top: -3%;
+    }
+
+    .widget-area {
+        margin-bottom: 40px;
+    }
+
+    /*  ======= footer  End ======= */
+
+    .slick-prev {
+        right: 11%;
+    }
+
+    /*  ======= slick  End ======= */
+
+}
+
+/*  ================================================
+
+    // Extra small devices (portrait phones, less than 600px)
+
+    ================================================ */
+
+@media (max-width: 599.98px) {
+
+    h2 {
+        font-size: 32px;
+        line-height: 1;
+    }
+
+    /*  ======= Basic heading End ======= */
+    .absolute-header {
+        top: 116px;
+    }
+    .navbar-fixed{
+        top: 0px;
+    }
+    .navbar-brand, .navbar-brand a {
+        white-space: pre-wrap;
+        font-size: 18px;
+    }
+
+    .site-branding {
+        margin-right: 0;
+    }
+
+    /*  ======= header End ======= */
+    .support-area ul.support-list {
+        justify-content: center;
+    }
+
+    .support-area ul.support-list li.list-inline-item:not(:last-child):before {
+        display: none;
+    }
+
+    /*  ======= support-area End ======= */
+    .maker-slider .slick-prev {
+        right: 12%;
+    }
+
+    /*  ======= chef item product  End ======= */
+    .play-btn {
+        top: 35%;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    /*  ======= video  End ======= */
+
+    .slick-prev {
+        right: 0%;
+        top: -27%;
+    }
+
+    /*  ======= slick  End ======= */
+}
