@@ -63,38 +63,16 @@
     /*
     *
     * ==========================================
-    *   Menu Sticky
+    *   Mobile Menu
     * ==========================================
     *
     */
-
-    $body.bind('click', function (e) {
-        if ($(e.target).closest('.navbar-toggler').length == 0) {
-            var opened = $('.navbar-collapse').hasClass('collapse');
-
-            if (opened === true) {
-                $('.navbar-collapse').collapse('hide');
-                $(this).find('.icofont-close').addClass('icofont-navigation-menu');
-                $(this).find('.icofont-close').removeClass('fa-close');
-            }
-        }
-    });
-
-    $body.on('click', '.navbar-toggler', function (e) {
+    $body.on('click', '.nav-mobile' , function (e) {
         e.preventDefault();
-        var dd = $(this).attr('aria-expanded');
-
-        if (dd != 'false') {
-            $(this).find('.icofont-close').addClass('icofont-navigation-menu');
-            $(this).find('.fa').removeClass('icofont-close');
-            $(this).parents('.site-header').css({backgroundColor: 'rgba(255, 255, 255, 0.10)'});
-        } else {
-            $(this).find('.fa').removeClass('icofont-navigation-menu');
-            $(this).find('.fa').addClass('icofont-close');
-            $(this).parents('.site-header').css({backgroundColor: '#000000'});
-        }
-
+        $('body').toggleClass('body-overflow');
+        $('.menu-all-pages-container').toggleClass('has-open-menu');
     });
+
 
     /*
     *

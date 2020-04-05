@@ -72,20 +72,19 @@
                         <p class="site-description"><?php echo $resta_description; /* WPCS: xss ok. */ ?></p>
                     <?php endif; ?>
                 </div><!-- .site-branding -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa icofont-navigation-menu"></i>
-                </button>
                     <?php
-//                    wp_nav_menu( array(
-//                        'theme_location' => 'menu-1',
-//                        'menu_id'        => 'primary-menu',
-//                    ) );
+                    wp_nav_menu( array(
+                        'theme_location' => 'menu-1',
+                        'menu_id'        => 'primary-menu',
+                        'menu_class'        => 'resta-main-menu'
+                    ) );
                     ?>
-                    <div class="my-2 my-lg-0 ml-lg-auto">
+                    <div class="my-2 my-lg-0 ml-lg-auto d-flex align-items-center">
                         <a href="" class="mr-3 d-inline-block mini-cart"><i class="icofont-cart text-white"></i> <span class="count">2</span></a>
-                        <a href="" class="btn  my-2 my-sm-0 reservation-btn">Reservation<span><i class="icofont-arrow-right"></i></span></a>
+                        <a href="" class="btn d-none d-lg-inline-block my-2 my-sm-0 reservation-btn">Reservation<span><i class="icofont-arrow-right"></i></span></a>
+                        <a href="#" class=" d-lg-none d-inline-block nav-mobile">
+                            <i class="fa icofont-navigation-menu"></i>
+                        </a>
                     </div>
             </nav>
         </div>
