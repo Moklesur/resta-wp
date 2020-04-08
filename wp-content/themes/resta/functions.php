@@ -174,6 +174,7 @@ function resta_elementor_widgets() {
     if ( defined('ELEMENTOR_PATH') && class_exists('Elementor\Widget_Base') ) {
         require get_template_directory() . '/plugin/slideshow.php';
         require get_template_directory() . '/plugin/hero-banner.php';
+        require get_template_directory() . '/plugin/support.php';
     }
 }
 add_action( 'elementor/widgets/widgets_registered', 'resta_elementor_widgets' );

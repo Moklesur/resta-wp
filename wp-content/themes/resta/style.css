@@ -942,14 +942,14 @@ h2.screen-reader-text {
 .support-area ul.support-list li.list-inline-item:not(:last-child):before {
     content: '';
     position: absolute;
-    width: 85px;
-    height: 85px;
-    background: url("../img/feature-icon/arrow.png") no-repeat center center;
+    width: 68px;
+    height: 68px;
+    background: url("./img/arrow.png") no-repeat center center;
     -webkit-background-size: auto;
     -moz-background-size: auto;
     background-size: auto;
-    left: 100%;
-    top: 35%;
+    left: 105%;
+    top: 40%;
     z-index: 1;
 }
 
@@ -964,6 +964,7 @@ h2.screen-reader-text {
     -moz-transition: .5s all ease-out;
     -webkit-transition: .5s all ease-out;
     -o-transition: .5s all ease-out;
+    margin-bottom: 30px;
 }
 
 .support-item:hover {
@@ -991,6 +992,7 @@ h2.screen-reader-text {
     height: 109px;
     line-height: 7;
     text-align: center;
+    display: block;
     margin: 0 auto 20px auto;
 }
 

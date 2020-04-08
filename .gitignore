@@ -7,9 +7,11 @@ wp-config.php
 index.php
 wp-content/uploads
 !wp-content/themes/resta/index.php
+!wp-content/themes/resta/
 wp-content/themes/twentytwenty
 
 wp-content/upgrade
 wp-content/updraft
 wp-content/debug.log
 wp-content/plugins/
+.htaccess
