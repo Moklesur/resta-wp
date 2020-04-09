@@ -140,6 +140,7 @@ function resta_scripts() {
     // Plugin CSS
     wp_enqueue_style( 'icofont', get_template_directory_uri() . '/css/icofont.min.css', array(), '4.7.0' );
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '4.4.1' );
+    wp_enqueue_style( 'magnific', get_template_directory_uri() . '/css/magnific-popup.css', array(), '1.1.1' );
     // Main Stylesheet
     wp_enqueue_style( 'resta-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' )  );
     // Responsive
@@ -175,6 +176,7 @@ function resta_elementor_widgets() {
         require get_template_directory() . '/plugin/slideshow.php';
         require get_template_directory() . '/plugin/hero-banner.php';
         require get_template_directory() . '/plugin/support.php';
+        require get_template_directory() . '/plugin/image-with-text.php';
     }
 }
 add_action( 'elementor/widgets/widgets_registered', 'resta_elementor_widgets' );

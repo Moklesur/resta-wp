@@ -127,13 +127,13 @@ class resta_Slideshow extends Widget_Base {
         $repeater->add_control(
             'content_alignment',
             [
-                'label' => __( 'Content Alignment', 'plugin-domain' ),
+                'label' => __( 'Content Alignment', 'resta' ),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'default' => 'justify-content-center',
                 'options' => [
-                    'justify-content-start'  => __( 'Start', 'plugin-domain' ),
-                    'justify-content-center' => __( 'Middle', 'plugin-domain' ),
-                    'justify-content-end' => __( 'End', 'plugin-domain' )
+                    'justify-content-start'  => __( 'Start', 'resta' ),
+                    'justify-content-center' => __( 'Middle', 'resta' ),
+                    'justify-content-end' => __( 'End', 'resta' )
                 ],
             ]
         );
@@ -142,19 +142,19 @@ class resta_Slideshow extends Widget_Base {
         $repeater->add_control(
             'text_alignment',
             [
-                'label' => __( 'Text Alignment', 'plugin-domain' ),
+                'label' => __( 'Text Alignment', 'resta' ),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'text-left' => [
-                        'title' => __( 'Left', 'plugin-domain' ),
+                        'title' => __( 'Left', 'resta' ),
                         'icon' => 'fa fa-align-left',
                     ],
                     'text-center' => [
-                        'title' => __( 'Center', 'plugin-domain' ),
+                        'title' => __( 'Center', 'resta' ),
                         'icon' => 'fa fa-align-center',
                     ],
                     'text-right' => [
-                        'title' => __( 'Right', 'plugin-domain' ),
+                        'title' => __( 'Right', 'resta' ),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -200,7 +200,7 @@ class resta_Slideshow extends Widget_Base {
         $repeater->add_control(
             'title_animation',
             [
-                'label' => __( 'Animation', 'plugin-domain' ),
+                'label' => __( 'Animation', 'resta' ),
                 'type' => \Elementor\Controls_Manager::ANIMATION,
                 'prefix_class' => 'animated ',
             ]
@@ -223,7 +223,7 @@ class resta_Slideshow extends Widget_Base {
         $repeater->add_control(
             'content_animation',
             [
-                'label' => __( 'Animation', 'plugin-domain' ),
+                'label' => __( 'Animation', 'resta' ),
                 'type' => \Elementor\Controls_Manager::ANIMATION,
                 'prefix_class' => 'animated ',
             ]
@@ -260,7 +260,7 @@ class resta_Slideshow extends Widget_Base {
         $repeater->add_control(
             'button_animation',
             [
-                'label' => __( 'Animation', 'plugin-domain' ),
+                'label' => __( 'Animation', 'resta' ),
                 'type' => \Elementor\Controls_Manager::ANIMATION,
                 'prefix_class' => 'animated ',
             ]
@@ -283,7 +283,7 @@ class resta_Slideshow extends Widget_Base {
         $this->start_controls_section(
             'slider_settings',
             [
-                'label' => __( 'Slider Settings', 'ushop' ),
+                'label' => __( 'Slider Settings', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -291,10 +291,10 @@ class resta_Slideshow extends Widget_Base {
         $this->add_control(
             'autoplay',
             [
-                'label' => __( 'Autoplay', 'ushop' ),
+                'label' => __( 'Autoplay', 'resta' ),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __( 'Show', 'ushop' ),
-                'label_off' => __( 'Hide', 'ushop' ),
+                'label_on' => __( 'Show', 'resta' ),
+                'label_off' => __( 'Hide', 'resta' ),
                 'return_value' => 'true',
                 'default' => 'true',
             ]
@@ -303,10 +303,10 @@ class resta_Slideshow extends Widget_Base {
         $this->add_control(
             'fade',
             [
-                'label' => __( 'Fade', 'ushop' ),
+                'label' => __( 'Fade', 'resta' ),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __( 'True', 'ushop' ),
-                'label_off' => __( 'False', 'ushop' ),
+                'label_on' => __( 'True', 'resta' ),
+                'label_off' => __( 'False', 'resta' ),
                 'return_value' => 'true',
                 'default' => 'true',
             ]
@@ -315,10 +315,10 @@ class resta_Slideshow extends Widget_Base {
         $this->add_control(
             'infinite',
             [
-                'label' => __( 'Infinite', 'ushop' ),
+                'label' => __( 'Infinite', 'resta' ),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __( 'True', 'ushop' ),
-                'label_off' => __( 'False', 'ushop' ),
+                'label_on' => __( 'True', 'resta' ),
+                'label_off' => __( 'False', 'resta' ),
                 'return_value' => 'true',
                 'default' => 'true',
             ]
@@ -327,10 +327,10 @@ class resta_Slideshow extends Widget_Base {
         $this->add_control(
             'adaptiveHeight',
             [
-                'label' => __( 'Adaptive Height', 'ushop' ),
+                'label' => __( 'Adaptive Height', 'resta' ),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __( 'True', 'ushop' ),
-                'label_off' => __( 'False', 'ushop' ),
+                'label_on' => __( 'True', 'resta' ),
+                'label_off' => __( 'False', 'resta' ),
                 'return_value' => 'true',
                 'default' => '',
             ]
@@ -339,10 +339,10 @@ class resta_Slideshow extends Widget_Base {
         $this->add_control(
             'arrows',
             [
-                'label' => __( 'Arrows', 'ushop' ),
+                'label' => __( 'Arrows', 'resta' ),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __( 'True', 'ushop' ),
-                'label_off' => __( 'False', 'ushop' ),
+                'label_on' => __( 'True', 'resta' ),
+                'label_off' => __( 'False', 'resta' ),
                 'return_value' => 'true',
                 'default' => '',
             ]
@@ -351,10 +351,10 @@ class resta_Slideshow extends Widget_Base {
         $this->add_control(
             'dot',
             [
-                'label' => __( 'Dots', 'ushop' ),
+                'label' => __( 'Dots', 'resta' ),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __( 'True', 'ushop' ),
-                'label_off' => __( 'False', 'ushop' ),
+                'label_on' => __( 'True', 'resta' ),
+                'label_off' => __( 'False', 'resta' ),
                 'return_value' => 'true',
                 'default' => 'true',
             ]
@@ -364,7 +364,7 @@ class resta_Slideshow extends Widget_Base {
         $this->add_control(
             'speed',
             [
-                'label' => __( 'Speed', 'ushop' ),
+                'label' => __( 'Speed', 'resta' ),
                 'type' => \Elementor\Controls_Manager::NUMBER,
                 'min' => 100,
                 'max' => 50000,
@@ -388,7 +388,7 @@ class resta_Slideshow extends Widget_Base {
         $this->add_control(
             'title_style',
             [
-                'label' => __( 'Title', 'plugin-name' ),
+                'label' => __( 'Title', 'resta' ),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -416,7 +416,7 @@ class resta_Slideshow extends Widget_Base {
         $this->add_control(
             'content_style',
             [
-                'label' => __( 'Content', 'plugin-name' ),
+                'label' => __( 'Content', 'resta' ),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -448,7 +448,7 @@ class resta_Slideshow extends Widget_Base {
         $this->add_control(
             'button_style',
             [
-                'label' => __( 'Button', 'plugin-name' ),
+                'label' => __( 'Button', 'resta' ),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -471,7 +471,7 @@ class resta_Slideshow extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'background',
-                'label' => __( 'Background', 'plugin-domain' ),
+                'label' => __( 'Background', 'resta' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .bb-slider-btn',
             ]
@@ -480,7 +480,7 @@ class resta_Slideshow extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'border',
-                'label' => __( 'Border', 'plugin-domain' ),
+                'label' => __( 'Border', 'resta' ),
                 'selector' => '{{WRAPPER}} .bb-slider-btn',
             ]
         );

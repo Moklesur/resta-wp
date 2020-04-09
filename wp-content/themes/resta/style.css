@@ -999,13 +999,12 @@ h2.screen-reader-text {
 /*
 *
 * ==========================================
-*  7. about-us style
+*  7. image-with-text-section style
 * ==========================================
 *
 */
-.about-us {
+.image-with-text-section {
     position: relative;
-    padding: 0 0 130px;
 }
 
 .batch {
@@ -1018,6 +1017,10 @@ h2.screen-reader-text {
     position: absolute;
     top: 0%;
     right: 3%;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 /*

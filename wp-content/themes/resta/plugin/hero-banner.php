@@ -331,8 +331,8 @@ class resta_heroBanner extends Widget_Base {
         <!--/.hero-banner start-->
         <section class="hero-banner" style="background-image: url('<?php echo esc_url( $settings['banner']['url'] ); ?>')">
             <div class="container">
-                <article class="row align-content-center">
-                    <div class="col-lg-5 col-md-6 col-sm-12">
+                <div class="row align-content-center">
+                    <article class="col-lg-5 col-md-6 col-sm-12">
                         <h5 class="font-weight-light font-playball mb-30"><?php echo esc_html( $settings['pretitle'] ); ?></h5>
                         <h1 class="mb-50 text-white"><?php
                             echo wp_kses(
@@ -345,8 +345,8 @@ class resta_heroBanner extends Widget_Base {
                         </h1>
                         <p class="mb-55"><?php echo esc_html( $settings['paragraph'] ) ?></p>
                         <a href="<?php echo esc_url( $settings['btn_url']['url'] ); ?>" <?php echo esc_attr( $target ) .' '. esc_attr( $nofollow ); ?>  class="btn"><?php echo esc_html( $settings['btn_txt'] ); ?><i class="icofont-arrow-right ml-5"></i></a>
-                    </div>
-                </article>
+                    </article>
+                </div>
             </div>
         </section>
         <!--/.hero-banner end-->
