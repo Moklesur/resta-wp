@@ -296,7 +296,7 @@ class resta_heroBanner extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'border',
-                'label' => __( 'Border', 'plugin-domain' ),
+                'label' => __( 'Border', 'resta' ),
                 'selector' => '{{WRAPPER}} .btn',
             ]
         );
