@@ -43,6 +43,7 @@ get_header();
                     endwhile;
 
                     ?>
+
                     <div class="col-12 text-center resta-pagination pagination-fix">
                     <?php
                     the_posts_pagination( array(
