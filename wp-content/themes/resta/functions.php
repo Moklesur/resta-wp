@@ -177,6 +177,7 @@ function resta_elementor_widgets() {
         require get_template_directory() . '/plugin/hero-banner.php';
         require get_template_directory() . '/plugin/support.php';
         require get_template_directory() . '/plugin/image-with-text.php';
+        require get_template_directory() . '/plugin/testimonial.php';
     }
 }
 add_action( 'elementor/widgets/widgets_registered', 'resta_elementor_widgets' );

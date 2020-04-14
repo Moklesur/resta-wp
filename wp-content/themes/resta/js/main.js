@@ -174,6 +174,8 @@
             slidesToShow: 3,
             slidesToScroll: 1,
             arrows: true,
+            focusOnSelect: false,
+            accessibility: false,
             prevArrow: "<button type='button' class='slick-prev'><i class='icofont-arrow-left icofont-2x'></i></button>",
             nextArrow: "<button type='button' class='slick-next '><i class='icofont-arrow-right icofont-2x'></i></button>",
             responsive: [

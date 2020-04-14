@@ -1407,19 +1407,16 @@ span.price {
 }
 
 .testimonials {
-    padding: 130px 0 0px 0;
     position: relative;
-    background: url("../img/testimonials/testimonial-bg.png") no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
 }
-
+.testimonial-header{
+    max-width: 500px;
+}
 .testimonial-item {
     padding: 110px 45px 55px 45px;
     position: relative;
     border: 1.22px dashed rgba(255, 255, 255, 0.349);
-    margin-bottom: 0;
+    margin: 20px 0 0 0;
     z-index: 1;
     background-color: rgba(7, 8, 7, 0.949);
 }
@@ -1492,6 +1489,9 @@ span.price {
     border: 1.22px dashed rgba(255, 255, 255, 0.8);
 }
 
+.testimonial-item .icon img {
+    display: inline-block;
+}
 .testimonial-item:hover .icon img:first-child {
     opacity: 0;
 }
@@ -1988,6 +1988,7 @@ span.price {
     display: flex !important;
     justify-content: center;
     margin-top: 20px;
+    list-style: none;
 }
 
 .slick-dots li > button {
@@ -2023,7 +2024,7 @@ span.price {
     border: none;
     padding: 0;
     position: absolute;
-    top: -40%;
+    top: -15%;
     z-index: 1;
     height: 70px;
     width: 70px;

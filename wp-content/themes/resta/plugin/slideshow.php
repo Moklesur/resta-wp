@@ -580,19 +580,19 @@ class resta_Slideshow extends Widget_Base {
                                             <?php
                                             if ( ! empty( $title ) ) {
                                                 ?>
-                                                <h2 class="bb-slider-title <?php echo esc_attr( $title_animation ); ?>"><?php esc_html_e( $title ); ?></h2>
+                                                <h2 class="bb-slider-title animated<?php echo esc_attr( $title_animation ); ?>"><?php esc_html_e( $title ); ?></h2>
                                                 <?php
                                             }
                                             if ( ! empty( $content ) ) {
                                                 ?>
                                                 <p class="bb-slider-content animated <?php echo esc_attr( $content_animation ); ?>">
-                                                    <?php echo $content; ?>
+                                                    <?php echo esc_html($content); ?>
                                                 </p>
                                                 <?php
                                             }
                                             if ( ! empty( $button_label ) ) {
                                                 ?>
-                                                <a class="mt-4 bb-slider-btn btn <?php echo esc_attr( $button_animation ); ?>" href="<?php echo esc_url( $button_url ); ?>" <?php echo $target. ' ' .$nofollow; ?>><?php esc_html_e( $button_label ); ?></a>
+                                                <a class="mt-4 bb-slider-btn btn animated <?php echo esc_attr( $button_animation ); ?>" href="<?php echo esc_url( $button_url ); ?>" <?php echo $target. ' ' .$nofollow; ?>><?php esc_html_e( $button_label ); ?></a>
                                                 <?php
 
                                             }
