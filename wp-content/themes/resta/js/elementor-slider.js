@@ -20,11 +20,24 @@
         });
     };
 
-
+    // Team slider
+    var TeamSlider = function($scope, $) {
+        var TeamSlider = $scope.find( '.maker-slider' );
+        TeamSlider.slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: false,
+            arrows: false
+        });
+    };
 
 
     $(window).on('elementor/frontend/init', function () {
         elementorFrontend.hooks.addAction('frontend/element_ready/resta-slideshow.default', MainSlider);
+        elementorFrontend.hooks.addAction('frontend/element_ready/resta-team.default', TeamSlider);
     });
 
 

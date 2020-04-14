@@ -279,6 +279,78 @@ class resta_Team extends Widget_Base {
                 ],
             ]
         );
+        // Border Radius
+        $this->add_responsive_control(
+            'team_container_border_radius',
+            [
+                'label' => __( 'Border Radius', 'resta' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'devices' => [ 'desktop', 'tablet', 'mobile' ],
+                'desktop_default' => [
+                    'size' => 20,
+                    'unit' => 'px',
+                ],
+                'tablet_default' => [
+                    'size' => 20,
+                    'unit' => 'px',
+                ],
+                'mobile_default' => [
+                    'size' => 20,
+                    'unit' => 'px',
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .chef-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        //Image Style
+        $this->add_control(
+            'image_style',
+            [
+                'label' => __('Image', 'resta'),
+                'type' => \Elementor\Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+        // Image Dimension
+        $this->add_control(
+            'image_dimension',
+            [
+                'label' => __( 'Image Dimension', 'resta' ),
+                'type' => \Elementor\Controls_Manager::IMAGE_DIMENSIONS,
+                'description' => __( 'Crop the original image size to any custom size. Set custom width or height to keep the original size ratio.', 'plugin-name' ),
+                'default' => [
+                    'width' => '158',
+                    'height' => '158',
+                ],
+            ]
+        );
+        // Border Radius
+        $this->add_responsive_control(
+            'team_border_radius',
+            [
+                'label' => __( 'Border Radius', 'resta' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'devices' => [ 'desktop', 'tablet', 'mobile' ],
+                'desktop_default' => [
+                    'size' => 50,
+                    'unit' => '%',
+                ],
+                'tablet_default' => [
+                    'size' => 50,
+                    'unit' => '%',
+                ],
+                'mobile_default' => [
+                    'size' => 50,
+                    'unit' => '%',
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .chef-profile img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
         //Title Style
         $this->add_control(
             'title_style',
@@ -302,7 +374,7 @@ class resta_Team extends Widget_Base {
             [
                 'label' => __('Text Color', 'resta'),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#232323',
+                'default' => '#222222',
                 'selectors' => [
                     '{{WRAPPER}} h4' => 'color: {{VALUE}}',
                 ],
@@ -331,7 +403,7 @@ class resta_Team extends Widget_Base {
             [
                 'label' => __('Text Color', 'resta'),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#78787c',
+                'default' => '#626262',
                 'selectors' => [
                     '{{WRAPPER}} p' => 'color: {{VALUE}}',
                 ],
@@ -351,7 +423,7 @@ class resta_Team extends Widget_Base {
             [
                 'label' => __('Color', 'resta'),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#78787c',
+                'default' => '#222222',
                 'selectors' => [
                     '{{WRAPPER}} i' => 'color: {{VALUE}}',
                 ],
@@ -377,20 +449,19 @@ class resta_Team extends Widget_Base {
 
         if ( $settings['list'] ) {
             ?>
-            <div class="our-team">
-                <div class="row">
+            <div class="chefs">
+                <div class="maker-slider">
                     <?php
                     foreach ( $settings['list'] as $item ) {
                         ?>
 
-                        <article class="col-12 col-lg-3">
-                            <div class="our-team-item text-<?php echo esc_attr( $settings['text_alignment'] ); ?>">
+                        <article class="col-12 col-lg-12">
+                            <div class="chef-item text-<?php echo esc_attr( $settings['text_alignment'] ); ?>">
                                 <?php
                                 if ( ! empty( $item['image']['url'] ) ) {
                                     ?>
-                                    <figure class="our-team-profile mb-4">
-
-                                        <img class="img-fluid" src="<?php echo esc_url( $item['image']['url'] ); ?>" alt="<?php echo Control_Media::get_image_alt( $item['sliderImage'] ); ?>">
+                                    <figure class="chef-profile">
+                                        <img width="<?php echo esc_attr( $settings['image_dimension']['width'] ); ?>" height="<?php echo esc_attr( $settings['image_dimension']['height'] ); ?>"  class="img-circle m-auto" src="<?php echo esc_url( $item['image']['url'] ); ?>" alt="<?php echo Control_Media::get_image_alt( $item['sliderImage'] ); ?>">
                                     </figure>
                                     <?php
                                 }
@@ -398,18 +469,18 @@ class resta_Team extends Widget_Base {
                                 <?php
                                 if ( ! empty( $item['title'] ) ) {
                                     ?>
-                                    <h4 class="m-0"><?php echo esc_html( $item['title'] ); ?></h4>
+                                    <h4 class="mb-30"><?php echo esc_html( $item['title'] ); ?></h4>
                                     <?php
                                 }
                                 ?>
                                 <?php
                                 if ( ! empty( $item['content'] ) ) {
                                     ?>
-                                    <p class="mb-0 mt-4"><?php echo esc_html( $item['content'] ); ?></p>
+                                    <p class="mb-20"><?php echo esc_html( $item['content'] ); ?></p>
                                     <?php
                                 }
                                 ?>
-                                <ul class="list-inline social-list mt-3 mb-0">
+                                <ul class="list-inline social-list">
                                     <?php
                                     if ( ! empty( $item['icon_link1']['url'] ) ) {
                                         ?>
