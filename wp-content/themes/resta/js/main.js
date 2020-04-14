@@ -97,9 +97,8 @@
     */
 
     // init Isotope
-    var $grid = $('.product-grid').isotope({
+    var $grid = $('.category-filter ul.products').isotope({
         itemSelector: '.product',
-        percentPosition: true,
     });
     // filter items on button click
     $('#filters').on('click', 'button', function () {
