@@ -233,6 +233,78 @@ class resta_Heading extends Widget_Base {
             ]
         );
         //Shape Style
+        $this->add_control(
+            'shape_style',
+            [
+                'label' => __( 'Title Shape', 'resta' ),
+                'type' => \Elementor\Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+        // Background
+        $this->add_control(
+            'title_shape_color',
+            [
+                'label' => __( 'background Color', 'resta' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#f96a0e',
+                'selectors' => [
+                    '{{WRAPPER}} .black-title-shape, {{WRAPPER}} .black-title-shape:before, {{WRAPPER}} .black-title-shape:after' => 'background: {{VALUE}}',
+                ],
+            ]
+        );
+        // Border Radius
+        $this->add_responsive_control(
+            'title_shape_border_radius',
+            [
+                'label' => __( 'Border Radius', 'resta' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'devices' => [ 'desktop', 'tablet', 'mobile' ],
+                'desktop_default' => [
+                    'size' => 30,
+                    'unit' => 'px',
+                ],
+                'tablet_default' => [
+                    'size' => 30,
+                    'unit' => 'px',
+                ],
+                'mobile_default' => [
+                    'size' => 30,
+                    'unit' => 'px',
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .black-title-shape, {{WRAPPER}} .black-title-shape:before, {{WRAPPER}} .black-title-shape:after' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        // Height
+        $this->add_control(
+            'title_shape_height',
+            [
+                'label' => __( 'Height', 'resta' ),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => [ 'px', '%' ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 30,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 6,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .black-title-shape, {{WRAPPER}} .black-title-shape:before, {{WRAPPER}} .black-title-shape:after' => 'height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
 
 
         $this->end_controls_section();
