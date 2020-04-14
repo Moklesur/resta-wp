@@ -73,6 +73,20 @@
         $('.menu-all-pages-container').toggleClass('has-open-menu');
     });
 
+    /*
+    *
+    * ==========================================
+    *   Youtube Video
+    * ==========================================
+    *
+    */
+
+    $('.youtube-play-btn,.youtube-close').on( 'click', function () {
+        $(this).parents('.elementor-element').toggleClass('youtube-index');
+        $('.youtube-popup').toggleClass('has-active');
+        //$("#video-youtube")[0].src += "&autoplay=1";
+    });
+
 
     /*
     *

@@ -176,6 +176,10 @@ function resta_elementor_widgets() {
         require get_template_directory() . '/plugin/slideshow.php';
         require get_template_directory() . '/plugin/hero-banner.php';
         require get_template_directory() . '/plugin/support.php';
+        require get_template_directory() . '/plugin/team.php';
+        require get_template_directory() . '/plugin/heading.php';
+        require get_template_directory() . '/plugin/info-box.php';
+        require get_template_directory() . '/plugin/youtube-video.php';
         require get_template_directory() . '/plugin/image-with-text.php';
         require get_template_directory() . '/plugin/testimonial.php';
     }
