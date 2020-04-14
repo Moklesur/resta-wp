@@ -59,7 +59,7 @@ class resta_testimonial extends Widget_Base
 
     public function get_icon()
     {
-        return 'fa fa-star-half-alt';
+        return 'eicon-testimonial-carousel';
     }
 
     /**

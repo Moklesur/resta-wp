@@ -34,10 +34,53 @@
         });
     };
 
+    // Testimonial Slider
+    var TestimonialSlider = function($scope, $) {
+        var TestimonialSlider = $scope.find( '.testimonial-slider' );
+        TestimonialSlider.slick({
+            dots: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+            focusOnSelect: false,
+            accessibility: false,
+            prevArrow: "<button type='button' class='slick-prev'><i class='icofont-arrow-left icofont-2x'></i></button>",
+            nextArrow: "<button type='button' class='slick-next '><i class='icofont-arrow-right icofont-2x'></i></button>",
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        centerMode: false,
+                        centerPadding: '0',
+                    }
+                }
+
+            ]
+        });
+    };
 
     $(window).on('elementor/frontend/init', function () {
         elementorFrontend.hooks.addAction('frontend/element_ready/resta-slideshow.default', MainSlider);
         elementorFrontend.hooks.addAction('frontend/element_ready/resta-team.default', TeamSlider);
+        elementorFrontend.hooks.addAction('frontend/element_ready/resta-testimonial.default', TestimonialSlider);
     });
 
 
