@@ -86,7 +86,7 @@ class resta_Product_Category extends Widget_Base {
     protected function _register_controls() {
 
         $this->start_controls_section(
-            'category_post_section',
+            'resta_category_post_section',
             [
                 'label' => __( 'Setting', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -122,7 +122,7 @@ class resta_Product_Category extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'category_STYLE_section',
+            'resta_category_STYLE_section',
             [
                 'label' => __( 'STYLE', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
@@ -197,7 +197,6 @@ class resta_Product_Category extends Widget_Base {
         $settings = $this->get_settings_for_display();
         $limit = $settings['limit'];
         $cat_name_val = '';
-
         $get_cat_val = $settings['categories'];
 
         ?>
@@ -206,22 +205,23 @@ class resta_Product_Category extends Widget_Base {
             <?php if( !empty ( $get_cat_val )  ) : ?>
                 <ul class="list-inline mb-5" id="filters">
                     <li class="list-inline-item">
-                        <button class="button is-checked" data-filter="*">show all</button>
+                        <button class="button is-checked" data-filter="*"><?php esc_html_e( 'show all', 'resta' ); ?></button>
                     </li>
 
                     <?php
-                    foreach ( $settings['categories'] as $value ) {
+
+                    foreach ( $get_cat_val as $value ) {
                         $cat_name = get_term_by( 'id', $value, 'product_cat' );
                         $cat_name_val .= $cat_name->name.',';
+
                         ?>
                         <li class="list-inline-item">
-
                             <button class="button" data-filter=".product_cat-<?php echo esc_attr( $cat_name->slug )?>"><?php echo esc_html( $cat_name->name ); ?></button>
                         </li>
                         <?php
 
                     }
-                    $cat_name_val = substr( $cat_name_val, 0, strlen($cat_name_val)-1 );
+                    $cat_name_val = substr( $cat_name_val, 0, strlen( $cat_name_val )-1 );
                     ?>
 
                 </ul>
@@ -233,8 +233,7 @@ class resta_Product_Category extends Widget_Base {
                 echo do_shortcode( '[products class="category-filter" limit="' . absint( $limit ) . '"  columns="2" category="' .esc_html( $cat_name_val ). '"]' );
                 ?>
             </div>
-        <?php endif; ?>
-        <?php
+        <?php endif;
 
     }
 

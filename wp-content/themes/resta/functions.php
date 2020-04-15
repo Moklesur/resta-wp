@@ -117,20 +117,30 @@ function resta_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-}
-$args_footer_widgets = array(
-    'name'          => esc_html__( 'Footer %d', 'resta' ),
-    'id'            => 'footer-widget',
-    'description'   => esc_html__( 'Add widgets here.', 'resta' ),
-    'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h4 class="footer-widget-title text-uppercase">',
-    'after_title'   => '</h4>'
-);
 
-register_sidebars( 4, $args_footer_widgets );
+    $args_footer_widgets = array(
+        'name'          => esc_html__( 'Footer %d', 'resta' ),
+        'id'            => 'footer-widget',
+        'description'   => esc_html__( 'Add widgets here.', 'resta' ),
+        'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="font-weight-bold text-white mb-50">',
+        'after_title'   => '</h4>'
+    );
+
+    register_sidebars( 4, $args_footer_widgets );
+
+    // Social Widget
+    register_widget( 'resta_Social' );
+}
 
 add_action( 'widgets_init', 'resta_widgets_init' );
+
+/**
+ * resta
+ * Widget
+ */
+require get_template_directory() . '/plugin/social.php';
 
 /**
  * Enqueue scripts and styles.

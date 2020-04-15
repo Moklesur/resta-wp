@@ -87,7 +87,7 @@ class resta_Info_Box extends Widget_Base {
     protected function _register_controls() {
 
         $this->start_controls_section(
-            'info_box_section',
+            'resta_info_box_section',
             [
                 'label' => __( 'Setting', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -135,10 +135,9 @@ class resta_Info_Box extends Widget_Base {
         );
         $this->end_controls_section();
 
-
         // STYLE Settings
         $this->start_controls_section(
-            'info_box_style_section',
+            'resta_info_box_style_section',
             [
                 'label' => __( 'Style', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
@@ -254,7 +253,7 @@ class resta_Info_Box extends Widget_Base {
 
             if( !empty( $settings['icon']['url'] ) ): ?>
                 <div class="box-icon text-center d-flex align-items-center justify-content-center">
-                    <img src="<?php echo esc_url( $settings['icon']['url'] ); ?>">
+                    <img src="<?php echo esc_url( $settings['icon']['url'] ); ?>" class="img-fluid">
                 </div>
             <?php endif;
 

@@ -87,7 +87,7 @@ class resta_YouTube_Video extends Widget_Base {
     protected function _register_controls() {
 
         $this->start_controls_section(
-            'YouTube_Video_section',
+            'resta_YouTube_Video_section',
             [
                 'label' => __( 'Setting', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,

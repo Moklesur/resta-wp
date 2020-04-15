@@ -164,7 +164,6 @@ class resta_image_with_text extends Widget_Base
         );
 
         // Burger Banner
-
         $this->add_control(
             'burger_enable',
             [
@@ -443,7 +442,7 @@ class resta_image_with_text extends Widget_Base
             ]
         );
 
-        //Specila Offer Style
+        //Offer Style
         $this->add_control(
             'offer_style',
             [
@@ -502,84 +501,80 @@ class resta_image_with_text extends Widget_Base
             $right_class = 'order-1';
         }
 
-            ?>
-            <!--/.image-with-text-section start-->
-            <section class="image-with-text-section">
-                <div class="container">
-                    <div class="row align-items-center">
+        ?>
+        <!--/.image-with-text-section start-->
+        <section class="image-with-text-section">
+            <div class="container">
+                <div class="row align-items-center">
 
-                        <aside class="col-lg-5 col-md-5 col-sm-12 <?php echo esc_html($left_class); ?>">
-                            <header>
-                                <h5 class="font-playball mb-30"><?php echo esc_html( $settings['pretitle'] ); ?></h5>
-                                <h2 class="mb-40"><?php
-                                    echo wp_kses(
-                                        $settings['title'],
-                                        array(
-                                            'span' => array()
-                                        )
-                                    );
-                                    ?></h2>
-                                <p class="mb-30"><?php echo esc_html( $settings['paragraph'] ) ?></p>
+                    <aside class="col-lg-5 col-md-5 col-sm-12 <?php echo esc_html($left_class); ?>">
+                        <header>
+                            <h5 class="font-playball mb-30"><?php echo esc_html( $settings['pretitle'] ); ?></h5>
+                            <h2 class="mb-40"><?php
+                                echo wp_kses(
+                                    $settings['title'],
+                                    array(
+                                        'span' => array()
+                                    )
+                                );
+                                ?></h2>
+                            <p class="mb-30"><?php echo esc_html( $settings['paragraph'] ) ?></p>
 
-                                <?php
-                                if ($settings['offer_enable'] === 'yes' && !empty($settings['offer_list'])):
+                            <?php
+                            if ( $settings['offer_enable'] === 'yes' && !empty($settings['offer_list']) ):
                                 ?>
                                 <nav class="mb-40">
                                     <ul class="list-unstyled special-offer">
                                         <?php
-                                    foreach ($settings['offer_list'] as $item) :
-                                        ?>
-                                        <li><a class="offer" href="<?php echo esc_url($item['offer_url']['url']) ?>"><?php echo esc_html($item['offer_title']) ?></a></li>
+                                        foreach ( $settings['offer_list'] as $item ) :
+                                            ?>
+                                            <li><a class="offer" href="<?php echo esc_url($item['offer_url']['url']) ?>"><?php echo esc_html($item['offer_title']) ?></a></li>
                                         <?php
-                                    endforeach;
+                                        endforeach;
                                         ?>
                                     </ul>
                                 </nav>
-                                    <?php
-                                endif;
-                                    ?>
-
-                                <a href="<?php echo esc_url( $settings['btn_url']['url'] ); ?>" <?php echo esc_attr( $target ) .' '. esc_attr( $nofollow ); ?>  class="btn"><?php echo esc_html( $settings['btn_txt'] ); ?><i class="icofont-arrow-right ml-5"></i></a>
-                            </header>
-                        </aside>
-                        <article class="col-lg-6 col-md-6 col-sm-12 <?php echo esc_html($right_class); ?>">
-                            <figure class="about-us-img">
-                                <a href="<?php echo esc_url( $settings['feature_image']['url'] ); ?>" class="d-block"> <img src="<?php echo esc_url( $settings['feature_image']['url'] ); ?>"
-                                                                                                                            class="img-fill"
-                                                                                                                            alt="about"></a>
-
-                                <?php
-                                if ($settings['batch_enable'] === 'yes'):
-                                    ?>
-                                    <figure class="batch">
-                                        <img src="<?php echo esc_url( $settings['batch_image']['url'] ); ?>" alt="batch">
-                                    </figure>
-                                <?php
-                                endif;
-                                ?>
-                            </figure>
-
-                        </article>
-                        <?php
-                        if ($settings['burger_enable'] === 'yes'):
+                            <?php
+                            endif;
                             ?>
-                            <figure class="burger-img">
-                                <img src="<?php echo esc_url( $settings['burger_image']['url'] ); ?>" alt="burger">
-                            </figure>
-                        <?php
-                        endif;
-                        ?>
-                    </div>
-                </div>
 
-            </section>
-            <!--/.image-with-text-section end-->
+                            <a href="<?php echo esc_url( $settings['btn_url']['url'] ); ?>" <?php echo esc_attr( $target ) .' '. esc_attr( $nofollow ); ?>  class="btn"><?php echo esc_html( $settings['btn_txt'] ); ?><i class="icofont-arrow-right ml-5"></i></a>
+                        </header>
+                    </aside>
+                    <article class="col-lg-6 col-md-6 col-sm-12 <?php echo esc_html($right_class); ?>">
+                        <figure class="about-us-img">
+                            <a href="<?php echo esc_url( $settings['feature_image']['url'] ); ?>" class="d-block">
+                                <img src="<?php echo esc_url( $settings['feature_image']['url'] ); ?>" class="img-fill">
+                            </a>
+
+                            <?php
+                            if ( $settings['batch_enable'] === 'yes' ):
+                                ?>
+                                <figure class="batch">
+                                    <img src="<?php echo esc_url( $settings['batch_image']['url'] ); ?>">
+                                </figure>
+                            <?php
+                            endif;
+                            ?>
+                        </figure>
+
+                    </article>
+                    <?php
+                    if ( $settings['burger_enable'] === 'yes' ):
+                        ?>
+                        <figure class="burger-img">
+                            <img src="<?php echo esc_url( $settings['burger_image']['url'] ); ?>">
+                        </figure>
+                    <?php
+                    endif;
+                    ?>
+                </div>
+            </div>
+
+        </section>
+        <!--/.image-with-text-section end-->
         <?php
 
-    }
-
-    protected function _content_template()
-    {
     }
 
 }

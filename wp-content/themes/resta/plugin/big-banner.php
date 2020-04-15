@@ -87,7 +87,7 @@ class resta_Big_Banner extends Widget_Base {
     protected function _register_controls() {
 
         $this->start_controls_section(
-            'Big_Banner_section',
+            'resta_Big_Banner_section',
             [
                 'label' => __( 'Setting', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -153,7 +153,7 @@ class resta_Big_Banner extends Widget_Base {
         );
         $this->end_controls_section();
         $this->start_controls_section(
-            'Big_Banner_banner_section',
+            'resta_Big_Banner_banner_section',
             [
                 'label' => __( 'Banner', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -248,7 +248,7 @@ class resta_Big_Banner extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'Big_Banner_button_section',
+            'resta_Big_Banner_button_section',
             [
                 'label' => __( 'Buttons', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -322,7 +322,7 @@ class resta_Big_Banner extends Widget_Base {
 
         // STYLE Settings
         $this->start_controls_section(
-            'info_box_style_section',
+            'resta_info_box_style_section',
             [
                 'label' => __( 'Style', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
@@ -421,7 +421,7 @@ class resta_Big_Banner extends Widget_Base {
         $this->end_controls_section();
         // STYLE Settings
         $this->start_controls_section(
-            'info_box_style_button_section',
+            'resta_info_box_style_button_section',
             [
                 'label' => __( 'Buttons', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
@@ -536,7 +536,7 @@ class resta_Big_Banner extends Widget_Base {
                 </div>
                 <div class="col-12 col-lg-6 d-flex align-items-end position-relative">
                     <span class="bb-big-img position-absolute"></span>
-                    <img src="<?php echo esc_url( $settings['banner']['url'] ); ?>" class="img-fluid m-auto">
+                    <img src="<?php echo esc_url( $settings['banner']['url'] ); ?>" class="img-fluid m-auto /">
                 </div>
             </div>
         </div>

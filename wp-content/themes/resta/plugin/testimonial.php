@@ -656,36 +656,35 @@ class resta_testimonial extends Widget_Base
                                 <blockquote class="testimonial-item">
                                     <figure>
                                        <span class="icon">
-                                           <img src="<?php echo get_template_directory_uri() . '/img/quote.png' ?>" alt="quote">
-                                           <img src="<?php echo get_template_directory_uri() . '/img/quote-hover.png' ?>"
-                                                alt="quote">
+                                           <img src="<?php echo esc_url( get_template_directory_uri() . '/img/quote.png' ); ?>">
+                                           <img src="<?php echo esc_url( get_template_directory_uri() . '/img/quote-hover.png' ); ?>" >
                                        </span>
                                         <?php
                                         if ( ! empty( $description ) ) {
-                                        ?>
+                                            ?>
                                             <figcaption class="<?php esc_attr_e( $textAlignment ); ?>">
                                                 <p class="description animated <?php echo esc_attr( $description_animation ); ?>"> <?php echo esc_html($description); ?></p>
                                             </figcaption>
-                                       <?php
+                                            <?php
                                         }
                                         ?>
 
                                     </figure>
                                     <footer class="<?php esc_attr_e( $textAlignment ); ?>">
-                                        <h4 class="mb-30 client-name animated <?php echo esc_attr( $name_animation ); ?>"><?php esc_html_e( $name); ?></h4>
+                                        <h4 class="mb-30 client-name animated <?php echo esc_attr( $name_animation ); ?>"><?php echo esc_html( $name); ?></h4>
                                         <aside class="d-flex justify-content-between">
-                                            <p class="m-0 designation animated<?php echo esc_attr( $designation_animation ); ?>"><?php esc_html_e( $designation); ?></p>
+                                            <p class="m-0 designation animated<?php echo esc_attr( $designation_animation ); ?>"><?php echo esc_html( $designation); ?></p>
                                             <ul class="list-inline review">
                                                 <?php
                                                 $rev =(int)$client_review;
-                                                $active_class='';
-                                                for ($i=5; $i>=1; $i--){
-                                                    if ($i === $rev):
+                                                $active_class = '';
+                                                for ( $i=5; $i>=1; $i-- ){
+                                                    if ($i === $rev ):
                                                         $active_class='active';
                                                     endif;
                                                     ?>
                                                     <li class="list-inline-item <?php echo $active_class; ?>"><i class="icofont-star"></i></li>
-                                              <?php  }
+                                                <?php  }
                                                 ?>
                                             </ul>
                                         </aside>
@@ -703,10 +702,6 @@ class resta_testimonial extends Widget_Base
             <?php
         }
     }
-    protected function _content_template()
-    {
-    }
-
 }
 
 Plugin::instance()->widgets_manager->register_widget_type(new resta_testimonial());

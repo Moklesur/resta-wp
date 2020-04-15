@@ -87,7 +87,7 @@ class resta_Heading extends Widget_Base {
     protected function _register_controls() {
 
         $this->start_controls_section(
-            'Heading_section',
+            'resta_Heading_section',
             [
                 'label' => __( 'Setting', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -116,7 +116,7 @@ class resta_Heading extends Widget_Base {
 
         // STYLE Settings
         $this->start_controls_section(
-            'heading_style_section',
+            'resta_heading_style_section',
             [
                 'label' => __( 'Style', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,

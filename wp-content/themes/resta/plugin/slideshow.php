@@ -86,7 +86,7 @@ class resta_Slideshow extends Widget_Base {
     protected function _register_controls() {
 
         $this->start_controls_section(
-            'slideshow_section',
+            'resta_slideshow_section',
             [
                 'label' => __( 'Setting', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -159,7 +159,7 @@ class resta_Slideshow extends Widget_Base {
                     ],
                 ],
                 'default' => 'text-center',
-                'toggle' => true,
+                'toggle' => true
             ]
         );
 
@@ -253,7 +253,7 @@ class resta_Slideshow extends Widget_Base {
                 'default' => [
                     'url' => '',
                     'is_external' => true,
-                    'nofollow' => true,
+                    'nofollow' => true
                 ],
             ]
         );
@@ -281,7 +281,7 @@ class resta_Slideshow extends Widget_Base {
         // Slider Settings
 
         $this->start_controls_section(
-            'slider_settings',
+            'resta_slider_settings',
             [
                 'label' => __( 'Slider Settings', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -377,7 +377,7 @@ class resta_Slideshow extends Widget_Base {
 
         // STYLE Settings
         $this->start_controls_section(
-            'slideshow_style_section',
+            'resta_slideshow_style_section',
             [
                 'label' => __( 'Style', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
@@ -540,8 +540,6 @@ class resta_Slideshow extends Widget_Base {
             if( esc_attr( $settings['speed']) ){
                 $speed = esc_attr( $settings['speed'] );
             }
-
-
 
             ?>
             <div class="bb-slideshow" data-slick='{"autoplay": <?php echo esc_attr( $autoplay );?>, "arrows": <?php echo esc_attr( $arrows ); ?>, "dots": <?php echo esc_attr( $dot ); ?>, "fade": <?php echo esc_attr( $fade ); ?>, "infinite": <?php echo esc_attr( $infinite ); ?>, "speed": <?php echo esc_attr( $speed ); ?>, "adaptiveHeight": <?php echo esc_attr( $adaptiveHeight ); ?> }'>

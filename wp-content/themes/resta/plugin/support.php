@@ -200,7 +200,7 @@ class resta_support extends Widget_Base
 
         // STYLE Settings
         $this->start_controls_section(
-            'support_style_section',
+            'resta_support_style_section',
             [
                 'label' => __('Style', 'resta'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
@@ -284,66 +284,65 @@ class resta_support extends Widget_Base
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-        if (!empty($settings['support_list'])):
-        ?>
-        <!--/.support-area start-->
-        <section class="support-area">
-            <div class="container">
-                <div class="row no-gutters">
-                    <nav class="col-12 p-0">
-                        <ul class="list-inline support-list">
-                            <?php
-                            foreach ($settings['support_list'] as $item) :
-                                $delivery_image = $item['delivery_image']['url'];
-                                $textAlignment = $item['text_alignment'];
-                                $content_animation = $item['content_animation'];
-                                $title = $item['title'];
-                                $content = $item['content'];
-                                $margin = '0 auto 20px auto';
-                                if ($textAlignment == 'center'):
+
+        if ( !empty($settings['support_list']) ):
+            ?>
+            <!--/.support-area start-->
+            <section class="support-area">
+                <div class="container">
+                    <div class="row no-gutters">
+                        <nav class="col-12 p-0">
+                            <ul class="list-inline support-list">
+                                <?php
+                                foreach ( $settings['support_list'] as $item ) :
+
+                                    $delivery_image = $item['delivery_image']['url'];
+                                    $textAlignment = $item['text_alignment'];
+                                    $content_animation = $item['content_animation'];
+                                    $title = $item['title'];
+                                    $content = $item['content'];
                                     $margin = '0 auto 20px auto';
-                                    elseif ($textAlignment == 'left'):
+
+                                    if ( $textAlignment == 'center' ):
+                                        $margin = '0 auto 20px auto';
+                                    elseif ( $textAlignment == 'left' ):
                                         $margin = '0 auto 20px 0';
-                                    elseif ($textAlignment == 'right'):
+                                    elseif ( $textAlignment == 'right' ):
                                         $margin = '0 0 20px auto';
                                     endif;
-                                ?>
-                                <li class="list-inline-item support-item" style="text-align:<?php echo esc_attr_e($textAlignment);?>">
-                                    <figure>
-                                        <?php
-                                        if (!empty($delivery_image)):
-                                            ?>
-                                            <span class="feature-icon d-block" style="margin:<?php echo esc_attr_e($margin);?>">
-                                                 <img src="<?php echo esc_url($delivery_image); ?>" alt="<?php echo esc_html($title); ?>">
+                                    ?>
+                                    <li class="list-inline-item support-item" style="text-align:<?php echo esc_attr( $textAlignment );?>">
+                                        <figure>
+                                            <?php
+                                            if (!empty( $delivery_image )):
+                                                ?>
+                                                <span class="feature-icon d-block" style="margin:<?php echo esc_attr( $margin );?>">
+                                                 <img src="<?php echo esc_url( $delivery_image ); ?>" alt="<?php echo esc_html( $title ); ?>">
                                               </span>
-                                        <?php
-                                        endif;
-                                        if (!empty($title)):
+                                            <?php
+                                            endif;
+                                            if (!empty($title)):
+                                                ?>
+                                                <figcaption class="animated <?php echo esc_attr( $content_animation ); ?>">
+                                                    <h5 class="mb-25 font-weight-extra-bold support-title"><?php echo esc_html($title); ?></h5>
+                                                    <p class="support-content"><?php echo esc_html($content); ?></p>
+                                                </figcaption>
+                                            <?php
+                                            endif;
                                             ?>
-                                            <figcaption class="animated <?php echo esc_attr( $content_animation ); ?>">
-                                                <h5 class="mb-25 font-weight-extra-bold support-title"><?php echo esc_html($title); ?></h5>
-                                                <p class="support-content"><?php echo esc_html($content); ?></p>
-                                            </figcaption>
-                                        <?php
-                                        endif;
-                                        ?>
-                                    </figure>
-                                </li>
-                            <?php
-                            endforeach;
-                            ?>
-                        </ul>
-                    </nav>
+                                        </figure>
+                                    </li>
+                                <?php
+                                endforeach;
+                                ?>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <!--/.support-area end-->
+            </section>
+            <!--/.support-area end-->
         <?php
-     endif;
-    }
-
-    protected function _content_template()
-    {
+        endif;
     }
 
 }

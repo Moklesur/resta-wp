@@ -87,7 +87,7 @@ class resta_Team extends Widget_Base {
     {
 
         $this->start_controls_section(
-            'team_section',
+            'resta_team_section',
             [
                 'label' => __('Setting', 'resta'),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -224,7 +224,7 @@ class resta_Team extends Widget_Base {
 
         // STYLE Settings
         $this->start_controls_section(
-            'team_style_section',
+            'resta_team_style_section',
             [
                 'label' => __('Style', 'resta'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
@@ -447,7 +447,7 @@ class resta_Team extends Widget_Base {
     {
         $settings = $this->get_settings_for_display();
 
-        if ( $settings['list'] ) {
+        if ( !empty( $settings['list'] ) ) {
             ?>
             <div class="chefs">
                 <div class="maker-slider">

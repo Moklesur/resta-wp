@@ -277,6 +277,15 @@ b, strong {
     border-radius: 50%;
 }
 
+label {
+    width: 100%;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
 /*
 *
 * ==========================================
@@ -2177,6 +2186,10 @@ span.price {
     margin: 0 0 1.5em;
 }
 
+body.page {
+    margin-bottom: 0;
+}
+
 .updated:not(.published) {
     display: none;
 }
@@ -2438,18 +2451,11 @@ input[type='password'] {
     padding: 0 10px;
 }
 
-label {
-    width: 100%;
-}
-
 .entry-title, .page-title {
     -ms-word-wrap: break-word;
     word-wrap: break-word;
 }
 
-img {
-    max-width: 100%;
-}
 
 .comment-form label {
     width: auto;
