@@ -13,7 +13,6 @@
     *
     */
 
-
     $('.play-btn').magnificPopup({
         type: 'iframe',
         closeOnBgClick: false,

@@ -24,31 +24,56 @@
 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'resta' ); ?></a>
 <?php wp_body_open(); ?>
 <div id="page" class="wrapper site">
+    <?php
+    if ( get_theme_mod('enable_top_bar' ) == true ) :
+        ?>
+        <!--/.top-bar start-->
+        <section class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 text-lg-left text-md-left text-center">
+                        <ul class="list-inline">
+                            <?php
+                            if ( ! empty( get_theme_mod('header_top_bar_content_1' ) ) ) :
+                            ?>
+                            <li class="list-inline-item"><i class="<?php echo esc_attr( get_theme_mod('header_top_bar_icon_1' ) ); ?> mr-2"></i><?php echo esc_html( get_theme_mod('header_top_bar_content_1' ) ); ?></li>
+                            <?php
+                            endif;
 
-    <!--/.top-bar start-->
-<!--    <section class="top-bar absolute-top-bar">-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-lg-6 col-md-6 col-sm-12 text-lg-left text-md-left text-center">-->
-<!--                    <ul class="list-inline">-->
-<!--                        <li class="list-inline-item"><a href=""><i class="icofont-clock-time mr-2"></i>07 am - 12 am,-->
-<!--                                Mon - Sun </a></li>-->
-<!--                        <li class="list-inline-item"><a href=""><i class="icofont-location-pin mr-2"></i>20, Floor,-->
-<!--                                California USA</a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--                <div class="col-lg-6 col-md-6 col-sm-12 text-lg-right text-md-right text-center">-->
-<!--                    <ul class="list-inline">-->
-<!--                        <li class="list-inline-item"><a href="tel:+00 568 697 435"><i-->
-<!--                                        class="icofont-headphone mr-2"></i>+00 568 697 435 </a></li>-->
-<!--                        <li class="list-inline-item"><a href="mailto:support24@gmail.com"><i-->
-<!--                                        class="icofont-envelope mr-2"></i>support24@gmail.com</a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-    <!--/.top-bar end-->
+                            if ( ! empty( get_theme_mod('header_top_bar_content_2' ) ) ) :
+                            ?>
+                                <li class="list-inline-item"><i class="<?php echo esc_attr( get_theme_mod('header_top_bar_icon_2' ) ); ?> mr-2"></i><?php echo esc_html( get_theme_mod('header_top_bar_content_2' ) ); ?></li>
+                            <?php
+                            endif;
+                            ?>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 text-lg-right text-md-right text-center">
+                        <ul class="list-inline">
+
+                            <?php
+                            if ( ! empty( get_theme_mod('header_top_bar_content_3' ) ) ) :
+                                ?>
+                                <li class="list-inline-item"><i class="<?php echo esc_attr( get_theme_mod('header_top_bar_icon_3' ) ); ?> mr-2"></i><?php echo esc_html( get_theme_mod('header_top_bar_content_3' ) ); ?></li>
+                            <?php
+                            endif;
+
+                            if ( ! empty( get_theme_mod('header_top_bar_content_4' ) ) ) :
+                                ?>
+                                <li class="list-inline-item"><i class="<?php echo esc_attr( get_theme_mod('header_top_bar_icon_4' ) ); ?> mr-2"></i><?php echo esc_html( get_theme_mod('header_top_bar_content_4' ) ); ?></li>
+                            <?php
+                            endif;
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/.top-bar end-->
+    <?php
+    endif;
+    ?>
 
     <!--/.header start -->
     <header class="site-header navbar-fixed" id="header">

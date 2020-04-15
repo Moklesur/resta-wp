@@ -22,6 +22,13 @@ function resta_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
+	// boxed or width layout
+    if ( get_theme_mod( 'site_layout' ) == 'boxed' ) {
+        $classes[] =  "boxed";
+    }else{
+        $classes[] = "wide";
+    }
+
 	return $classes;
 }
 add_filter( 'body_class', 'resta_body_classes' );

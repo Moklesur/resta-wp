@@ -233,6 +233,11 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/woocommerce.php';
 
 /**
+ * Resta Typography, Color
+ */
+require get_template_directory() . '/inc/typography.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
