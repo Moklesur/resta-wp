@@ -74,11 +74,20 @@ function resta_typography_color( $color ) {
     $menu_font_weight = get_theme_mod( 'menu_font_weight', 400 );
     $menu_color = get_theme_mod( 'menu_color', '#fff' );
     $menu_font_size = get_theme_mod( 'menu_font_size', 14 );
+    $menu_top_bottom_padding = get_theme_mod( 'menu_top_bottom_padding', 30 );
+    $menu_left_right_padding = get_theme_mod( 'menu_left_right_padding', 15 );
 
     $color .= ".resta-main-menu .menu-item a{
         font-size: " . esc_attr($menu_font_size) . "px;
         color:" . esc_attr( $menu_color ) . ";
         font-weight:" . esc_attr( $menu_font_weight ) . ";
+        padding-top:" . esc_attr( $menu_top_bottom_padding ) . "px;
+        padding-bottom:" . esc_attr( $menu_top_bottom_padding ) . "px;
+    } ";
+
+    $color .= ".resta-main-menu .menu-item{
+        padding-left:" . esc_attr( $menu_left_right_padding ) . "px;
+        padding-right:" . esc_attr( $menu_left_right_padding ) . "px;
     } ";
 
     /**

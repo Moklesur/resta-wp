@@ -559,24 +559,23 @@ function resta_customize_register( $wp_customize ) {
         'type' => 'number',
         'section' => 'menu_design'
     ) );
-
-
-    $wp_customize->add_setting( 'header_top_padding', array(
-        'default'           => 0,
+    // Padding Top/Bottom
+    $wp_customize->add_setting( 'menu_top_bottom_padding', array(
+        'default'           => 30,
         'sanitize_callback' => 'absint',
     ) );
-    $wp_customize->add_control( 'header_top_padding', array(
-        'label' => __( 'Header Padding Top', 'resta' ),
+    $wp_customize->add_control( 'menu_top_bottom_padding', array(
+        'label' => __( 'Padding Top/Bottom', 'resta' ),
         'type' => 'number',
         'section' => 'menu_design'
     ) );
-
-    $wp_customize->add_setting( 'header_bottom_padding', array(
-        'default'           => 0,
+    // Padding Left/Right
+    $wp_customize->add_setting( 'menu_left_right_padding', array(
+        'default'           => 15,
         'sanitize_callback' => 'absint',
     ) );
-    $wp_customize->add_control( 'header_bottom_padding', array(
-        'label' => __( 'Header Padding Bottom', 'resta' ),
+    $wp_customize->add_control( 'menu_left_right_padding', array(
+        'label' => __( 'Padding Left/Right', 'resta' ),
         'type' => 'number',
         'section' => 'menu_design'
     ) );
