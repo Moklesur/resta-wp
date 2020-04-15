@@ -92,25 +92,6 @@ class resta_Product_Category extends Widget_Base {
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
-        $this->add_control(
-            'pre_title',
-            [
-                'label' => __( 'Pre Title', 'resta' ),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __( 'Pre Title', 'resta' ),
-                'placeholder' => __( 'Title', 'resta' )
-            ]
-        );
-        $this->add_control(
-            'title',
-            [
-                'label' => __( 'Title', 'resta' ),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __( 'Title', 'resta' ),
-                'placeholder' => __( 'Title', 'resta' )
-            ]
-        );
-
         // Get Product category
         $cat_ID_array = $this->prepare_cats_for_select();
         $this->add_control(
@@ -149,51 +130,55 @@ class resta_Product_Category extends Widget_Base {
         );
         // Pre Title
         $this->add_control(
-            'pre_title_content',
+            'filter_tab_style',
             [
-                'label' => __( 'Pre Title', 'resta' ),
+                'label' => __( 'Filter Tab', 'resta' ),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
         );
+        // Text Color
         $this->add_control(
-            'pre_title_color',
+            'filter_tab_text_color',
             [
-                'label' => __( 'Title Color', 'resta' ),
+                'label' => __( 'Text Color', 'resta' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#f96a0e',
+                'default' => '#fff',
                 'selectors' => [
-                    '{{WRAPPER}} h5' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} #filters li .button' => 'color: {{VALUE}}',
                 ],
+            ]
+        );
+        // Border Color
+        $this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            [
+                'name' => 'border',
+                'label' => __( 'Border', 'resta' ),
+                'selector' => '{{WRAPPER}} #filters li .button',
             ]
         );
         // Title & Content
-        $this->add_control(
-            'title_content',
-            [
-                'label' => __( 'Title', 'resta' ),
-                'type' => \Elementor\Controls_Manager::HEADING,
-                'separator' => 'before',
-            ]
-        );
-        $this->add_control(
-            'title_color',
-            [
-                'label' => __( 'Title Color', 'resta' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#ffffff',
-                'selectors' => [
-                    '{{WRAPPER}} h2' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
                 'name' => 'title_typography',
-                'label' => __( 'Typography', 'plugin-domain' ),
+                'label' => __( 'Typography', 'resta' ),
                 'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}} h2',
+                'selector' => '{{WRAPPER}} #filters li .button',
+            ]
+        );
+        // Padding
+        $this->add_responsive_control(
+            'padding',
+            [
+                'label' => __( 'Padding', 'resta' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'devices' => [ 'desktop', 'tablet', 'mobile' ],
+                'selectors' => [
+                    '{{WRAPPER}} #filters li .button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                ],
             ]
         );
         $this->end_controls_section();
@@ -210,55 +195,45 @@ class resta_Product_Category extends Widget_Base {
 
     protected function render() {
         $settings = $this->get_settings_for_display();
-        $limit = absint( $settings['limit'] );
+        $limit = $settings['limit'];
         $cat_name_val = '';
-        $title = $settings['title'];
-        $pre_title = $settings['pre_title'];
 
         $get_cat_val = $settings['categories'];
 
         ?>
 
-        <section class="top-product">
-            <div class="row mb-60">
-                <div class="col-12 text-center">
-
-                    <h5 class="text-orange font-weight-light font-playball mb-30"><?php echo esc_html( $pre_title ); ?></h5>
-
-                    <h2 class="mb-50 text-white font-weight-extra-bold"><?php echo esc_html( $title ); ?></h2>
-                    <?php if( !empty ( $get_cat_val )  ) : ?>
-                        <ul class="list-inline" id="filters">
-                            <li class="list-inline-item">
-                                <button class="button is-checked" data-filter="*">show all</button>
-                            </li>
-
-                            <?php
-                            foreach ( $settings['categories'] as $value ) {
-                                $cat_name = get_term_by( 'id', $value, 'product_cat' );
-                                $cat_name_val .= $cat_name->name.',';
-                                ?>
-                                <li class="list-inline-item">
-
-                                    <button class="button" data-filter=".product_cat-<?php echo esc_attr( $cat_name->slug )?>"><?php echo esc_html( $cat_name->name ); ?></button>
-                                </li>
-                                <?php
-
-                            }
-                            $cat_name_val = substr( $cat_name_val, 0, strlen($cat_name_val)-1 );
-                            ?>
-
-                        </ul>
-                    <?php endif; ?>
-                </div>
-            </div>
+        <div class="col-12 text-center">
             <?php if( !empty ( $get_cat_val )  ) : ?>
-                <div class="product-grid">
+                <ul class="list-inline mb-5" id="filters">
+                    <li class="list-inline-item">
+                        <button class="button is-checked" data-filter="*">show all</button>
+                    </li>
+
                     <?php
-                    echo do_shortcode( '[products class="category-filter" limit="' . $limit . '"  columns="2" category="' .$cat_name_val. '"]' );
+                    foreach ( $settings['categories'] as $value ) {
+                        $cat_name = get_term_by( 'id', $value, 'product_cat' );
+                        $cat_name_val .= $cat_name->name.',';
+                        ?>
+                        <li class="list-inline-item">
+
+                            <button class="button" data-filter=".product_cat-<?php echo esc_attr( $cat_name->slug )?>"><?php echo esc_html( $cat_name->name ); ?></button>
+                        </li>
+                        <?php
+
+                    }
+                    $cat_name_val = substr( $cat_name_val, 0, strlen($cat_name_val)-1 );
                     ?>
-                </div>
+
+                </ul>
             <?php endif; ?>
-        </section>
+        </div>
+        <?php if( !empty ( $get_cat_val )  ) : ?>
+            <div class="product-grid">
+                <?php
+                echo do_shortcode( '[products class="category-filter" limit="' . absint( $limit ) . '"  columns="2" category="' .esc_html( $cat_name_val ). '"]' );
+                ?>
+            </div>
+        <?php endif; ?>
         <?php
 
     }

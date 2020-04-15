@@ -1091,15 +1091,6 @@ h2.screen-reader-text {
 * ==========================================
 *
 */
-.top-product {
-    position: relative;
-    padding: 125px 0;
-    background: url("../img/product/product-bg.png") no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-}
-
 #filters li .button {
     font-size: 18px;
     font-family: "Playfair Display", serif;
