@@ -81,10 +81,8 @@ if ( ! function_exists( 'resta_setup' ) ) :
 		) );
 	}
 
-	// Woocommerce Support
+	// WooCommerce Support
     add_theme_support( 'woocommerce' );
-    add_theme_support( 'wc-product-gallery-lightbox' );
-    add_theme_support( 'wc-product-gallery-zoom' );
 
 endif;
 add_action( 'after_setup_theme', 'resta_setup' );
@@ -188,7 +186,10 @@ function resta_elementor_widgets() {
         require get_template_directory() . '/plugin/youtube-video.php';
         require get_template_directory() . '/plugin/image-with-text.php';
         require get_template_directory() . '/plugin/testimonial.php';
-        require get_template_directory() . '/plugin/product-category-tab.php';
+        // Woocommerce Exists?
+        if ( class_exists( 'WooCommerce' ) ) {
+            require get_template_directory() . '/plugin/product-category-tab.php';
+        }
         //require get_template_directory() . '/plugin/gallery.php';
     }
 }
@@ -215,6 +216,11 @@ add_action( 'elementor/elements/categories_registered', 'resta_elementor_widget_
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Woocommerce Snippet
+ */
+require get_template_directory() . '/inc/woocommerce.php';
 
 /**
  * Custom template tags for this theme.

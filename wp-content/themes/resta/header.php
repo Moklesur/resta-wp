@@ -26,32 +26,32 @@
 <div id="page" class="wrapper site">
 
     <!--/.top-bar start-->
-    <section class="top-bar absolute-top-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 text-lg-left text-md-left text-center">
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a href=""><i class="icofont-clock-time mr-2"></i>07 am - 12 am,
-                                Mon - Sun </a></li>
-                        <li class="list-inline-item"><a href=""><i class="icofont-location-pin mr-2"></i>20, Floor,
-                                California USA</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 text-lg-right text-md-right text-center">
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a href="tel:+00 568 697 435"><i
-                                        class="icofont-headphone mr-2"></i>+00 568 697 435 </a></li>
-                        <li class="list-inline-item"><a href="mailto:support24@gmail.com"><i
-                                        class="icofont-envelope mr-2"></i>support24@gmail.com</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<!--    <section class="top-bar absolute-top-bar">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-6 col-md-6 col-sm-12 text-lg-left text-md-left text-center">-->
+<!--                    <ul class="list-inline">-->
+<!--                        <li class="list-inline-item"><a href=""><i class="icofont-clock-time mr-2"></i>07 am - 12 am,-->
+<!--                                Mon - Sun </a></li>-->
+<!--                        <li class="list-inline-item"><a href=""><i class="icofont-location-pin mr-2"></i>20, Floor,-->
+<!--                                California USA</a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                <div class="col-lg-6 col-md-6 col-sm-12 text-lg-right text-md-right text-center">-->
+<!--                    <ul class="list-inline">-->
+<!--                        <li class="list-inline-item"><a href="tel:+00 568 697 435"><i-->
+<!--                                        class="icofont-headphone mr-2"></i>+00 568 697 435 </a></li>-->
+<!--                        <li class="list-inline-item"><a href="mailto:support24@gmail.com"><i-->
+<!--                                        class="icofont-envelope mr-2"></i>support24@gmail.com</a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
     <!--/.top-bar end-->
 
     <!--/.header start -->
-    <header class="site-header absolute-header navbar-fixed" id="header">
+    <header class="site-header navbar-fixed" id="header">
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <div class="navbar-brand">
