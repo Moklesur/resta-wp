@@ -416,6 +416,7 @@ img {
 .mr-20{
     margin-right: 20px;
 }
+
 /*
 *
 * ==========================================
@@ -750,6 +751,7 @@ h2.screen-reader-text {
 
 .navbar-fixed {
     top: 0;
+    left: 0;
     position: fixed;
     background-color: #000000;
     box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.05), -1px -1px 50px rgba(0, 0, 0, 0.05);
@@ -2178,6 +2180,18 @@ span.price {
 * ==========================================
 *
 */
+.boxed .wrapper,
+.boxed main{
+    width: 100%;
+    padding: 0 5%;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.08);
+}
+body.boxed {
+    background: #f7f7f7;
+}
 .sticky {
     display: block;
 }
