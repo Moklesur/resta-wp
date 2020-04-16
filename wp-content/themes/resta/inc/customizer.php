@@ -179,8 +179,8 @@ function resta_customize_register( $wp_customize ) {
     );
     // Custom Button Label
     $wp_customize->add_setting('custom_nav_title', array(
-        'default' => false,
-        'sanitize_callback' => 'resta_sanitize_checkbox',
+        'default' => '',
+        'sanitize_callback' => 'resta_sanitize_text',
     ));
     $wp_customize->add_control('custom_nav_title', array(
         'label' => __('Button Text', 'resta'),

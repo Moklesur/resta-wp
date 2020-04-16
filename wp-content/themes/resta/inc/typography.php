@@ -31,8 +31,9 @@ function resta_typography_color( $color ) {
         $top_bar_bg = get_theme_mod( 'top_bar_bg', 'transparent' );
         $top_bar_text_color = get_theme_mod( 'top_bar_text_color', '#fff' );
         $top_bar_icon_color = get_theme_mod( 'top_bar_icon_color', '#f96a0e' );
-        $color .= ".top-bar {  background-color:" . esc_attr( $top_bar_bg ) . ";  color:" . esc_attr( $top_bar_text_color ) . ";} ";
-        $color .= ".top-bar i {  color:" . esc_attr( $top_bar_icon_color ) . ";} ";
+        $color .= ".top-bar { background-color:" . esc_attr( $top_bar_bg ) . ";} ";
+        $color .= ".top-bar, .top-bar ul li { color:" . esc_attr( $top_bar_text_color ) . ";} ";
+        $color .= ".top-bar ul li i {  color:" . esc_attr( $top_bar_icon_color ) . ";} ";
 
     endif;
 
@@ -49,7 +50,7 @@ function resta_typography_color( $color ) {
     $color .= ".site-header { 
         background-color:" . esc_attr($header_bg_color) . "; 
         color:" . esc_attr($header_text_color) . "; 
-    } ";
+    }";
 
     if ( ! empty( get_theme_mod( 'header_top_padding' ) ) ){
         $color .= ".site-header { padding-top:" . esc_attr( get_theme_mod( 'header_top_padding' ) ) . "px;  } ";
@@ -94,6 +95,8 @@ function resta_typography_color( $color ) {
      * Hero Banner
      */
 
+    if ( get_theme_mod('enable_hero_area' ) == true ) :
+
     $header_banner_bg = get_theme_mod( 'header_banner_bg', '#1488cc' );
     $hero_area_heading_pre_color = get_theme_mod( 'hero_area_heading_pre_color', '#f96a0e' );
     $hero_area_heading_color = get_theme_mod( 'hero_area_heading_color', '#fff' );
@@ -111,6 +114,8 @@ function resta_typography_color( $color ) {
         background-color:" . esc_attr( $header_banner_btn_bg_color ) . "; 
         border-color:" . esc_attr( $header_banner_btn_bg_color ) . "; 
     } ";
+
+    endif;
 
     /**
     * Footer Section
