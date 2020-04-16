@@ -626,8 +626,8 @@ h2.screen-reader-text {
 #scroll {
     position: fixed;
     z-index: 1;
-    right: 0px;
-    bottom: 0px;
+    right: 0;
+    bottom: 0;
     cursor: pointer;
     width: 50px;
     height: 50px;
@@ -1045,7 +1045,6 @@ h2.screen-reader-text {
 .specialties {
     position: relative;
     padding: 130px 0;
-    background: url("../img/specialities/special_bg.png") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -1531,7 +1530,6 @@ span.price {
 .book-table {
     position: relative;
     padding: 275px 0 130px 0;
-    background: url("../img/booktable/book-table-bg.png") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;

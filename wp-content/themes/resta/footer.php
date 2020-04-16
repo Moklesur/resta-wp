@@ -50,7 +50,7 @@ $footer_columns = get_theme_mod( 'footer_columns', '4' );
 <!-- /.footer end -->
 
 <!-- Back to top button -->
-<a href="javascript:void(0)" id="scroll" style="display: none;"><span></span></a>
+<a href="javascript:void(0)" id="scroll"><span></span></a>
 <!-- Back to top button -->
 </div><!-- #page -->
 
