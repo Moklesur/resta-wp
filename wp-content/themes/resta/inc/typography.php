@@ -91,21 +91,26 @@ function resta_typography_color( $color ) {
     } ";
 
     /**
-     * Header Banner Image With Contents
+     * Hero Banner
      */
 
     $header_banner_bg = get_theme_mod( 'header_banner_bg', '#1488cc' );
+    $hero_area_heading_pre_color = get_theme_mod( 'hero_area_heading_pre_color', '#f96a0e' );
     $hero_area_heading_color = get_theme_mod( 'hero_area_heading_color', '#fff' );
     $header_banner_text_color = get_theme_mod( 'header_banner_text_color', '#fff' );
-    $header_banner_btn_txt_color = get_theme_mod( 'header_banner_btn_txt_color', '#717171' );
-    $header_banner_btn_bg_color = get_theme_mod( 'header_banner_btn_bg_color', '#fff' );
+    $header_banner_btn_bg_color = get_theme_mod( 'header_banner_btn_bg_color', '#f96a0e' );
+    $header_banner_btn_txt_color = get_theme_mod( 'header_banner_btn_txt_color', '#fff' );
 
-    $color .= ".site-header-banner-image { background-color:" . esc_attr( $header_banner_bg ) . "; } ";
-    $color .= ".site-header-banner-contents h1{ color:" . esc_attr( $hero_area_heading_color ) . "; } ";
-    $color .= ".site-header-banner-contents p { color:" . esc_attr( $header_banner_text_color ) . "; } ";
-    $color .= ".site-header-banner-contents .btn { color:" . esc_attr( $header_banner_btn_txt_color ) . "; background-color:" . esc_attr( $header_banner_btn_bg_color ) . "; border-color:" . esc_attr( $header_banner_btn_bg_color ) . "; } ";
+    $color .= ".hero-banner { background-color:" . esc_attr( $header_banner_bg ) . "; } ";
+    $color .= ".hero-banner h5{ color:" . esc_attr( $hero_area_heading_pre_color ) . "; } ";
+    $color .= ".hero-banner h1{ color:" . esc_attr( $hero_area_heading_color ) . "; } ";
+    $color .= ".hero-banner { color:" . esc_attr( $header_banner_text_color ) . "; } ";
 
-
+    $color .= ".hero-banner .btn { 
+        color:" . esc_attr( $header_banner_btn_txt_color ) . "; 
+        background-color:" . esc_attr( $header_banner_btn_bg_color ) . "; 
+        border-color:" . esc_attr( $header_banner_btn_bg_color ) . "; 
+    } ";
 
     /**
     * Footer Section

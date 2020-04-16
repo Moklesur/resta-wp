@@ -179,7 +179,7 @@ function resta_customize_register( $wp_customize ) {
     );
     // Custom Button Label
     $wp_customize->add_setting('custom_nav_title', array(
-        'default' => '',
+        'default' => false,
         'sanitize_callback' => 'resta_sanitize_checkbox',
     ));
     $wp_customize->add_control('custom_nav_title', array(
@@ -580,22 +580,34 @@ function resta_customize_register( $wp_customize ) {
         'section' => 'menu_design'
     ) );
 
-    /********************* Header Banner Image with content ************************/
+    /********************* Hero Area ************************/
+
+    // Enable Hero Area?
     $wp_customize->add_setting( 'enable_hero_area', array(
-        'default'           => '',
+        'default'           => false,
         'sanitize_callback' => 'resta_sanitize_checkbox',
     ) );
     $wp_customize->add_control( 'enable_hero_area', array(
-        'label' => __( 'Show/Hide Hero Area', 'resta' ),
+        'label' => __( 'Enable Hero Area?', 'resta' ),
         'type' => 'checkbox',
         'section' => 'header_image',
-        'priority'       => 5
+        'priority'      => 5
     ) );
+    /**
+     * resta Divider
+     */
 
+    $wp_customize->add_control( new resta_divider( $wp_customize, 'header_hero_color_content', array(
+            'label' => __('Color', 'resta'),
+            'section' => 'header_image',
+            'settings' => 'resta_options[divider]'
+        ) )
+    );
+    // Background Color
     $wp_customize->add_setting(
         'header_banner_bg',
         array(
-            'default'           => '#1488cc',
+            'default'           => '#111',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -604,24 +616,32 @@ function resta_customize_register( $wp_customize ) {
             $wp_customize,
             'header_banner_bg',
             array(
-                'label'         => __('Hero Area Background Color', 'resta'),
-                'section'       => 'header_image',
-                'priority'       => 10
+                'label'         => __('Background Color ( Container )', 'resta'),
+                'section'       => 'header_image'
             )
         )
     );
 
-    $wp_customize->add_setting( 'header_banner_heading', array(
-        'default'           => '',
-        'sanitize_callback' => 'resta_sanitize_text',
-    ) );
-    $wp_customize->add_control( 'header_banner_heading', array(
-        'label' => __( 'Hero Area Heading', 'resta' ),
-        'type' => 'text',
-        'section' => 'header_image',
-        'priority'       => 10
-    ) );
+    // Pre Heading Color
+    $wp_customize->add_setting(
+        'hero_area_heading_pre_color',
+        array(
+            'default'           => '#f96a0e',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'hero_area_heading_pre_color',
+            array(
+                'label'         => __('Pre Heading Text Color', 'resta'),
+                'section'       => 'header_image'
+            )
+        )
+    );
 
+    // Heading Color
     $wp_customize->add_setting(
         'hero_area_heading_color',
         array(
@@ -634,24 +654,13 @@ function resta_customize_register( $wp_customize ) {
             $wp_customize,
             'hero_area_heading_color',
             array(
-                'label'         => __('Heading Font Color', 'resta'),
-                'section'       => 'header_image',
-                'priority'       => 10
+                'label'         => __('Heading Text Color', 'resta'),
+                'section'       => 'header_image'
             )
         )
     );
 
-    $wp_customize->add_setting( 'header_banner_text', array(
-        'default'           => '',
-        'sanitize_callback' => 'resta_sanitize_text',
-    ) );
-    $wp_customize->add_control( 'header_banner_text', array(
-        'label' => __( 'Hero Area Paragraph', 'resta' ),
-        'type' => 'textarea',
-        'section' => 'header_image',
-        'priority'       => 10
-    ) );
-
+    // Paragraph Color
     $wp_customize->add_setting(
         'header_banner_text_color',
         array(
@@ -664,39 +673,17 @@ function resta_customize_register( $wp_customize ) {
             $wp_customize,
             'header_banner_text_color',
             array(
-                'label'         => __('Paragraph Font Color', 'resta'),
-                'section'       => 'header_image',
-                'priority'       => 10
+                'label'         => __('Paragraph Text Color', 'resta'),
+                'section'       => 'header_image'
             )
         )
     );
 
-    $wp_customize->add_setting( 'header_banner_button_text', array(
-        'default'           => '',
-        'sanitize_callback' => 'resta_sanitize_text',
-    ) );
-    $wp_customize->add_control( 'header_banner_button_text', array(
-        'label' => __( 'Hero Area Button Text', 'resta' ),
-        'type' => 'text',
-        'section' => 'header_image',
-        'priority'       => 10
-    ) );
-
-    $wp_customize->add_setting( 'header_banner_button_link', array(
-        'default'           => '',
-        'sanitize_callback' => 'esc_url_raw',
-    ) );
-    $wp_customize->add_control( 'header_banner_button_link', array(
-        'label' => __( 'Button URL', 'resta' ),
-        'type' => 'url',
-        'section' => 'header_image',
-        'priority'       => 10
-    ) );
-
+    // Button BG Color
     $wp_customize->add_setting(
         'header_banner_btn_bg_color',
         array(
-            'default'           => '#fff',
+            'default'           => '#f96a0e',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -705,16 +692,17 @@ function resta_customize_register( $wp_customize ) {
             $wp_customize,
             'header_banner_btn_bg_color',
             array(
-                'label'         => __('Button Background Color', 'resta'),
+                'label'         => __('Button BG Color', 'resta'),
                 'section'       => 'header_image'
             )
         )
     );
 
+    // Button Text Color
     $wp_customize->add_setting(
         'header_banner_btn_txt_color',
         array(
-            'default'           => '#717171',
+            'default'           => '#fff',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -728,6 +716,71 @@ function resta_customize_register( $wp_customize ) {
             )
         )
     );
+
+    /**
+     * resta Divider
+     */
+
+    $wp_customize->add_control( new resta_divider( $wp_customize, 'header_hero_content_', array(
+            'label' => __('Content', 'resta'),
+            'section' => 'header_image',
+            'settings' => 'resta_options[divider]'
+        ) )
+    );
+
+    // Pre Heading
+    $wp_customize->add_setting( 'header_banner_pre_heading', array(
+        'default'           => '',
+        'sanitize_callback' => 'resta_sanitize_text',
+    ) );
+    $wp_customize->add_control( 'header_banner_pre_heading', array(
+        'label' => __( 'Pre Heading', 'resta' ),
+        'type' => 'text',
+        'section' => 'header_image'
+    ) );
+
+    // Heading
+    $wp_customize->add_setting( 'header_banner_heading', array(
+        'default'           => '',
+        'sanitize_callback' => 'resta_sanitize_text',
+    ) );
+    $wp_customize->add_control( 'header_banner_heading', array(
+        'label' => __( 'Heading', 'resta' ),
+        'type' => 'text',
+        'description' => __( 'HTML tag support a, span, strong & br', 'resta' ),
+        'section' => 'header_image'
+    ) );
+
+    // Paragraph
+    $wp_customize->add_setting( 'header_banner_text', array(
+        'default'           => '',
+        'sanitize_callback' => 'resta_sanitize_text',
+    ) );
+    $wp_customize->add_control( 'header_banner_text', array(
+        'label' => __( 'Paragraph', 'resta' ),
+        'type' => 'textarea',
+        'section' => 'header_image'
+    ) );
+
+    $wp_customize->add_setting( 'header_banner_button_text', array(
+        'default'           => '',
+        'sanitize_callback' => 'resta_sanitize_text',
+    ) );
+    $wp_customize->add_control( 'header_banner_button_text', array(
+        'label' => __( 'Hero Area Button Text', 'resta' ),
+        'type' => 'text',
+        'section' => 'header_image',
+    ) );
+
+    $wp_customize->add_setting( 'header_banner_button_link', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'header_banner_button_link', array(
+        'label' => __( 'Button URL', 'resta' ),
+        'type' => 'url',
+        'section' => 'header_image'
+    ) );
 
     /*********************************************
      * Social Links
@@ -878,7 +931,7 @@ function resta_customize_register( $wp_customize ) {
     );
     /********************* Blog Meta ************************/
     $wp_customize->add_setting( 'meta_index_enable', array(
-        'default'           => '',
+        'default'           => false,
         'sanitize_callback' => 'resta_sanitize_checkbox',
     ) );
     $wp_customize->add_control( 'meta_index_enable', array(
@@ -889,7 +942,7 @@ function resta_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'meta_single_enable', array(
-        'default'           => '',
+        'default'           => false,
         'sanitize_callback' => 'resta_sanitize_checkbox',
     ) );
     $wp_customize->add_control( 'meta_single_enable', array(
@@ -900,7 +953,7 @@ function resta_customize_register( $wp_customize ) {
     ) );
     /********************* Excerpt length ************************/
     $wp_customize->add_setting( 'excerpt_content_enable', array(
-        'default'           => '',
+        'default'           => false,
         'sanitize_callback' => 'resta_sanitize_checkbox',
     ) );
     $wp_customize->add_control( 'excerpt_content_enable', array(
@@ -926,7 +979,7 @@ function resta_customize_register( $wp_customize ) {
     ) );
     /********************* Featured Image ************************/
     $wp_customize->add_setting( 'featured_image_index_enable', array(
-        'default'           => '',
+        'default'           => false,
         'sanitize_callback' => 'resta_sanitize_checkbox',
     ) );
     $wp_customize->add_control( 'featured_image_index_enable', array(
@@ -937,7 +990,7 @@ function resta_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'featured_image_single_enable', array(
-        'default'           => '',
+        'default'           => false,
         'sanitize_callback' => 'resta_sanitize_checkbox',
     ) );
     $wp_customize->add_control( 'featured_image_single_enable', array(
@@ -992,7 +1045,7 @@ function resta_customize_register( $wp_customize ) {
     );
 
     $wp_customize->add_setting( 'social_footer_enable', array(
-        'default'           => '',
+        'default'           => false,
         'sanitize_callback' => 'resta_sanitize_checkbox',
     ) );
     $wp_customize->add_control( 'social_footer_enable', array(
@@ -1333,7 +1386,7 @@ function resta_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'enable_page_title', array(
-        'default'           => '',
+        'default'           => false,
         'sanitize_callback' => 'resta_sanitize_checkbox',
     ) );
     $wp_customize->add_control( 'enable_page_title', array(
@@ -1536,7 +1589,7 @@ function resta_sanitize_checkbox( $input ) {
     if ( $input == true ) {
         return true;
     } else {
-        return '';
+        return false;
     }
 }
 

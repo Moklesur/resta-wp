@@ -115,3 +115,59 @@
         </div>
     </header>
     <!--/.header end -->
+    <?php if ( get_theme_mod('enable_hero_area' ) == true ) : ?>
+        <section class="hero-banner" <?php if ( get_header_image() ) : ?>style="background-image: url('<?php header_image(); ?>')"<?php endif; ?>>
+        <div class="container">
+            <article class="row align-content-center">
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                 <?php
+                    if ( !empty( get_theme_mod('header_banner_pre_heading' ) ) ) :
+                 ?>
+                    <h5 class="text-orange font-weight-light font-playball mb-30"><?php echo esc_html( get_theme_mod('header_banner_pre_heading' ) ); ?></h5>
+                    <?php
+                 endif;
+
+                if ( !empty( get_theme_mod('header_banner_heading' ) ) ) :
+
+                $heading = get_theme_mod('header_banner_heading' );
+                ?>
+                    <h1 class="mb-50 text-white">
+                     <?php
+
+                    echo wp_kses(
+                        $heading,
+                        array(
+                            'a' => array(
+                                'href' => array(),
+                                'title' => array()
+                            ),
+                            'p' => array(),
+                            'strong' => array(),
+                            'span' => array(),
+                            'br' => array()
+                        )
+                    );
+
+                    ?>
+                    </h1>
+
+                         <?php
+                endif;
+
+                if ( !empty( get_theme_mod('header_banner_text' ) ) ) :
+                ?>
+                    <p class="mb-55 text-bright"><?php echo esc_html( get_theme_mod('header_banner_text' ) ); ?></p>
+                <?php
+                endif;
+
+                if ( !empty( get_theme_mod('header_banner_button_link' ) ) ) :
+                ?>
+                    <a href="<?php  echo esc_url( get_theme_mod('header_banner_button_link' ) ); ?>" class="btn text-white"><?php echo esc_html( get_theme_mod('header_banner_button_text' ) ); ?> <i class="icofont-arrow-right ml-5"></i></a>
+                <?php
+                endif;
+                ?>
+                </div>
+            </article>
+        </div>
+    </section>
+    <?php endif; ?>
