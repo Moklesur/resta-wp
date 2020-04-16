@@ -43,49 +43,49 @@ function resta_social_action() {
 
         array(
             'name' => 'facebook',
-            'href' => get_theme_mod( 'fb_link' ),
+            'href' => get_theme_mod( 'facebook' ),
             'class' => 'fb'
         ),
         array(
             'name' => 'twitter',
-            'href' => get_theme_mod( 'tw_link' ),
+            'href' => get_theme_mod( 'twitter' ),
             'class' => 'twitter'
         ),
         array(
             'name' => 'youtube',
-            'href' => get_theme_mod( 'yo_link' ),
+            'href' => get_theme_mod( 'youtube' ),
             'class' => 'youtube'
         ),
         array(
             'name' => 'linkedin',
-            'href' => get_theme_mod( 'li_link' ),
+            'href' => get_theme_mod( 'linkedin' ),
             'class' => 'linkedin'
         ),
         array(
             'name' => 'pinterest',
-            'href' => get_theme_mod( 'pi_link' ),
+            'href' => get_theme_mod( 'pinterest' ),
             'class' => 'pinterest'
         ),
         array(
             'name' => 'instagram',
-            'href' =>  get_theme_mod( 'in_link' ),
+            'href' =>  get_theme_mod( 'instagram' ),
             'class' => 'instagram'
         ),
         array(
             'name' => 'dribbble',
-            'href' =>  get_theme_mod( 'dri_link' ),
+            'href' =>  get_theme_mod( 'dribbble' ),
             'class' => 'dribbble'
         ),
         array(
             'name' => 'google-plus',
-            'href' => get_theme_mod( 'gp_link' ),
+            'href' => get_theme_mod( 'google_plus' ),
             'class' => 'g-plus'
         )
 
     );
 
     foreach ( $social_arg as $item ) {
-        if( esc_url( $item['href'] ) != '' ){
+        if( !empty( esc_url( $item['href'] ) ) ){
             ?>
             <li class="list-inline-item">
                 <a class="<?php echo esc_attr( $item['class'] ); ?>" href="<?php echo esc_url( $item['href'] ); ?>"  target="_blank">

@@ -1,6 +1,6 @@
 <?php
 
-$footerCol = get_theme_mod( 'footer_columns', 'four' );
+$footerCol = get_theme_mod( 'footer_widget_column', 'four' );
 
 if ( esc_attr( $footerCol ) == 'four' ) { ?>
     <div class="col-lg-3 col-sm-6 col-12 widget-area">

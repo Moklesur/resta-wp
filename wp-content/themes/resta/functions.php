@@ -124,7 +124,7 @@ function resta_widgets_init() {
         'description'   => esc_html__( 'Add widgets here.', 'resta' ),
         'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
         'after_widget'  => '</div>',
-        'before_title'  => '<h4 class="font-weight-bold text-white mb-50">',
+        'before_title'  => '<h4 class="font-weight-bold mb-50">',
         'after_title'   => '</h4>'
     );
 

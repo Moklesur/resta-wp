@@ -325,7 +325,7 @@ function resta_customize_register( $wp_customize ) {
 
 
     /********************* Top Bar ************************/
-    
+
     // Enable Top Bar
     $wp_customize->add_setting( 'enable_top_bar', array(
         'default'           => false,
@@ -791,86 +791,56 @@ function resta_customize_register( $wp_customize ) {
     ) );
 
     /********************* Social ************************/
-    $wp_customize->add_setting( 'header_fb', array(
-        'default'           => '',
-        'sanitize_callback' => 'esc_url_raw',
-    ) );
-    $wp_customize->add_control( 'header_fb', array(
-        'label' => __( 'Facebook', 'resta' ),
-        'type' => 'url',
-        'section' => 'social_settings',
-        'settings' => 'header_fb'
-    ) );
-    $wp_customize->add_setting( 'header_tw', array(
-        'default'           => '',
-        'sanitize_callback' => 'esc_url_raw',
-    ) );
-    $wp_customize->add_control( 'header_tw', array(
-        'label' => __( 'Twitter', 'resta' ),
-        'type' => 'url',
-        'section' => 'social_settings',
-        'settings' => 'header_tw'
-    ) );
-    $wp_customize->add_setting( 'header_li', array(
-        'default'           => '',
-        'sanitize_callback' => 'esc_url_raw',
-    ) );
-    $wp_customize->add_control( 'header_li', array(
-        'label' => __( 'Linkedin', 'resta' ),
-        'type' => 'url',
-        'section' => 'social_settings',
-        'settings' => 'header_li'
-    ) );
-    $wp_customize->add_setting( 'header_pint', array(
-        'default'           => '',
-        'sanitize_callback' => 'esc_url_raw',
-    ) );
-    $wp_customize->add_control( 'header_pint', array(
-        'label' => __( 'Pinterest', 'resta' ),
-        'type' => 'url',
-        'section' => 'social_settings',
-        'settings' => 'header_pint'
-    ) );
-    $wp_customize->add_setting( 'header_ins', array(
-        'default'           => '',
-        'sanitize_callback' => 'esc_url_raw',
-    ) );
-    $wp_customize->add_control( 'header_ins', array(
-        'label' => __( 'Instagram', 'resta' ),
-        'type' => 'url',
-        'section' => 'social_settings',
-        'settings' => 'header_ins'
-    ) );
-    $wp_customize->add_setting( 'header_dri', array(
-        'default'           => '',
-        'sanitize_callback' => 'esc_url_raw',
-    ) );
-    $wp_customize->add_control( 'header_dri', array(
-        'label' => __( 'Dribbble', 'resta' ),
-        'type' => 'url',
-        'section' => 'social_settings',
-        'settings' => 'header_dri'
-    ) );
-    $wp_customize->add_setting( 'header_plus', array(
-        'default'           => '',
-        'sanitize_callback' => 'esc_url_raw',
-    ) );
-    $wp_customize->add_control( 'header_plus', array(
-        'label' => __( 'Plus Google', 'resta' ),
-        'type' => 'url',
-        'section' => 'social_settings',
-        'settings' => 'header_plus'
-    ) );
-    $wp_customize->add_setting( 'header_you', array(
-        'default'           => '',
-        'sanitize_callback' => 'esc_url_raw',
-    ) );
-    $wp_customize->add_control( 'header_you', array(
-        'label' => __( 'YouTube', 'resta' ),
-        'type' => 'url',
-        'section' => 'social_settings',
-        'settings' => 'header_you'
-    ) );
+
+    $social_arg = array(
+
+        array(
+            'label' => 'Facebook',
+            'id' => 'facebook'
+        ),
+        array(
+            'label' => 'Twitter',
+            'id' => 'twitter'
+        ),
+        array(
+            'label' => 'Youtube',
+            'id' => 'youtube'
+        ),
+        array(
+            'label' => 'Linkedin',
+            'id' => 'linkedin'
+        ),
+        array(
+            'label' => 'Pinterest',
+            'id' => 'pinterest'
+        ),
+        array(
+            'label' => 'Instagram',
+            'id' => 'instagram'
+        ),
+        array(
+            'label' => 'Dribbble',
+            'id' => 'dribbble'
+        ),
+        array(
+            'label' => 'Google Plus',
+            'id' => 'google_plus'
+        )
+
+    );
+
+    foreach ( $social_arg as $item ) {
+        $wp_customize->add_setting( $item['id'], array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ) );
+        $wp_customize->add_control( $item['id'], array(
+            'label' => __( $item['label'], 'resta' ),
+            'type' => 'url',
+            'section' => 'social_settings',
+            'settings' => $item['id']
+        ) );
+    }
 
     /*********************************************
      * Blog
@@ -1022,6 +992,47 @@ function resta_customize_register( $wp_customize ) {
     ) );
 
     /********************* Footer Content ************************/
+
+    $wp_customize->add_setting(
+        'footer_logo',
+        array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'footer_logo',
+            array(
+                'label'      => __( 'Logo', 'theme_name' ),
+                'section'    => 'footer_content',
+                'settings'   => 'footer_logo'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'footer_background_image',
+        array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'footer_background_image',
+            array(
+                'label'      => __( 'Background Image', 'theme_name' ),
+                'section'    => 'footer_content',
+                'settings'   => 'footer_background_image'
+            )
+        )
+    );
+
     $wp_customize->add_setting(
         'footer_widget_column',
         array(
@@ -1044,19 +1055,8 @@ function resta_customize_register( $wp_customize ) {
         )
     );
 
-    $wp_customize->add_setting( 'social_footer_enable', array(
-        'default'           => false,
-        'sanitize_callback' => 'resta_sanitize_checkbox',
-    ) );
-    $wp_customize->add_control( 'social_footer_enable', array(
-        'label' => __( 'Show/Hide Social Icons in Footer', 'resta' ),
-        'type' => 'checkbox',
-        'priority'       => 10,
-        'section' => 'footer_content'
-    ) );
-
     $wp_customize->add_setting( 'copyright', array(
-        'default'           => 'resta By ThemeTim',
+        'default'           => 'Resta By ThemeTim',
         'sanitize_callback' => 'resta_sanitize_text',
     ) );
     $wp_customize->add_control( 'copyright', array(
@@ -1070,7 +1070,7 @@ function resta_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'footer_bg_color',
         array(
-            'default'           => '#1488cc',
+            'default'           => '#000',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -1079,7 +1079,7 @@ function resta_customize_register( $wp_customize ) {
             $wp_customize,
             'footer_bg_color',
             array(
-                'label'         => __('Footer Background Color', 'resta'),
+                'label'         => __('Background Color', 'resta'),
                 'section'       => 'footer_design'
             )
         )
@@ -1088,7 +1088,7 @@ function resta_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'footer_border_color',
         array(
-            'default'           => '#cccccc',
+            'default'           => '#fff',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -1097,7 +1097,7 @@ function resta_customize_register( $wp_customize ) {
             $wp_customize,
             'footer_border_color',
             array(
-                'label'         => __('Footer Border Color', 'resta'),
+                'label'         => __('Border Color', 'resta'),
                 'section'       => 'footer_design'
             )
         )
@@ -1106,7 +1106,7 @@ function resta_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'footer_text_color',
         array(
-            'default'           => '#717171',
+            'default'           => '#b6b6b6',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -1115,7 +1115,25 @@ function resta_customize_register( $wp_customize ) {
             $wp_customize,
             'footer_text_color',
             array(
-                'label'         => __('Footer Text Color', 'resta'),
+                'label'         => __('Text Color', 'resta'),
+                'section'       => 'footer_design'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'footer_heading_color',
+        array(
+            'default'           => '#fff',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'footer_heading_color',
+            array(
+                'label'         => __('Heading Color', 'resta'),
                 'section'       => 'footer_design'
             )
         )
@@ -1157,7 +1175,7 @@ function resta_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'footer_top_padding', array(
-        'default'           => '',
+        'default'           => '190',
         'sanitize_callback' => 'absint',
     ) );
     $wp_customize->add_control( 'footer_top_padding', array(
@@ -1167,7 +1185,7 @@ function resta_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'footer_bottom_padding', array(
-        'default'           => '28',
+        'default'           => '130',
         'sanitize_callback' => 'absint',
     ) );
     $wp_customize->add_control( 'footer_bottom_padding', array(
@@ -1180,10 +1198,11 @@ function resta_customize_register( $wp_customize ) {
      * Color
      *********************************************/
 
+    // Primary Color
     $wp_customize->add_setting(
         'primary_color',
         array(
-            'default'           => '#1488cc',
+            'default'           => '#f96a0e',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -1199,10 +1218,11 @@ function resta_customize_register( $wp_customize ) {
             )
         )
     );
+    // Link Color
     $wp_customize->add_setting(
         'link_color',
         array(
-            'default'           => '#1488cc',
+            'default'           => '#f96a0e',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -1217,10 +1237,11 @@ function resta_customize_register( $wp_customize ) {
             )
         )
     );
+    //Link Hover Color
     $wp_customize->add_setting(
         'link_hover_color',
         array(
-            'default'           => '#2939b4',
+            'default'           => '#000',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -1374,98 +1395,6 @@ function resta_customize_register( $wp_customize ) {
         'label' => __( 'Heading Font Weight', 'resta' ),
         'type' => 'text',
         'section' => 'heading_font'
-    ) );
-
-    /*********************************************
-     * Page Title
-     *********************************************/
-
-    $wp_customize->add_section( 'page_title_panel', array(
-        'title'          => __( 'Page Title', 'resta' ),
-        'priority'       => 50
-    ) );
-
-    $wp_customize->add_setting( 'enable_page_title', array(
-        'default'           => false,
-        'sanitize_callback' => 'resta_sanitize_checkbox',
-    ) );
-    $wp_customize->add_control( 'enable_page_title', array(
-        'label' => __( 'Show/Hide Page Title', 'resta' ),
-        'type' => 'checkbox',
-        'section' => 'page_title_panel'
-    ) );
-
-    $wp_customize->add_setting(
-        'page_title_background_color',
-        array(
-            'default'           => '#1488cc',
-            'sanitize_callback' => 'sanitize_hex_color',
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'page_title_background_color',
-            array(
-                'label'         => __('Background Color', 'resta'),
-                'section' => 'page_title_panel'
-            )
-        )
-    );
-
-    $wp_customize->add_setting(
-        'page_title_text_color',
-        array(
-            'default'           => '#ffffff',
-            'sanitize_callback' => 'sanitize_hex_color',
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'page_title_text_color',
-            array(
-                'label'         => __('Text Color', 'resta'),
-                'section' => 'page_title_panel'
-            )
-        )
-    );
-
-    $wp_customize->add_setting( 'page_title_background_image', array(
-        'default'           => '',
-        'sanitize_callback' => 'esc_url_raw'
-    ) );
-
-    $wp_customize->add_control(
-        new WP_Customize_Image_Control(
-            $wp_customize,
-            'page_title_background_image',
-            array(
-                'label'          => __( 'Upload Background Image', 'resta' ),
-                'type'           => 'image',
-                'section'        => 'page_title_panel',
-            )
-        )
-    );
-
-    $wp_customize->add_setting( 'page_title_font_size', array(
-        'default'           => '48',
-        'sanitize_callback' => 'absint',
-    ) );
-    $wp_customize->add_control( 'page_title_font_size', array(
-        'label' => __( 'Font Size', 'resta' ),
-        'type' => 'number',
-        'section' => 'page_title_panel'
-    ) );
-
-    $wp_customize->add_setting( 'page_title_padding', array(
-        'default'           => '85',
-        'sanitize_callback' => 'absint',
-    ) );
-    $wp_customize->add_control( 'page_title_padding', array(
-        'label' => __( 'Padding Top/Bottom', 'resta' ),
-        'type' => 'number',
-        'section' => 'page_title_panel'
     ) );
 }
 add_action( 'customize_register', 'resta_customize_register' );

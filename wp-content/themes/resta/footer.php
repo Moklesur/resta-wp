@@ -13,29 +13,34 @@
 $footer_columns = get_theme_mod( 'footer_columns', '4' );
 ?>
 
-<footer class="footer-area" style="background-image: url('img/footer/footer-bg.png')">
-    <!-- /.footer start -->
-    <figure class="footer-logo">
-        <a href=""> <img src="img/logo/logo.png" alt=""></a>
-    </figure>
+<footer class="footer-area" <?php if ( !empty( get_theme_mod('footer_background_image' ) ) ) : ?>style="background-image: url('<?php echo esc_url( get_theme_mod('footer_background_image' ) ); ?>')"<?php endif; ?>>
 
-    <?php if ( is_active_sidebar( 'footer-widget' ) or is_active_sidebar( 'footer-widget-2' ) or is_active_sidebar( 'footer-widget-3' ) or is_active_sidebar( 'footer-widget-4' ) ) : ?>
+    <?php if ( !empty( get_theme_mod('footer_logo' ) ) ) : ?>
+        <!-- /.footer start -->
+        <figure class="footer-logo">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <img src="<?php echo esc_url( get_theme_mod('footer_logo' ) ); ?>">
+            </a>
+        </figure>
+    <?php endif;
+
+    if ( is_active_sidebar( 'footer-widget' ) or is_active_sidebar( 'footer-widget-2' ) or is_active_sidebar( 'footer-widget-3' ) or is_active_sidebar( 'footer-widget-4' ) ) : ?>
         <!-- .footer-top start -->
-    <div class="footer-top">
-        <div class="container footer-middle">
-            <div class="row">
-                <?php get_template_part( 'footer-layout/layout' ); ?>
+        <div class="footer-top">
+            <div class="container footer-middle">
+                <div class="row">
+                    <?php get_template_part( 'footer-layout/layout' ); ?>
+                </div>
             </div>
         </div>
-    </div>
     <?php endif; ?>
 
     <!--        /.footer-bottom start-->
     <div class="footer-bottom">
         <div class="row copy-right-text align-items-center">
             <div class="col-10 m-auto text-center font-weight-bold text-uppercase">
-                <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'resta' ) ); ?>">
-                    <?php esc_html_e( 'Copyright © 2020. All Right Reserved', 'resta' ); ?>
+                <a href="<?php echo esc_url( __( 'https://www.themetim.com/', 'resta' ) ); ?>">
+                    <?php echo esc_html( get_theme_mod('copyright', 'Resta By ThemeTim' ) ); ?>
                 </a>
             </div>
         </div>
