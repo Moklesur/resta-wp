@@ -124,7 +124,7 @@ function resta_widgets_init() {
         'description'   => esc_html__( 'Add widgets here.', 'resta' ),
         'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
         'after_widget'  => '</div>',
-        'before_title'  => '<h4 class="font-weight-bold text-white mb-50">',
+        'before_title'  => '<h4 class="font-weight-bold mb-50">',
         'after_title'   => '</h4>'
     );
 
@@ -149,7 +149,7 @@ function resta_scripts() {
 
     wp_enqueue_style('resta-body-fonts', '//fonts.googleapis.com/css?family=Playball:400');
     wp_enqueue_style('resta-body-fonts', '//fonts.googleapis.com/css?family=Playfair+Display:300,700,800');
-    wp_enqueue_style('resta-heading-fonts', '//fonts.googleapis.com/css?family=Poppins:300,700,800');
+    wp_enqueue_style('resta-heading-fonts', '//fonts.googleapis.com/css?family=Poppins:300,500,800');
 
     // Plugin CSS
     wp_enqueue_style( 'icofont', get_template_directory_uri() . '/css/icofont.min.css', array(), '4.7.0' );
@@ -163,7 +163,7 @@ function resta_scripts() {
 
     // Plugin JS
     wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.8.0', true );
-    wp_enqueue_script( 'jquery-popper', get_template_directory_uri() . '/js/popper.min.js', array('jquery'), '1.12.5', true );
+    //wp_enqueue_script( 'jquery-popper', get_template_directory_uri() . '/js/popper.min.js', array('jquery'), '1.12.5', true );
     wp_enqueue_script( 'jquery-isotope', get_template_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery'), '3.0.6', true );
     wp_enqueue_script( 'jquery-magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', array('jquery'), '1.1.0', true );
     wp_enqueue_script( 'jquery-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '4.4.1', true );

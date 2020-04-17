@@ -416,6 +416,7 @@ img {
 .mr-20{
     margin-right: 20px;
 }
+
 /*
 *
 * ==========================================
@@ -625,8 +626,8 @@ h2.screen-reader-text {
 #scroll {
     position: fixed;
     z-index: 1;
-    right: 0px;
-    bottom: 0px;
+    right: 0;
+    bottom: 0;
     cursor: pointer;
     width: 50px;
     height: 50px;
@@ -750,6 +751,7 @@ h2.screen-reader-text {
 
 .navbar-fixed {
     top: 0;
+    left: 0;
     position: fixed;
     background-color: #000000;
     box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.05), -1px -1px 50px rgba(0, 0, 0, 0.05);
@@ -1043,7 +1045,6 @@ h2.screen-reader-text {
 .specialties {
     position: relative;
     padding: 130px 0;
-    background: url("../img/specialities/special_bg.png") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -1097,7 +1098,112 @@ h2.screen-reader-text {
 /*
 *
 * ==========================================
-*   9. top item product style
+*   9. Product Loop style
+* ==========================================
+*
+*/
+.woocommerce .products ul,
+.woocommerce ul.products {
+    width: 100%;
+}
+.resta-product-loop {
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 34px 0 rgba(0, 0, 0, 0.08);
+    padding-bottom: 30px;
+}
+
+.woocommerce .resta-product-loop a.added_to_cart {
+    position: absolute;
+    bottom: -25px;
+    right: 52px;
+    font-size: 14px;
+}
+
+.woocommerce ul.products li.product .resta-product-loop h2.woocommerce-loop-product__title,
+.woocommerce ul.products li.product .resta-product-loop .price{
+    font-size: 22px;
+    font-family: "Playfair Display", serif;
+    font-weight: 800;
+    color: #222222;
+}
+.woocommerce ul.products li.product .resta-product-loop h2.woocommerce-loop-product__title{
+    padding: 25px 0 20px;
+}
+.woocommerce ul.products li.product .resta-product-loop a img{
+    margin-bottom: 0;
+}
+.resta-product-loop ins{
+    text-decoration: none;
+}
+.woocommerce ul.products li.product .resta-product-loop .price{
+    font-size: 24px;
+    margin-bottom: 0;
+    line-height: 1;
+    margin-right: 10px;
+}
+.woocommerce ul.products li.product .resta-product-loop  .price del{
+    font-size: 22px;
+}
+.resta-product-loop img{
+    border-radius: 20px;
+}
+.resta-loop-title-description,
+.resta-loop-price-cart{
+    position: relative;
+    padding: 0 30px;
+}
+.resta-product-loop p{
+    font-size: 14px;
+}
+.resta-loop-price-cart{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.add-to-cart-btn ,
+.woocommerce ul.products li.product .resta-loop-price-cart a.button {
+    margin-top: 0;
+    margin-left: auto;
+    text-align: center;
+    background-color: #f96a0e;
+    padding: 10px 15px;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    border-radius: 40px;
+    color: #ffffff;
+    min-width: 98px;
+    font-weight: 500;
+    transition: .5s all ease-out;
+    -moz-transition: .5s all ease-out;
+    -webkit-transition: .5s all ease-out;
+    -o-transition: .5s all ease-out;
+}
+
+.add-to-cart-btn:hover,
+.woocommerce .resta-loop-price-cart a.button:hover{
+    background-color: #222222;
+    color: #ffffff;
+}
+
+.resta-product-loop .price{
+    margin-right: auto;
+}
+
+.woocommerce ul.columns-4 li.product, .woocommerce-page ul.products li.product {
+    margin: 0 1.875% 1.875% 0;
+    width: 23.5%
+}
+.woocommerce ul.columns-4 li.last, .woocommerce-page ul.columns-4 li.last{
+    margin-right: 0;
+}
+
+/*
+*
+* ==========================================
+*   9. Product Filter
 * ==========================================
 *
 */
@@ -1116,59 +1222,44 @@ h2.screen-reader-text {
     color: #f96a0e;
     border: 1px dashed #f96a0e;
 }
-
-.product {
-    position: relative;
-    margin-bottom: 30px;
+.product-grid .woocommerce.category-filter ul.products{
+    margin: 0 -15px;
 }
-
-.product-thumb {
-    position: relative;
+.product-grid .woocommerce.category-filter ul.products li.product{
+    width: 50%;
+    margin: 0 0 30px;
+    padding: 0 15px;
 }
-
-.product-thumb img {
-    border-radius: 6px;
-}
-
-.product-details {
+.product-grid .resta-product-loop{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 0;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
     border: 1px dashed #ffffff;
-    border-left: 0;
-    padding: 10px 25px;
-    max-width: 300px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
-.product-details p {
-    color: #adadad;
+.product-grid .resta-product-loop img{
+    border-radius: 20px;
 }
-
-span.price {
-    font-size: 35px;
+.product-grid .resta-product-loop>a{
+    width: 50%;
+    float: left;
 }
-
-.align-sup {
-    vertical-align: super;
+.product-grid .resta-loop-title-description,
+.product-grid .resta-loop-price-cart{
+    width: 50%;
+    float: left;
+    overflow: hidden;
 }
-
-.add-to-cart-btn {
-    background-color: #f96a0e;
-    padding: 10px 15px;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    border-radius: 40px;
-    color: #ffffff;
-    transition: .5s all ease-out;
-    -moz-transition: .5s all ease-out;
-    -webkit-transition: .5s all ease-out;
-    -o-transition: .5s all ease-out;
-}
-
-.add-to-cart-btn:hover {
-    background-color: #222222;
-    color: #ffffff;
-    transition: .5s all ease-in;
-    -moz-transition: .5s all ease-in;
-    -webkit-transition: .5s all ease-in;
-    -o-transition: .5s all ease-in;
+.product-grid  ul.products li.product .resta-product-loop h2.woocommerce-loop-product__title,
+.product-grid ul.products li.product .resta-product-loop .price,
+.product-grid .resta-product-loop p{
+    color: #fff;
 }
 
 /*
@@ -1529,7 +1620,6 @@ span.price {
 .book-table {
     position: relative;
     padding: 275px 0 130px 0;
-    background: url("../img/booktable/book-table-bg.png") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -1786,12 +1876,11 @@ span.price {
 .widget-menu li > a, .menu li > a {
     font-family: "Poppins", sans-serif;
     font-style: normal;
-    font-weight: normal;
     font-size: 14px;
     line-height: 26px;
     color: #b6b6b6;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .widget-menu li > a:hover, .menu li > a:hover {
@@ -2178,6 +2267,18 @@ span.price {
 * ==========================================
 *
 */
+.boxed .wrapper,
+.boxed main{
+    width: 100%;
+    padding: 0 5%;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.08);
+}
+body.boxed {
+    background: #f7f7f7;
+}
 .sticky {
     display: block;
 }
@@ -2386,13 +2487,13 @@ object {
 }
 
 .nav-links .nav-previous {
-    font-weight: 700;
+    font-weight: 500;
     max-width: 50%;
     word-break: break-word;
 }
 
 .nav-links .nav-next {
-    font-weight: 700;
+    font-weight: 500;
     max-width: 50%;
     word-break: break-word;
 }
@@ -2433,7 +2534,7 @@ input[type='password'] {
 }
 
 .widget-area ul > li > a {
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .wpcf7 label {
