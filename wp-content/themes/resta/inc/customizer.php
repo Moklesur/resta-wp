@@ -1284,7 +1284,7 @@ function resta_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'bg_text_color',
         array(
-            'default'           => '#717171',
+            'default'           => '#626262',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );

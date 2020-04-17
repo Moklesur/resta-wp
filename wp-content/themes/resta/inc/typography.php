@@ -145,23 +145,23 @@ function resta_typography_color( $color ) {
 
     $body_font_family = get_theme_mod('body_font_family');
     if ( $body_font_family !='' ) {
-        $color .= "body{ font-family:" . $body_font_family . ";}";
+        //$color .= "body{ font-family:" . $body_font_family . ";}";
     }else{
-        $color .= "body{ font-family: 'Source Sans Pro', sans-serif;}";
+        //$color .= "body{ font-family: 'Source Sans Pro', sans-serif;}";
     }
 
     $heading_font_family = get_theme_mod('heading_font_family');
     if ( $heading_font_family !='' ) {
-        $color .= "h1,h2,h3,h4,h5,h6,.h1, .h2, .h3, h1, h2, h3{ font-family:" . $heading_font_family . ";}";
+        //$color .= "h1,h2,h3,h4,h5,h6,.h1, .h2, .h3, h1, h2, h3{ font-family:" . $heading_font_family . ";}";
     }else{
-        $color .= "h1,h2,h3,h4,h5,h6,.h1, .h2, .h3, h1, h2, h3{ font-family: 'Nunito', sans-serif;}";
+        //$color .= "h1,h2,h3,h4,h5,h6,.h1, .h2, .h3, h1, h2, h3{ font-family: 'Nunito', sans-serif;}";
     }
 
     /**
      * Body
      */
 
-    $body_text_color = get_theme_mod( 'bg_text_color', '#717171' );
+    $body_text_color = get_theme_mod( 'bg_text_color', '#626262' );
     $body_font_size = get_theme_mod( 'body_font_size', '18' );
     $body_font_weight = get_theme_mod( 'body_font_weight', '300' );
 

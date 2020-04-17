@@ -1098,6 +1098,98 @@ h2.screen-reader-text {
 /*
 *
 * ==========================================
+*   9. Product Loop style
+* ==========================================
+*
+*/
+.resta-product-loop {
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 34px 0 rgba(0, 0, 0, 0.08);
+    padding-bottom: 30px;
+}
+.woocommerce ul.products li.product .resta-product-loop h2.woocommerce-loop-product__title,
+.woocommerce ul.products li.product .resta-product-loop .price{
+    font-size: 22px;
+    font-family: "Playfair Display", serif;
+    font-weight: 800;
+    color: #222222;
+}
+.woocommerce ul.products li.product .resta-product-loop h2.woocommerce-loop-product__title{
+    padding: 25px 0 20px;
+}
+.woocommerce ul.products li.product .resta-product-loop a img{
+    margin-bottom: 0;
+}
+.resta-product-loop ins{
+    text-decoration: none;
+}
+.woocommerce ul.products li.product .resta-product-loop .price{
+    font-size: 24px;
+    margin-bottom: 0;
+    line-height: 1;
+    margin-right: 10px;
+}
+.woocommerce ul.products li.product .resta-product-loop  .price del{
+    font-size: 22px;
+}
+.resta-product-loop img{
+    border-radius: 20px;
+}
+.resta-loop-title-description,
+.resta-loop-price-cart{
+    padding: 0 30px;
+}
+.resta-product-loop p{
+    font-size: 14px;
+}
+.resta-loop-price-cart{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.add-to-cart-btn ,
+.woocommerce ul.products li.product .resta-loop-price-cart a.button {
+    margin-top: 0;
+    margin-left: auto;
+    text-align: center;
+    background-color: #f96a0e;
+    padding: 10px 15px;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    border-radius: 40px;
+    color: #ffffff;
+    min-width: 98px;
+    font-weight: 500;
+    transition: .5s all ease-out;
+    -moz-transition: .5s all ease-out;
+    -webkit-transition: .5s all ease-out;
+    -o-transition: .5s all ease-out;
+}
+
+.add-to-cart-btn:hover,
+.woocommerce .resta-loop-price-cart a.button:hover{
+    background-color: #222222;
+    color: #ffffff;
+}
+
+.resta-product-loop .price{
+    margin-right: auto;
+}
+
+.woocommerce ul.columns-4 li.product, .woocommerce-page ul.products li.product {
+    margin: 0 1.875% 1.875% 0;
+    width: 23.5%
+}
+.woocommerce ul.columns-4 li.last, .woocommerce-page ul.columns-4 li.last{
+    margin-right: 0;
+}
+
+/*
+*
+* ==========================================
 *   9. top item product style
 * ==========================================
 *
@@ -1149,29 +1241,6 @@ span.price {
 .align-sup {
     vertical-align: super;
 }
-
-.add-to-cart-btn {
-    background-color: #f96a0e;
-    padding: 10px 15px;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    border-radius: 40px;
-    color: #ffffff;
-    transition: .5s all ease-out;
-    -moz-transition: .5s all ease-out;
-    -webkit-transition: .5s all ease-out;
-    -o-transition: .5s all ease-out;
-}
-
-.add-to-cart-btn:hover {
-    background-color: #222222;
-    color: #ffffff;
-    transition: .5s all ease-in;
-    -moz-transition: .5s all ease-in;
-    -webkit-transition: .5s all ease-in;
-    -o-transition: .5s all ease-in;
-}
-
 /*
 *
 * ==========================================
@@ -1786,12 +1855,11 @@ span.price {
 .widget-menu li > a, .menu li > a {
     font-family: "Poppins", sans-serif;
     font-style: normal;
-    font-weight: normal;
     font-size: 14px;
     line-height: 26px;
     color: #b6b6b6;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .widget-menu li > a:hover, .menu li > a:hover {
@@ -2398,13 +2466,13 @@ object {
 }
 
 .nav-links .nav-previous {
-    font-weight: 700;
+    font-weight: 500;
     max-width: 50%;
     word-break: break-word;
 }
 
 .nav-links .nav-next {
-    font-weight: 700;
+    font-weight: 500;
     max-width: 50%;
     word-break: break-word;
 }
@@ -2445,7 +2513,7 @@ input[type='password'] {
 }
 
 .widget-area ul > li > a {
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .wpcf7 label {

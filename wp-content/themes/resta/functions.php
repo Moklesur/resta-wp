@@ -149,7 +149,7 @@ function resta_scripts() {
 
     wp_enqueue_style('resta-body-fonts', '//fonts.googleapis.com/css?family=Playball:400');
     wp_enqueue_style('resta-body-fonts', '//fonts.googleapis.com/css?family=Playfair+Display:300,700,800');
-    wp_enqueue_style('resta-heading-fonts', '//fonts.googleapis.com/css?family=Poppins:300,700,800');
+    wp_enqueue_style('resta-heading-fonts', '//fonts.googleapis.com/css?family=Poppins:300,500,800');
 
     // Plugin CSS
     wp_enqueue_style( 'icofont', get_template_directory_uri() . '/css/icofont.min.css', array(), '4.7.0' );
