@@ -1108,6 +1108,14 @@ h2.screen-reader-text {
     box-shadow: 0 0 34px 0 rgba(0, 0, 0, 0.08);
     padding-bottom: 30px;
 }
+
+.woocommerce .resta-product-loop a.added_to_cart {
+    position: absolute;
+    bottom: -25px;
+    right: 52px;
+    font-size: 14px;
+}
+
 .woocommerce ul.products li.product .resta-product-loop h2.woocommerce-loop-product__title,
 .woocommerce ul.products li.product .resta-product-loop .price{
     font-size: 22px;
@@ -1138,6 +1146,7 @@ h2.screen-reader-text {
 }
 .resta-loop-title-description,
 .resta-loop-price-cart{
+    position: relative;
     padding: 0 30px;
 }
 .resta-product-loop p{
