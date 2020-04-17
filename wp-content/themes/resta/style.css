@@ -1102,6 +1102,10 @@ h2.screen-reader-text {
 * ==========================================
 *
 */
+.woocommerce .products ul,
+.woocommerce ul.products {
+    width: 100%;
+}
 .resta-product-loop {
     border-radius: 20px;
     background-color: #fff;
@@ -1199,7 +1203,7 @@ h2.screen-reader-text {
 /*
 *
 * ==========================================
-*   9. top item product style
+*   9. Product Filter
 * ==========================================
 *
 */
@@ -1218,38 +1222,46 @@ h2.screen-reader-text {
     color: #f96a0e;
     border: 1px dashed #f96a0e;
 }
-
-.product {
-    position: relative;
-    margin-bottom: 30px;
+.product-grid .woocommerce.category-filter ul.products{
+    margin: 0 -15px;
 }
-
-.product-thumb {
-    position: relative;
+.product-grid .woocommerce.category-filter ul.products li.product{
+    width: 50%;
+    margin: 0 0 30px;
+    padding: 0 15px;
 }
-
-.product-thumb img {
-    border-radius: 6px;
-}
-
-.product-details {
+.product-grid .resta-product-loop{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 0;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
     border: 1px dashed #ffffff;
-    border-left: 0;
-    padding: 10px 25px;
-    max-width: 300px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
-.product-details p {
-    color: #adadad;
+.product-grid .resta-product-loop img{
+    border-radius: 20px;
+}
+.product-grid .resta-product-loop>a{
+    width: 50%;
+    float: left;
+}
+.product-grid .resta-loop-title-description,
+.product-grid .resta-loop-price-cart{
+    width: 50%;
+    float: left;
+    overflow: hidden;
+}
+.product-grid  ul.products li.product .resta-product-loop h2.woocommerce-loop-product__title,
+.product-grid ul.products li.product .resta-product-loop .price,
+.product-grid .resta-product-loop p{
+    color: #fff;
 }
 
-span.price {
-    font-size: 35px;
-}
-
-.align-sup {
-    vertical-align: super;
-}
 /*
 *
 * ==========================================
