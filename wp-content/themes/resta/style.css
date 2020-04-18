@@ -1176,6 +1176,8 @@ h2.screen-reader-text {
     color: #ffffff;
     min-width: 98px;
     font-weight: 500;
+    position: relative;
+    z-index: 2;
     transition: .5s all ease-out;
     -moz-transition: .5s all ease-out;
     -webkit-transition: .5s all ease-out;
@@ -1199,7 +1201,14 @@ h2.screen-reader-text {
 .woocommerce ul.columns-4 li.last, .woocommerce-page ul.columns-4 li.last{
     margin-right: 0;
 }
-
+.woocommerce ul.products li.product > a{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
 /*
 *
 * ==========================================

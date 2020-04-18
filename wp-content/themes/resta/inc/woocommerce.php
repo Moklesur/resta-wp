@@ -42,6 +42,9 @@ function disable_woo_commerce_sidebar() {
  * Product Loop
  */
 
+remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+add_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 5 );
+
 // Start & End Div ( Loop )
 add_action( 'woocommerce_before_shop_loop_item', 'resta_loop_wrapper_start_div', 5 );
 add_action( 'woocommerce_after_shop_loop_item', 'resta_loop_wrapper_end_div', 40 );
@@ -98,3 +101,7 @@ function resta_loop_price_cart_start_div(){
 function resta_loop_price_cart_end_div(){
     echo "</div>";
 }
+
+/**
+ * Single Product Loop
+ */
