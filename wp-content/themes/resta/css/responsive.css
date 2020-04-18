@@ -15,6 +15,8 @@
 
     .burger-img {
         right: 0%;
+        width: 100px;
+        height: 100px;
     }
 
     .burger-img img {

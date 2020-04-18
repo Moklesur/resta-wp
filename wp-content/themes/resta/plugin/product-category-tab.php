@@ -229,9 +229,15 @@ class resta_Product_Category extends Widget_Base {
         </div>
         <?php if( !empty ( $get_cat_val )  ) : ?>
             <div class="product-grid">
-                <?php
-                echo do_shortcode( '[products class="category-filter" limit="' . absint( $limit ) . '"  columns="2" category="' .esc_html( $cat_name_val ). '"]' );
-                ?>
+               <div class="container">
+                   <div class="row">
+                       <div class="col-12">
+                           <?php
+                           echo do_shortcode( '[products class="category-filter" limit="' . absint( $limit ) . '"  columns="2" category="' .esc_html( $cat_name_val ). '"]' );
+                           ?>
+                       </div>
+                   </div>
+               </div>
             </div>
         <?php endif;
 
