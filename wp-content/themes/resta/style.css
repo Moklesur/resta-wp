@@ -1717,7 +1717,7 @@ input[type='password'] {
 /*
 *
 * ==========================================
-*   9. Product Loop style
+*   9. Product style ( WooCommerce )
 * ==========================================
 *
 */
@@ -1790,6 +1790,7 @@ input[type='password'] {
     display: flex;
     width: 100%;
     align-items: center;
+    z-index: 10;
 }
 
 .add-to-cart-btn,
@@ -1837,10 +1838,37 @@ input[type='password'] {
     left: 0;
     z-index: 1;
 }
+.woocommerce-products-header__title{
+    font-size: 24px;
+    margin-top: 20px;
+}
+.woocommerce .woocommerce-result-count{
+    font-size: 16px;
+    margin-top: 15px;
+}
+.woocommerce .woocommerce-ordering {
+    margin: 0 0 2.5em;
+}
+.woocommerce-ordering select{
+    border-width: 1px;
+    padding: 7px 12px
+}
+.woocommerce-page ul.products{
+    margin-top: 20px;
+}
+.woocommerce span.onsale {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    font-weight: normal;
+    line-height: 50px;
+    font-size: 13px;
+    letter-spacing: .5px;
+}
 /*
 *
 * ==========================================
-*   10. Product Filter
+*   10. Product Filter ( wooCommerce )
 * ==========================================
 *
 */

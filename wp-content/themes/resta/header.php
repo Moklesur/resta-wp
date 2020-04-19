@@ -183,4 +183,11 @@
             </article>
         </div>
     </section>
-    <?php endif; ?>
+    <?php endif;
+
+     /**
+     * Breadcrumbs
+     */
+    if ( true == get_theme_mod( 'enable_page_title', true )  ) {
+        resta_breadcrumbs();
+    }

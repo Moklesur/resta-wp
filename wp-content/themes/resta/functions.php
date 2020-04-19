@@ -143,6 +143,11 @@ add_action( 'widgets_init', 'resta_widgets_init' );
 require get_template_directory() . '/plugin/social.php';
 
 /**
+ * Breadcrumb
+ */
+require get_template_directory() . '/inc/breadcrumb.php';
+
+/**
  * Enqueue scripts and styles.
  */
 function resta_scripts() {
