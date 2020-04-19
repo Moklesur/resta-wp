@@ -81,8 +81,7 @@ add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_produ
 // Loop Product description
 add_action( 'woocommerce_after_shop_loop_item', 'resta_show_excerpt_shop_page', 10 );
 function resta_show_excerpt_shop_page() {
-    global $product;
-    echo '<p>'.wp_trim_words( $product->post->post_excerpt, 10, '...' ).'</p>';
+    echo '<p>'.wp_trim_words( get_the_content(), 10, '...' ).'</p>';
 }
 
 // Start Div

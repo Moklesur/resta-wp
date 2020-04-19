@@ -1741,7 +1741,8 @@ input[type='password'] {
 }
 
 .woocommerce ul.products li.product .resta-product-loop h2.woocommerce-loop-product__title,
-.woocommerce ul.products li.product .resta-product-loop .price {
+.woocommerce ul.products li.product .resta-product-loop .price,
+.woocommerce div.product p.price, .woocommerce div.product span.price{
     font-size: 22px;
     font-family: "Playfair Display", serif;
     font-weight: 800;
@@ -1756,7 +1757,8 @@ input[type='password'] {
     margin-bottom: 0;
 }
 
-.resta-product-loop ins {
+.resta-product-loop ins,
+.woocommerce div.product p.price ins, .woocommerce div.product span.price ins{
     text-decoration: none;
 }
 
@@ -1864,6 +1866,42 @@ input[type='password'] {
     line-height: 50px;
     font-size: 13px;
     letter-spacing: .5px;
+}
+.woocommerce-cart table.cart td.actions .coupon .input-text,
+.woocommerce-checkout table.cart td.actions .coupon .input-text {
+    width: auto;
+    padding: 20px 15px;
+}
+.woocommerce button.button{
+    height: 50px;
+    border-radius: 35px;
+    font-weight: normal;
+    padding: 0 25px;
+    font-size: 14px;
+}
+.woocommerce #respond input#submit.disabled, .woocommerce #respond input#submit:disabled, .woocommerce #respond input#submit:disabled[disabled], .woocommerce a.button.disabled, .woocommerce a.button:disabled, .woocommerce a.button:disabled[disabled], .woocommerce button.button.disabled, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled], .woocommerce input.button.disabled, .woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled]{
+    padding: 0 25px;
+    color: #fff;
+}
+#add_payment_method .wc-proceed-to-checkout a.checkout-button, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button, .woocommerce-checkout .wc-proceed-to-checkout a.checkout-button{
+    border-radius: 35px;
+    font-weight: normal;
+}
+.woocommerce .col2-set .col-1,
+.woocommerce-page .col2-set .col-1{
+    width: 100%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.woocommerce form .form-row-first, .woocommerce form .form-row-last, .woocommerce-page form .form-row-first, .woocommerce-page form .form-row-last {
+    width: 50%;
+}
+.woocommerce-input-wrapper{
+    width: 100%;
+}
+input[type=text], input[type=search], .form-control{
+    border: 1px solid #eee;
 }
 /*
 *
