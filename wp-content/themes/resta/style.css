@@ -12,7 +12,7 @@ Tags: blog, custom-background, custom-colors, custom-menu, translation-ready, th
 */
 
 .text-orange,
-.hero-banner h1 span{
+.hero-banner h1 span {
     color: #f96a0e;
 }
 
@@ -413,7 +413,8 @@ img {
 .mb-100 {
     margin-bottom: 100px;
 }
-.mr-20{
+
+.mr-20 {
     margin-right: 20px;
 }
 
@@ -473,11 +474,12 @@ input[type=text]:focus, input[type=search]:focus, .form-control:focus {
 }
 
 input[type=text]::placeholder, input[type=search]::placeholder, .form-control::placeholder,
-input[type=text]::-webkit-input-placeholder, input[type=search]::-webkit-input-placeholder, .form-control::-webkit-input-placeholder ,
-input[type=text]::-moz-placeholder, input[type=search]::-moz-placeholder, .form-control::-moz-placeholder ,
+input[type=text]::-webkit-input-placeholder, input[type=search]::-webkit-input-placeholder, .form-control::-webkit-input-placeholder,
+input[type=text]::-moz-placeholder, input[type=search]::-moz-placeholder, .form-control::-moz-placeholder,
 input[type=text]::-ms-input-placeholder, input[type=search]::-ms-input-placeholder, .form-control::-ms-input-placeholder {
     color: rgba(0, 0, 0, 0.5);
 }
+
 .form-inline input[type=text], .form-inline input[type=search], .form-inline .form-control {
     width: auto;
 }
@@ -690,6 +692,614 @@ h2.screen-reader-text {
     transition: .5s all ease-in;
 }
 
+
+/*
+*
+* ==========================================
+*    Accessibility
+* ==========================================
+*
+*/
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    clip-path: none;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+    outline: 0;
+}
+
+/*
+*
+* ==========================================
+* Alignments
+* ==========================================
+*
+*/
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+}
+
+/*
+*
+* ==========================================
+* Clearings
+* ==========================================
+*
+*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+    clear: both;
+}
+
+/*
+*
+* ==========================================
+* Widgets
+* ==========================================
+*
+*/
+.widget {
+    margin: 0 0 1.5em;
+    /* Make sure select elements fit in widgets. */
+}
+
+.widget select {
+    max-width: 100%;
+}
+
+
+/*
+*
+* ==========================================
+* Posts and pages
+* ==========================================
+*
+*/
+.boxed .wrapper,
+.boxed main {
+    width: 100%;
+    padding: 0 5%;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.08);
+}
+
+body.boxed {
+    background: #f7f7f7;
+}
+
+.sticky {
+    display: block;
+}
+
+.post,
+.page {
+    margin: 0 0 1.5em;
+}
+
+body.page {
+    margin-bottom: 0;
+}
+
+.updated:not(.published) {
+    display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 0 0 0;
+}
+
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
+}
+
+.pagination-fix {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.pagination-fix .navigation.pagination {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.pagination-fix .pagination a.page-numbers,
+.pagination-fix .pagination span {
+    display: inline-block;
+    background: #f9f9f9;
+    padding: 4px 18px;
+    text-align: center;
+    line-height: 30px;
+    color: #000;
+    margin: 1px;
+}
+
+.pagination-fix .pagination .current,
+.pagination-fix .pagination a.page-numbers:hover,
+.pagination-fix .pagination span:hover {
+    color: #ffffff;
+    background: #f96a0e;
+}
+
+/*
+*
+* ==========================================
+* Comments
+* ==========================================
+*
+*/
+.comment-content a {
+    word-wrap: break-word;
+}
+
+.bypostauthor {
+    display: block;
+}
+
+/*
+*
+* ==========================================
+* Infinite scroll
+* ==========================================
+*
+*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+    /* Theme Footer (when set to scrolling) */
+    display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+    display: block;
+}
+
+/*
+*
+* ==========================================
+* Media
+* ==========================================
+*
+*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+    display: inline-block;
+}
+
+/*
+*
+* ==========================================
+* Captions
+* ==========================================
+*
+*/
+.wp-caption {
+    margin-bottom: 1.5em;
+    max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+    margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+    text-align: center;
+}
+
+/*
+*
+* ==========================================
+* Galleries
+* ==========================================
+*
+*/
+.gallery {
+    margin-bottom: 1.5em;
+}
+
+.gallery-item {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+    max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+    max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+    max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+    max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+    max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+    max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+    max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+    max-width: 11.11%;
+}
+
+.gallery-caption {
+    display: block;
+}
+
+.search-form input[type='submit'] {
+    width: 100%;
+    background-color: #f96a0e;
+    border: 1px solid #f96a0e;
+    color: #ffffff;
+}
+
+.search-form input[type='submit']:hover {
+    background-color: #222222;
+    color: #ffffff;
+    border: 1px solid #222222;
+}
+
+.nav-links .nav-previous {
+    font-weight: 500;
+    max-width: 50%;
+    word-break: break-word;
+}
+
+.nav-links .nav-next {
+    font-weight: 500;
+    max-width: 50%;
+    word-break: break-word;
+}
+
+.wp-block-cover-image .wp-block-cover-image-text, .wp-block-cover .wp-block-cover-text, section.wp-block-cover-image > h2 {
+    font-size: 40px;
+    line-height: 48px;
+    z-index: 1;
+    margin-bottom: 0;
+    max-width: 610px;
+    padding: 14px;
+    text-align: center;
+    color: #fff !important;
+}
+
+.wp-block-button {
+    margin-bottom: 30px;
+}
+
+input[type='submit'] {
+    width: auto;
+}
+
+input[type='password'] {
+    width: 100%;
+}
+
+.blocks-gallery-grid .blocks-gallery-image, .blocks-gallery-grid .blocks-gallery-item, .wp-block-gallery .blocks-gallery-image, .wp-block-gallery .blocks-gallery-item {
+    width: calc((100% - 16px) / 2) !important;
+}
+
+.blocks-gallery-grid.columns-3 .blocks-gallery-image, .blocks-gallery-grid.columns-3 .blocks-gallery-item, .wp-block-gallery.columns-3 .blocks-gallery-image, .wp-block-gallery.columns-3 .blocks-gallery-item {
+    margin: 0 !important;
+}
+
+.blocks-gallery-grid, .wp-block-gallery {
+    margin: 0 15px 20px 0px;
+}
+
+.widget-area ul > li > a {
+    font-weight: 500;
+}
+
+.wpcf7 label {
+    width: 100%;
+}
+
+.wpcf7-form-control.wpcf7-submit {
+    width: auto;
+}
+
+.tags-links {
+    margin-right: 5px;
+}
+
+.edit-link {
+    padding: 0 10px;
+}
+
+.entry-title, .page-title {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+
+.comment-form label {
+    width: auto;
+}
+
+/*
+*
+* ==========================================
+*  2. slick Style
+* ==========================================
+*
+*/
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 1;
+}
+
+.slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 30px 0 0;
+}
+
+.slick-list:focus {
+    outline: none;
+}
+
+.slick-list.dragging {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track, .slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slick-track:before, .slick-track:after {
+    content: "";
+    display: table;
+}
+
+.slick-track:after {
+    clear: both;
+}
+
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    display: none;
+}
+
+[dir="rtl"] .slick-slide {
+    float: right;
+}
+
+.slick-slide img {
+    display: inline-block;
+}
+
+.slick-slide.slick-loading img {
+    display: none;
+}
+
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+.slick-dots {
+    display: flex !important;
+    justify-content: center;
+    margin-top: 20px;
+    list-style: none;
+}
+
+.slick-dots li > button {
+    border-radius: 40px;
+    border: 1px solid transparent;
+    background-color: #ffc3c2;
+    width: 12px;
+    height: 14px;
+    text-align: center;
+    color: #626262;
+    font-size: 14px;
+    display: block;
+    line-height: 10px;
+    margin: 0 7px;
+    text-indent: -9999999999px;
+}
+
+.slick-dots li > button:hover {
+    border: 1px solid #f96a0e;
+    background-color: #f96a0e;
+    color: #ffffff;
+}
+
+.slick-dots li.slick-active button {
+    border: 1px solid #f96a0e;
+    background-color: #f96a0e;
+    color: #ffffff;
+}
+
+.slick-arrow {
+    background-color: #f96a0e;
+    border: 2px solid transparent;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: -15%;
+    z-index: 1;
+    height: 70px;
+    width: 70px;
+    color: #ffffff;
+}
+
+.slick-arrow:hover {
+    background-color: #222222;
+    border: 2px solid #ffffff;
+}
+
+.slick-prev {
+    right: 7%;
+}
+
+.slick-next {
+    right: 0;
+}
+
 /*
 *
 * ==========================================
@@ -714,7 +1324,7 @@ h2.screen-reader-text {
     color: #f96a0e;
 }
 
-.top-bar ul li  {
+.top-bar ul li {
     font-size: 14px;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -799,6 +1409,7 @@ h2.screen-reader-text {
 .reservation-btn {
     padding: 20px 15px;
 }
+
 .reservation-btn span {
     position: relative;
     margin-left: 15px;
@@ -814,11 +1425,13 @@ h2.screen-reader-text {
     width: 2px;
     background-color: rgba(255, 255, 255, 0.251);
 }
-.mini-cart{
+
+.mini-cart {
     position: relative;
     font-size: 20px;
 }
-.count{
+
+.count {
     position: absolute;
     top: 0px;
     right: -6px;
@@ -833,18 +1446,21 @@ h2.screen-reader-text {
     line-height: 15px;
     border-radius: 50%;
 }
-@media only screen and (min-width: 991.98px){
-    .menu-all-pages-container{
+
+@media only screen and (min-width: 991.98px) {
+    .menu-all-pages-container {
         margin: 0 auto;
     }
-    .resta-main-menu{
+
+    .resta-main-menu {
         display: -ms-flexbox;
         display: flex;
         -ms-flex-direction: row;
         flex-direction: row;
     }
+
     .resta-main-menu li ul,
-    .resta-main-menu ul ul ul{
+    .resta-main-menu ul ul ul {
         min-width: 190px;
         max-width: 100%;
         position: absolute;
@@ -854,16 +1470,19 @@ h2.screen-reader-text {
         z-index: 1000;
         display: none;
     }
-    .resta-main-menu ul.sub-menu>li{
+
+    .resta-main-menu ul.sub-menu > li {
         display: flex;
     }
 }
-.resta-main-menu{
+
+.resta-main-menu {
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
     width: 100%;
 }
+
 .resta-main-menu .menu-item {
     padding: 0 15px;
     position: relative;
@@ -884,31 +1503,36 @@ h2.screen-reader-text {
     color: #ffffff;
     border-color: #f96a0e;
 }
+
 .resta-main-menu ul.sub-menu li a {
     padding: 10px 0 0;
     text-transform: none;
 }
+
 .resta-main-menu ul.sub-menu li a:hover {
     border-color: #f96a0e;
 }
+
 .resta-main-menu li ul,
-.resta-main-menu ul ul ul{
+.resta-main-menu ul ul ul {
     margin: 0;
     list-style: none;
     background-color: #000;
-    border: 1px solid rgba(0,0,0,.15);
+    border: 1px solid rgba(0, 0, 0, .15);
 }
 
-.resta-main-menu li:hover > ul{
+.resta-main-menu li:hover > ul {
     opacity: 1;
     top: 150%;
     visibility: visible;
     display: block;
 }
-.resta-main-menu li:hover > ul ul{
+
+.resta-main-menu li:hover > ul ul {
     left: 100%;
     top: 0;
 }
+
 /*
 *
 * ==========================================
@@ -1106,6 +1730,7 @@ h2.screen-reader-text {
 .woocommerce ul.products {
     width: 100%;
 }
+
 .resta-product-loop {
     border-radius: 20px;
     background-color: #fff;
@@ -1121,49 +1746,58 @@ h2.screen-reader-text {
 }
 
 .woocommerce ul.products li.product .resta-product-loop h2.woocommerce-loop-product__title,
-.woocommerce ul.products li.product .resta-product-loop .price{
+.woocommerce ul.products li.product .resta-product-loop .price {
     font-size: 22px;
     font-family: "Playfair Display", serif;
     font-weight: 800;
     color: #222222;
 }
-.woocommerce ul.products li.product .resta-product-loop h2.woocommerce-loop-product__title{
+
+.woocommerce ul.products li.product .resta-product-loop h2.woocommerce-loop-product__title {
     padding: 25px 0 20px;
 }
-.woocommerce ul.products li.product .resta-product-loop a img{
+
+.woocommerce ul.products li.product .resta-product-loop a img {
     margin-bottom: 0;
 }
-.resta-product-loop ins{
+
+.resta-product-loop ins {
     text-decoration: none;
 }
-.woocommerce ul.products li.product .resta-product-loop .price{
+
+.woocommerce ul.products li.product .resta-product-loop .price {
     font-size: 24px;
     margin-bottom: 0;
     line-height: 1;
     margin-right: 10px;
 }
-.woocommerce ul.products li.product .resta-product-loop  .price del{
+
+.woocommerce ul.products li.product .resta-product-loop .price del {
     font-size: 22px;
 }
-.resta-product-loop img{
+
+.resta-product-loop img {
     border-radius: 20px;
 }
+
 .resta-loop-title-description,
-.resta-loop-price-cart{
+.resta-loop-price-cart {
     position: relative;
     padding: 0 30px;
 }
-.resta-product-loop p{
+
+.resta-product-loop p {
     font-size: 14px;
 }
-.resta-loop-price-cart{
+
+.resta-loop-price-cart {
     margin-top: 20px;
     display: flex;
     width: 100%;
     align-items: center;
 }
 
-.add-to-cart-btn ,
+.add-to-cart-btn,
 .woocommerce ul.products li.product .resta-loop-price-cart a.button {
     margin-top: 0;
     margin-left: auto;
@@ -1183,12 +1817,12 @@ h2.screen-reader-text {
 }
 
 .add-to-cart-btn:hover,
-.woocommerce .resta-loop-price-cart a.button:hover{
+.woocommerce .resta-loop-price-cart a.button:hover {
     background-color: #222222;
     color: #ffffff;
 }
 
-.resta-product-loop .price{
+.resta-product-loop .price {
     margin-right: auto;
 }
 
@@ -1196,14 +1830,15 @@ h2.screen-reader-text {
     margin: 0 1.875% 1.875% 0;
     width: 23.5%
 }
-.woocommerce ul.columns-4 li.last, .woocommerce-page ul.columns-4 li.last{
+
+.woocommerce ul.columns-4 li.last, .woocommerce-page ul.columns-4 li.last {
     margin-right: 0;
 }
 
 /*
 *
 * ==========================================
-*   9. Product Filter
+*   10. Product Filter
 * ==========================================
 *
 */
@@ -1222,15 +1857,18 @@ h2.screen-reader-text {
     color: #f96a0e;
     border: 1px dashed #f96a0e;
 }
-.product-grid .woocommerce.category-filter ul.products{
+
+.product-grid .woocommerce.category-filter ul.products {
     margin: 0 -15px;
 }
-.product-grid .woocommerce.category-filter ul.products li.product{
+
+.product-grid .woocommerce.category-filter ul.products li.product {
     width: 50%;
     margin: 0 0 30px;
     padding: 0 15px;
 }
-.product-grid .resta-product-loop{
+
+.product-grid .resta-product-loop {
     display: block;
     width: 100%;
     overflow: hidden;
@@ -1243,29 +1881,32 @@ h2.screen-reader-text {
     border-bottom-left-radius: 20px;
 }
 
-.product-grid .resta-product-loop img{
+.product-grid .resta-product-loop img {
     border-radius: 20px;
 }
-.product-grid .resta-product-loop>a{
+
+.product-grid .resta-product-loop > a {
     width: 50%;
     float: left;
 }
+
 .product-grid .resta-loop-title-description,
-.product-grid .resta-loop-price-cart{
+.product-grid .resta-loop-price-cart {
     width: 50%;
     float: left;
     overflow: hidden;
 }
-.product-grid  ul.products li.product .resta-product-loop h2.woocommerce-loop-product__title,
+
+.product-grid ul.products li.product .resta-product-loop h2.woocommerce-loop-product__title,
 .product-grid ul.products li.product .resta-product-loop .price,
-.product-grid .resta-product-loop p{
+.product-grid .resta-product-loop p {
     color: #fff;
 }
 
 /*
 *
 * ==========================================
-*  10. Gallery style
+*  11. Gallery style
 * ==========================================
 *
 */
@@ -1351,7 +1992,7 @@ h2.screen-reader-text {
 /*
 *
 * ==========================================
-* 11. Chefs style
+* 12. Chefs style
 * ==========================================
 *
 */
@@ -1444,7 +2085,7 @@ h2.screen-reader-text {
 /*
 *
 * ==========================================
-* 12. video style
+* 13. video style
 * ==========================================
 *
 */
@@ -1475,6 +2116,7 @@ h2.screen-reader-text {
     left: 0;
     right: 0;
     top: 40%;
+    z-index: 1;
 }
 
 .play-btn:hover, .play-btn:focus {
@@ -1490,7 +2132,7 @@ h2.screen-reader-text {
 /*
 *
 * ==========================================
-* 13. testimonial style
+* 14. testimonial style
 * ==========================================
 *
 */
@@ -1501,9 +2143,11 @@ h2.screen-reader-text {
 .testimonials {
     position: relative;
 }
-.testimonial-header{
+
+.testimonial-header {
     max-width: 500px;
 }
+
 .testimonial-item {
     padding: 110px 45px 55px 45px;
     position: relative;
@@ -1584,6 +2228,7 @@ h2.screen-reader-text {
 .testimonial-item .icon img {
     display: inline-block;
 }
+
 .testimonial-item:hover .icon img:first-child {
     opacity: 0;
 }
@@ -1613,7 +2258,7 @@ h2.screen-reader-text {
 /*
 *
 * ==========================================
-* 14. book-table style
+* 15. book-table style
 * ==========================================
 *
 */
@@ -1683,7 +2328,7 @@ h2.screen-reader-text {
 /*
 *
 * ==========================================
-* 15. blog style
+* 16. blog style
 * ==========================================
 *
 */
@@ -1719,9 +2364,11 @@ h2.screen-reader-text {
     vertical-align: bottom;
     z-index: 1;
 }
-.no-thumbs{
+
+.no-thumbs {
     display: block;
 }
+
 .blog-thumb a {
     display: inline-block;
 }
@@ -1737,6 +2384,7 @@ h2.screen-reader-text {
 .blog-thumb .content {
     margin-bottom: -100px;
 }
+
 .no-thumbs .content {
     margin-bottom: 0;
 }
@@ -1761,7 +2409,7 @@ h2.screen-reader-text {
 }
 
 .blog-thumb:hover .blog-title,
-.no-thumbs .blog-title{
+.no-thumbs .blog-title {
     color: #222222;
 }
 
@@ -1770,7 +2418,7 @@ h2.screen-reader-text {
 }
 
 .blog-thumb:hover .more-btn,
-.no-thumbs .more-btn{
+.no-thumbs .more-btn {
     visibility: visible;
     transform: translate(0px, 0px);
     -moz-transform: translate(0px, 0px);
@@ -1780,7 +2428,7 @@ h2.screen-reader-text {
 .blog-thumb:hover ul.author-nfo,
 .blog-thumb:hover ul.comment-nfo,
 .no-thumbs ul.author-nfo,
-.no-thumbs ul.comment-nfo{
+.no-thumbs ul.comment-nfo {
     color: #222222;
 }
 
@@ -1800,7 +2448,7 @@ h2.screen-reader-text {
     margin-right: 20px;
 }
 
-.more-btn{
+.more-btn {
     padding: 20px 15px;
     margin-top: 40px;
     visibility: hidden;
@@ -1824,11 +2472,55 @@ h2.screen-reader-text {
     width: 2px;
     background-color: rgba(255, 255, 255, 0.251);
 }
+/*
+*
+* --------------------------------
+* 17. Text with Video
+* --------------------------------
+*
+*/
+
+.text-with-video{
+    position: relative;
+}
+.poster-1{
+    max-width: 85%;
+    margin: 0 0 0 auto;
+}
+.poster-1 img{
+    transform: scale(1);
+    transition: opacity 0.35s ease, transform 0.7s ease;
+}
+.poster-1:before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.59);
+}
+.poster-2{
+    max-width: 85%;
+    margin: -70% auto 0 0;
+}
+.text-video:hover .poster-1:before{
+    content: "";
+    position: absolute;
+    background: rgba(150, 59, 0, 0.27);
+}
+
+.text-video:hover .poster-1 img{
+    transform: scale(1.2);
+    transition: opacity 0.35s ease, transform 0.7s ease;
+}
+
 
 /*
 *
 * ==========================================
-* 16. footer Style
+* 18. footer Style
 * ==========================================
 *
 */
@@ -1963,602 +2655,3 @@ h2.screen-reader-text {
 }
 
 
-/*
-*
-* ==========================================
-*  2. slick Style
-* ==========================================
-*
-*/
-.slick-slider {
-    position: relative;
-    display: block;
-    box-sizing: border-box;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -ms-touch-action: pan-y;
-    touch-action: pan-y;
-    -webkit-tap-highlight-color: transparent;
-    z-index: 1;
-}
-
-.slick-list {
-    position: relative;
-    overflow: hidden;
-    display: block;
-    margin: 0;
-    padding: 30px 0 0;
-}
-
-.slick-list:focus {
-    outline: none;
-}
-
-.slick-list.dragging {
-    cursor: pointer;
-    cursor: hand;
-}
-
-.slick-slider .slick-track, .slick-slider .slick-list {
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-}
-
-.slick-track {
-    position: relative;
-    left: 0;
-    top: 0;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.slick-track:before, .slick-track:after {
-    content: "";
-    display: table;
-}
-
-.slick-track:after {
-    clear: both;
-}
-
-.slick-loading .slick-track {
-    visibility: hidden;
-}
-
-.slick-slide {
-    float: left;
-    height: 100%;
-    min-height: 1px;
-    display: none;
-}
-
-[dir="rtl"] .slick-slide {
-    float: right;
-}
-
-.slick-slide img {
-    display: inline-block;
-}
-
-.slick-slide.slick-loading img {
-    display: none;
-}
-
-.slick-slide.dragging img {
-    pointer-events: none;
-}
-
-.slick-initialized .slick-slide {
-    display: block;
-}
-
-.slick-loading .slick-slide {
-    visibility: hidden;
-}
-
-.slick-vertical .slick-slide {
-    display: block;
-    height: auto;
-    border: 1px solid transparent;
-}
-
-.slick-arrow.slick-hidden {
-    display: none;
-}
-
-.slick-dots {
-    display: flex !important;
-    justify-content: center;
-    margin-top: 20px;
-    list-style: none;
-}
-
-.slick-dots li > button {
-    border-radius: 40px;
-    border: 1px solid transparent;
-    background-color: #ffc3c2;
-    width: 12px;
-    height: 14px;
-    text-align: center;
-    color: #626262;
-    font-size: 14px;
-    display: block;
-    line-height: 10px;
-    margin: 0 7px;
-    text-indent: -9999999999px;
-}
-
-.slick-dots li > button:hover {
-    border: 1px solid #f96a0e;
-    background-color: #f96a0e;
-    color: #ffffff;
-}
-
-.slick-dots li.slick-active button {
-    border: 1px solid #f96a0e;
-    background-color: #f96a0e;
-    color: #ffffff;
-}
-
-.slick-arrow {
-    background-color: #f96a0e;
-    border: 2px solid transparent;
-    border: none;
-    padding: 0;
-    position: absolute;
-    top: -15%;
-    z-index: 1;
-    height: 70px;
-    width: 70px;
-    color: #ffffff;
-}
-
-.slick-arrow:hover {
-    background-color: #222222;
-    border: 2px solid #ffffff;
-}
-
-.slick-prev {
-    right: 7%;
-}
-
-.slick-next {
-    right: 0;
-}
-
-/*
-*
-* ==========================================
-*    Accessibility
-* ==========================================
-*
-*/
-.screen-reader-text {
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-    clip-path: inset(50%);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute !important;
-    width: 1px;
-    word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
-}
-
-.screen-reader-text:focus {
-    background-color: #f1f1f1;
-    border-radius: 3px;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-    clip: auto !important;
-    clip-path: none;
-    color: #21759b;
-    display: block;
-    font-size: 14px;
-    font-size: 0.875rem;
-    font-weight: bold;
-    height: auto;
-    left: 5px;
-    line-height: normal;
-    padding: 15px 23px 14px;
-    text-decoration: none;
-    top: 5px;
-    width: auto;
-    z-index: 100000;
-    /* Above WP toolbar. */
-}
-
-/* Do not show the outline on the skip link target. */
-#content[tabindex="-1"]:focus {
-    outline: 0;
-}
-
-/*
-*
-* ==========================================
-* Alignments
-* ==========================================
-*
-*/
-.alignleft {
-    display: inline;
-    float: left;
-    margin-right: 1.5em;
-    margin-bottom: 1.5em;
-}
-
-.alignright {
-    display: inline;
-    float: right;
-    margin-left: 1.5em;
-    margin-bottom: 1.5em;
-}
-
-.aligncenter {
-    clear: both;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1.5em;
-}
-
-/*
-*
-* ==========================================
-* Clearings
-* ==========================================
-*
-*/
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-    content: "";
-    display: table;
-    table-layout: fixed;
-}
-
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-    clear: both;
-}
-
-/*
-*
-* ==========================================
-* Widgets
-* ==========================================
-*
-*/
-.widget {
-    margin: 0 0 1.5em;
-    /* Make sure select elements fit in widgets. */
-}
-
-.widget select {
-    max-width: 100%;
-}
-
-
-/*
-*
-* ==========================================
-* Posts and pages
-* ==========================================
-*
-*/
-.boxed .wrapper,
-.boxed main{
-    width: 100%;
-    padding: 0 5%;
-    margin: 0 auto;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.08);
-}
-body.boxed {
-    background: #f7f7f7;
-}
-.sticky {
-    display: block;
-}
-
-.post,
-.page {
-    margin: 0 0 1.5em;
-}
-
-body.page {
-    margin-bottom: 0;
-}
-
-.updated:not(.published) {
-    display: none;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-    margin: 0 0 0;
-}
-
-.page-links {
-    clear: both;
-    margin: 0 0 1.5em;
-}
-.pagination-fix{
-    margin-bottom: 30px;
-    margin-top: 30px;
-}
-.pagination-fix .navigation.pagination{
-    display: block;
-    width: 100%;
-    text-align: center;
-}
-.pagination-fix .pagination a.page-numbers,
-.pagination-fix .pagination span{
-    display: inline-block;
-    background: #f9f9f9;
-    padding: 4px 18px;
-    text-align: center;
-    line-height: 30px;
-    color: #000;
-    margin: 1px;
-}
-
-.pagination-fix .pagination .current,
-.pagination-fix .pagination a.page-numbers:hover,
-.pagination-fix .pagination span:hover{
-    color: #ffffff;
-    background: #f96a0e;
-}
-/*
-*
-* ==========================================
-* Comments
-* ==========================================
-*
-*/
-.comment-content a {
-    word-wrap: break-word;
-}
-
-.bypostauthor {
-    display: block;
-}
-
-/*
-*
-* ==========================================
-* Infinite scroll
-* ==========================================
-*
-*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-    /* Theme Footer (when set to scrolling) */
-    display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-    display: block;
-}
-
-/*
-*
-* ==========================================
-* Media
-* ==========================================
-*
-*/
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-    border: none;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding: 0;
-}
-
-/* Make sure embeds and iframes fit their containers. */
-embed,
-iframe,
-object {
-    max-width: 100%;
-}
-
-/* Make sure logo link wraps around logo image. */
-.custom-logo-link {
-    display: inline-block;
-}
-
-/*
-*
-* ==========================================
-* Captions
-* ==========================================
-*
-*/
-.wp-caption {
-    margin-bottom: 1.5em;
-    max-width: 100%;
-}
-
-.wp-caption img[class*="wp-image-"] {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.wp-caption .wp-caption-text {
-    margin: 0.8075em 0;
-}
-
-.wp-caption-text {
-    text-align: center;
-}
-/*
-*
-* ==========================================
-* Galleries
-* ==========================================
-*
-*/
-.gallery {
-    margin-bottom: 1.5em;
-}
-
-.gallery-item {
-    display: inline-block;
-    text-align: center;
-    vertical-align: top;
-    width: 100%;
-}
-
-.gallery-columns-2 .gallery-item {
-    max-width: 50%;
-}
-
-.gallery-columns-3 .gallery-item {
-    max-width: 33.33%;
-}
-
-.gallery-columns-4 .gallery-item {
-    max-width: 25%;
-}
-
-.gallery-columns-5 .gallery-item {
-    max-width: 20%;
-}
-
-.gallery-columns-6 .gallery-item {
-    max-width: 16.66%;
-}
-
-.gallery-columns-7 .gallery-item {
-    max-width: 14.28%;
-}
-
-.gallery-columns-8 .gallery-item {
-    max-width: 12.5%;
-}
-
-.gallery-columns-9 .gallery-item {
-    max-width: 11.11%;
-}
-
-.gallery-caption {
-    display: block;
-}
-
-.search-form input[type='submit'] {
-    width: 100%;
-    background-color: #f96a0e;
-    border: 1px solid #f96a0e;
-    color: #ffffff;
-}
-
-.search-form input[type='submit']:hover {
-    background-color: #222222;
-    color: #ffffff;
-    border: 1px solid #222222;
-}
-
-.nav-links .nav-previous {
-    font-weight: 500;
-    max-width: 50%;
-    word-break: break-word;
-}
-
-.nav-links .nav-next {
-    font-weight: 500;
-    max-width: 50%;
-    word-break: break-word;
-}
-
-.wp-block-cover-image .wp-block-cover-image-text, .wp-block-cover .wp-block-cover-text, section.wp-block-cover-image > h2 {
-    font-size: 40px;
-    line-height: 48px;
-    z-index: 1;
-    margin-bottom: 0;
-    max-width: 610px;
-    padding: 14px;
-    text-align: center;
-    color: #fff !important;
-}
-
-.wp-block-button {
-    margin-bottom: 30px;
-}
-
-input[type='submit'] {
-    width: auto;
-}
-
-input[type='password'] {
-    width: 100%;
-}
-
-.blocks-gallery-grid .blocks-gallery-image, .blocks-gallery-grid .blocks-gallery-item, .wp-block-gallery .blocks-gallery-image, .wp-block-gallery .blocks-gallery-item {
-    width: calc((100% - 16px) / 2) !important;
-}
-
-.blocks-gallery-grid.columns-3 .blocks-gallery-image, .blocks-gallery-grid.columns-3 .blocks-gallery-item, .wp-block-gallery.columns-3 .blocks-gallery-image, .wp-block-gallery.columns-3 .blocks-gallery-item {
-    margin: 0 !important;
-}
-
-.blocks-gallery-grid, .wp-block-gallery {
-    margin: 0 15px 20px 0px;
-}
-
-.widget-area ul > li > a {
-    font-weight: 500;
-}
-
-.wpcf7 label {
-    width: 100%;
-}
-
-.wpcf7-form-control.wpcf7-submit {
-    width: auto;
-}
-
-.tags-links {
-    margin-right: 5px;
-}
-
-.edit-link {
-    padding: 0 10px;
-}
-
-.entry-title, .page-title {
-    -ms-word-wrap: break-word;
-    word-wrap: break-word;
-}
-
-
-.comment-form label {
-    width: auto;
-}

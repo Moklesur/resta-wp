@@ -7,12 +7,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Slideshow
+ * Info_Box
  *
  * @since 1.0.0
  */
 
-class resta_Gallery extends Widget_Base {
+class resta_Call_To_Action extends Widget_Base {
 
     /**
      * Get widget name.
@@ -26,7 +26,7 @@ class resta_Gallery extends Widget_Base {
      */
 
     public function get_name() {
-        return 'resta-Gallery';
+        return 'resta-Call-To-Action';
     }
 
     /**
@@ -41,7 +41,7 @@ class resta_Gallery extends Widget_Base {
      */
 
     public function get_title() {
-        return __( 'Slideshow', 'resta' );
+        return __( 'Call TO Action', 'resta' );
     }
 
     /**
@@ -56,7 +56,7 @@ class resta_Gallery extends Widget_Base {
      */
 
     public function get_icon() {
-        return 'fa fa-glide-g';
+        return 'fa fa-eye-slash';
     }
 
     /**
@@ -74,6 +74,7 @@ class resta_Gallery extends Widget_Base {
         return [ 'resta_elementor_categories' ];
     }
 
+
     /**
      * Register oEmbed widget controls.
      *
@@ -86,13 +87,12 @@ class resta_Gallery extends Widget_Base {
     protected function _register_controls() {
 
         $this->start_controls_section(
-            'resta_slideshow_section',
+            'resta_info_box_section',
             [
                 'label' => __( 'Setting', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
-
         // Text Alignment
         $this->add_control(
             'text_alignment',
@@ -194,113 +194,86 @@ class resta_Gallery extends Widget_Base {
                 'prefix_class' => 'animated ',
             ]
         );
-        $this->end_controls_section();
 
-        // Slider Settings
-
-        $this->start_controls_section(
-            'resta_slider_settings',
+        // btn
+        $this->add_control(
+            'divbtn',
             [
-                'label' => __( 'Slider Settings', 'resta' ),
-                'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+                'type' => \Elementor\Controls_Manager::DIVIDER,
             ]
         );
-        //Autoplay
         $this->add_control(
-            'autoplay',
+            'btn_txt',
             [
-                'label' => __( 'Autoplay', 'resta' ),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __( 'Show', 'resta' ),
-                'label_off' => __( 'Hide', 'resta' ),
-                'return_value' => 'true',
-                'default' => 'true',
-            ]
-        );
-        //Fade
-        $this->add_control(
-            'fade',
-            [
-                'label' => __( 'Fade', 'resta' ),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __( 'True', 'resta' ),
-                'label_off' => __( 'False', 'resta' ),
-                'return_value' => 'true',
-                'default' => 'true',
-            ]
-        );
-        //Infinite
-        $this->add_control(
-            'infinite',
-            [
-                'label' => __( 'Infinite', 'resta' ),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __( 'True', 'resta' ),
-                'label_off' => __( 'False', 'resta' ),
-                'return_value' => 'true',
-                'default' => 'true',
-            ]
-        );
-        //adaptiveHeight
-        $this->add_control(
-            'adaptiveHeight',
-            [
-                'label' => __( 'Adaptive Height', 'resta' ),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __( 'True', 'resta' ),
-                'label_off' => __( 'False', 'resta' ),
-                'return_value' => 'true',
-                'default' => '',
-            ]
-        );
-        //Arrow
-        $this->add_control(
-            'arrows',
-            [
-                'label' => __( 'Arrows', 'resta' ),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __( 'True', 'resta' ),
-                'label_off' => __( 'False', 'resta' ),
-                'return_value' => 'true',
-                'default' => '',
-            ]
-        );
-        //Dot
-        $this->add_control(
-            'dot',
-            [
-                'label' => __( 'Dots', 'resta' ),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __( 'True', 'resta' ),
-                'label_off' => __( 'False', 'resta' ),
-                'return_value' => 'true',
-                'default' => 'true',
+                'label' => __( 'Button Text', 'resta' ),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => __( 'View All Menu', 'resta' )
             ]
         );
 
-        // speed
         $this->add_control(
-            'speed',
+            'btn_url',
             [
-                'label' => __( 'Speed', 'resta' ),
-                'type' => \Elementor\Controls_Manager::NUMBER,
-                'min' => 100,
-                'max' => 50000,
-                'step' => 100,
-                'default' => 1000
+                'label' => __( 'Link', 'resta' ),
+                'type' => \Elementor\Controls_Manager::URL,
+                'placeholder' => __( 'https://your-link.com', 'resta' ),
+                'show_external' => true,
+                'default' => [
+                    'url' => '#',
+                    'is_external' => true,
+                    'nofollow' => true,
+                ],
             ]
         );
-
+        $this->add_control(
+            'btn_animation',
+            [
+                'label' => __( 'Animation', 'resta' ),
+                'type' => \Elementor\Controls_Manager::ANIMATION,
+                'prefix_class' => 'animated ',
+            ]
+        );
         $this->end_controls_section();
 
         // STYLE Settings
         $this->start_controls_section(
-            'resta_slideshow_style_section',
+            'resta_info_box_style_section',
             [
                 'label' => __( 'Style', 'resta' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
+
+        //Pre Title Style
+        $this->add_control(
+            'pre_title_style',
+            [
+                'label' => __( 'Pre Title', 'resta' ),
+                'type' => \Elementor\Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'pre_title_typography',
+                'label' => __( 'Typography', 'resta' ),
+                'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}}  h5',
+            ]
+        );
+        $this->add_control(
+            'pre_title_color',
+            [
+                'label' => __( 'Text Color', 'resta' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#f96a0e',
+                'selectors' => [
+                    '{{WRAPPER}} h5' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
 
         //Title Style
         $this->add_control(
@@ -317,7 +290,7 @@ class resta_Gallery extends Widget_Base {
                 'name' => 'title_typography',
                 'label' => __( 'Typography', 'resta' ),
                 'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}} .bb-slider-title',
+                'selector' => '{{WRAPPER}} h3',
             ]
         );
         $this->add_control(
@@ -325,14 +298,15 @@ class resta_Gallery extends Widget_Base {
             [
                 'label' => __( 'Text Color', 'resta' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '232323',
                 'selectors' => [
-                    '{{WRAPPER}} .bb-slider-title' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} h3' => 'color: {{VALUE}}',
                 ],
             ]
         );
         //Content Style
         $this->add_control(
-            'content_style',
+            'paragraph_style',
             [
                 'label' => __( 'Content', 'resta' ),
                 'type' => \Elementor\Controls_Manager::HEADING,
@@ -342,23 +316,20 @@ class resta_Gallery extends Widget_Base {
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'name' => 'content_typography',
+                'name' => 'paragraph_typography',
                 'label' => __( 'Typography', 'resta' ),
                 'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}} .bb-slider-content',
+                'selector' => '{{WRAPPER}} p',
             ]
         );
         $this->add_control(
-            'content_color',
+            'paragraph_color',
             [
                 'label' => __( 'Text Color', 'resta' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'scheme' => [
-                    'type' => \Elementor\Scheme_Color::get_type(),
-                    'value' => \Elementor\Scheme_Color::COLOR_1,
-                ],
+                'default' => '78787c',
                 'selectors' => [
-                    '{{WRAPPER}} .bb-slider-content' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} p' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -381,7 +352,7 @@ class resta_Gallery extends Widget_Base {
                     'value' => \Elementor\Scheme_Color::COLOR_1,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .bb-slider-btn' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .btn' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -391,7 +362,7 @@ class resta_Gallery extends Widget_Base {
                 'name' => 'background',
                 'label' => __( 'Background', 'resta' ),
                 'types' => [ 'classic', 'gradient' ],
-                'selector' => '{{WRAPPER}} .bb-slider-btn',
+                'selector' => '{{WRAPPER}} .btn',
             ]
         );
         $this->add_group_control(
@@ -399,7 +370,7 @@ class resta_Gallery extends Widget_Base {
             [
                 'name' => 'border',
                 'label' => __( 'Border', 'resta' ),
-                'selector' => '{{WRAPPER}} .bb-slider-btn',
+                'selector' => '{{WRAPPER}} .btn',
             ]
         );
         $this->add_group_control(
@@ -407,7 +378,7 @@ class resta_Gallery extends Widget_Base {
             [
                 'name' => 'button_shadow',
                 'label' => __( 'Shadow', 'resta' ),
-                'selector' => '{{WRAPPER}} .bb-slider-btn',
+                'selector' => '{{WRAPPER}} .btn',
             ]
         );
 
@@ -423,54 +394,37 @@ class resta_Gallery extends Widget_Base {
      * @access protected
      */
 
-    protected function render()
-    {
+    protected function render() {
         $settings = $this->get_settings_for_display();
+        $paragraph = $settings['paragraph'];
+        $text_alignment = $settings['text_alignment'];
+        $target = $settings['btn_url']['is_external'] ? ' target="_blank"' : '';
+        $nofollow = $settings['btn_url']['nofollow'] ? ' rel="nofollow"' : '';
+        ?>
 
-
-            ?>
-
-        <section class="gallery-about m--192">
-            <div class="container-fluid no-gutters p-0">
-                <div class="row gallery-slider">
-
-                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/gallery1.png"><img
-                                src="img/gallery/1.jpg" alt="">
-                            <figcaption class="g-overlay">
-                                <i class="icofont-search-1"></i>
-                            </figcaption>
-                        </a>
-
-                    </figure>
-                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/2.jpg"><img
-                                src="img/gallery/2.jpg" alt="">
-                            <figcaption class="g-overlay">
-                                <i class="icofont-search-1"></i>
-                            </figcaption></a>
-                    </figure>
-                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/3.jpg"><img
-                                src="img/gallery/3.jpg" alt="">   <figcaption class="g-overlay"> <i class="icofont-search-1"></i></figcaption></a>
-                    </figure>
-                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/4.jpg"><img
-                                src="img/gallery/4.jpg" alt=""> <figcaption class="g-overlay"> <i class="icofont-search-1"></i></figcaption> </a>
-                    </figure>
-                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/5.jpg"><img
-                                src="img/gallery/5.jpg" alt=""> <figcaption class="g-overlay"> <i class="icofont-search-1"></i></figcaption> </a>
-                    </figure>
-                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/6.jpg"><img
-                                src="img/gallery/6.jpg" alt=""> <figcaption class="g-overlay"> <i class="icofont-search-1"></i></figcaption></a>
-                    </figure>
-                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/7.jpg"><img
-                                src="img/gallery/7.jpg" alt=""> <figcaption class="g-overlay"> <i class="icofont-search-1"></i></figcaption></a>
-                    </figure>
-                </div>
+        <section class="special-feature">
+            <div class="container">
+                <header class="<?php echo esc_attr( $text_alignment ); ?>">
+                    <h5 class="font-playball mb-30 animated <?php echo esc_attr( $settings['pretitle_animation'] ); ?>"><?php echo esc_html( $settings['pretitle'] ); ?></h5>
+                    <h2 class="mb-30 animated <?php echo esc_attr( $settings['title_animation'] ); ?>"> <?php
+                        echo wp_kses(
+                            $settings['title'],
+                            array(
+                                'span' => array()
+                            )
+                        );
+                        ?></h2>
+                    <p class="mb-50 animated <?php echo esc_attr( $settings['paragraph_animation'] ); ?>"><?php
+                        echo  esc_html($paragraph);
+                        ?></p>
+                    <a href="<?php echo esc_url( $settings['btn_url']['url'] ); ?>" <?php echo esc_attr( $target ) .' '. esc_attr( $nofollow ); ?>  class="btn animated <?php echo esc_attr( $settings['btn_animation'] ); ?>""><?php echo esc_html( $settings['btn_txt'] ); ?><i class="icofont-restaurant ml-5"></i></a>
+                </header>
             </div>
         </section>
+
         <?php
-
-
-
     }
+
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new resta_Gallery() );
+Plugin::instance()->widgets_manager->register_widget_type( new resta_Call_To_Action() );
