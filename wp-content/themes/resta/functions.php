@@ -198,6 +198,8 @@ function resta_elementor_widgets() {
         require get_template_directory() . '/plugin/testimonial.php';
         require get_template_directory() . '/plugin/resta-page-title.php';
         require get_template_directory() . '/plugin/call-to-action.php';
+        require get_template_directory() . '/plugin/gallery.php';
+        require get_template_directory() . '/plugin/video_with_text.php';
         // Woocommerce Exists?
         if ( class_exists( 'WooCommerce' ) ) {
             require get_template_directory() . '/plugin/product-category-tab.php';

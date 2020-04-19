@@ -2332,6 +2332,7 @@ input[type='password'] {
 * ==========================================
 *
 */
+
 .blog-area {
     position: relative;
     padding: 130px 0;
@@ -2475,52 +2476,120 @@ input[type='password'] {
 /*
 *
 * --------------------------------
-* 17. Text with Video
+* 17. Video With Text
 * --------------------------------
 *
 */
 
-.text-with-video{
+.video_with_text{
     position: relative;
 }
 .poster-1{
+    overflow: hidden;
     max-width: 85%;
-    margin: 0 0 0 auto;
+    margin: 0 0 0 auto !important;
 }
 .poster-1 img{
-    transform: scale(1);
-    transition: opacity 0.35s ease, transform 0.7s ease;
-}
-.poster-1:before{
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.59);
-}
-.poster-2{
-    max-width: 85%;
-    margin: -70% auto 0 0;
-}
-.text-video:hover .poster-1:before{
-    content: "";
-    position: absolute;
-    background: rgba(150, 59, 0, 0.27);
-}
-
-.text-video:hover .poster-1 img{
     transform: scale(1.2);
     transition: opacity 0.35s ease, transform 0.7s ease;
 }
-
+.poster-2{
+    max-width: 85%;
+    margin: -70% auto 0 0 !important;
+}
+.video-wrap:hover .poster-1 img{
+    transform: scale(1);
+    transition: opacity 0.35s ease, transform 0.7s ease;
+}
+.video-wrap:hover .poster-1 .overlay {
+    background-color: rgba(249, 106, 14, 0.54);
+    transition: all 0.5s ease-out 0.15s;
+}
+.video_with_text .promo-video .poster-1 .overlay {
+    background-color: rgba(150, 59, 0, 0.375);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    transform-origin: 50% 50% 0;
+    -webkit-transform-origin: 50% 50% 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    position: absolute;
+    display: block;
+    transition: all 0.5s ease-out 0.15s;
+    width: 100%;
+    height: 100%;
+}
 
 /*
 *
+* --------------------------------
+* 18. resta-gellary
+* --------------------------------
+*
+*/
+
+
+.resta-gallery{
+    position: relative;
+    padding: 20px 0;
+}
+.g-item, .g-item a{
+    position: relative;
+    display: block;
+}
+.g-item img{
+    width: 100%;
+}
+.g-item a:hover .g-overlay{
+    opacity: 1;
+    top:0;
+}
+.g-item .g-overlay{
+    -webkit-transition: 0.3s all ease-out;
+    transition: 0.3s all ease-out;
+    bottom: 0;
+    color: #ffffff;
+    height: 100%;
+    top:30%;
+    left: 0;
+    right: 0;
+    position: absolute;
+    transition: all 0.5s ease-out 0.15s;
+    width: 100%;
+    text-align: center;
+    padding: 45px 38px 55px;
+    background-color: rgba(254, 90, 14, 0.7);
+    opacity: 0;
+    display: table;
+}
+.g-item .g-overlay i{
+    color: #fff;
+    font-size: 18px;
+    line-height: 25px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.g-title{
+    font-size: 18px;
+    line-height: normal;
+    margin-top: 0;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 13px 0;
+    background: #000;
+}
+/*
+*
 * ==========================================
-* 18. footer Style
+* 19. footer Style
 * ==========================================
 *
 */
