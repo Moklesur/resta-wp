@@ -22,9 +22,80 @@ function resta_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
+	// boxed or width layout
+    if ( get_theme_mod( 'site_layout' ) == 'boxed' ) {
+        $classes[] =  "boxed";
+    }else{
+        $classes[] = "wide";
+    }
+
 	return $classes;
 }
 add_filter( 'body_class', 'resta_body_classes' );
+
+/**
+ *  Social Links
+ */
+add_action( 'resta_social', 'resta_social_action' );
+function resta_social_action() {
+
+    $social_arg = array(
+
+        array(
+            'name' => 'facebook',
+            'href' => get_theme_mod( 'facebook' ),
+            'class' => 'fb'
+        ),
+        array(
+            'name' => 'twitter',
+            'href' => get_theme_mod( 'twitter' ),
+            'class' => 'twitter'
+        ),
+        array(
+            'name' => 'youtube',
+            'href' => get_theme_mod( 'youtube' ),
+            'class' => 'youtube'
+        ),
+        array(
+            'name' => 'linkedin',
+            'href' => get_theme_mod( 'linkedin' ),
+            'class' => 'linkedin'
+        ),
+        array(
+            'name' => 'pinterest',
+            'href' => get_theme_mod( 'pinterest' ),
+            'class' => 'pinterest'
+        ),
+        array(
+            'name' => 'instagram',
+            'href' =>  get_theme_mod( 'instagram' ),
+            'class' => 'instagram'
+        ),
+        array(
+            'name' => 'dribbble',
+            'href' =>  get_theme_mod( 'dribbble' ),
+            'class' => 'dribbble'
+        ),
+        array(
+            'name' => 'google-plus',
+            'href' => get_theme_mod( 'google_plus' ),
+            'class' => 'g-plus'
+        )
+
+    );
+
+    foreach ( $social_arg as $item ) {
+        if( !empty( esc_url( $item['href'] ) ) ){
+            ?>
+            <li class="list-inline-item">
+                <a class="<?php echo esc_attr( $item['class'] ); ?>" href="<?php echo esc_url( $item['href'] ); ?>"  target="_blank">
+                    <i class="icofont-<?php echo esc_attr( $item['name'] ); ?>"></i>
+                </a>
+            </li>
+            <?php
+        }
+    }
+}
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.

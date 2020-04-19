@@ -80,6 +80,10 @@ if ( ! function_exists( 'resta_setup' ) ) :
 			'flex-height' => true,
 		) );
 	}
+
+	// WooCommerce Support
+    add_theme_support( 'woocommerce' );
+
 endif;
 add_action( 'after_setup_theme', 'resta_setup' );
 
@@ -113,20 +117,35 @@ function resta_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-}
-$args_footer_widgets = array(
-    'name'          => esc_html__( 'Footer %d', 'resta' ),
-    'id'            => 'footer-widget',
-    'description'   => esc_html__( 'Add widgets here.', 'resta' ),
-    'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h4 class="footer-widget-title text-uppercase">',
-    'after_title'   => '</h4>'
-);
 
-register_sidebars( 4, $args_footer_widgets );
+    $args_footer_widgets = array(
+        'name'          => esc_html__( 'Footer %d', 'resta' ),
+        'id'            => 'footer-widget',
+        'description'   => esc_html__( 'Add widgets here.', 'resta' ),
+        'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="font-weight-bold mb-50">',
+        'after_title'   => '</h4>'
+    );
+
+    register_sidebars( 4, $args_footer_widgets );
+
+    // Social Widget
+    register_widget( 'resta_Social' );
+}
 
 add_action( 'widgets_init', 'resta_widgets_init' );
+
+/**
+ * resta
+ * Widget
+ */
+require get_template_directory() . '/plugin/social.php';
+
+/**
+ * Breadcrumb
+ */
+require get_template_directory() . '/inc/breadcrumb.php';
 
 /**
  * Enqueue scripts and styles.
@@ -135,11 +154,12 @@ function resta_scripts() {
 
     wp_enqueue_style('resta-body-fonts', '//fonts.googleapis.com/css?family=Playball:400');
     wp_enqueue_style('resta-body-fonts', '//fonts.googleapis.com/css?family=Playfair+Display:300,700,800');
-    wp_enqueue_style('resta-heading-fonts', '//fonts.googleapis.com/css?family=Poppins:300,700,800');
+    wp_enqueue_style('resta-heading-fonts', '//fonts.googleapis.com/css?family=Poppins:300,500,800');
 
     // Plugin CSS
     wp_enqueue_style( 'icofont', get_template_directory_uri() . '/css/icofont.min.css', array(), '4.7.0' );
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '4.4.1' );
+    wp_enqueue_style( 'magnific', get_template_directory_uri() . '/css/magnific-popup.css', array(), '1.1.1' );
     // Main Stylesheet
     wp_enqueue_style( 'resta-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' )  );
     // Responsive
@@ -148,7 +168,7 @@ function resta_scripts() {
 
     // Plugin JS
     wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.8.0', true );
-    wp_enqueue_script( 'jquery-popper', get_template_directory_uri() . '/js/popper.min.js', array('jquery'), '1.12.5', true );
+    //wp_enqueue_script( 'jquery-popper', get_template_directory_uri() . '/js/popper.min.js', array('jquery'), '1.12.5', true );
     wp_enqueue_script( 'jquery-isotope', get_template_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery'), '3.0.6', true );
     wp_enqueue_script( 'jquery-magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', array('jquery'), '1.1.0', true );
     wp_enqueue_script( 'jquery-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '4.4.1', true );
@@ -174,6 +194,20 @@ function resta_elementor_widgets() {
     if ( defined('ELEMENTOR_PATH') && class_exists('Elementor\Widget_Base') ) {
         require get_template_directory() . '/plugin/slideshow.php';
         require get_template_directory() . '/plugin/hero-banner.php';
+        require get_template_directory() . '/plugin/support.php';
+        require get_template_directory() . '/plugin/team.php';
+        require get_template_directory() . '/plugin/heading.php';
+        require get_template_directory() . '/plugin/info-box.php';
+        require get_template_directory() . '/plugin/youtube-video.php';
+        require get_template_directory() . '/plugin/image-with-text.php';
+        require get_template_directory() . '/plugin/testimonial.php';
+        require get_template_directory() . '/plugin/resta-page-title.php';
+        require get_template_directory() . '/plugin/call-to-action.php';
+        // Woocommerce Exists?
+        if ( class_exists( 'WooCommerce' ) ) {
+            require get_template_directory() . '/plugin/product-category-tab.php';
+        }
+        //require get_template_directory() . '/plugin/gallery.php';
     }
 }
 add_action( 'elementor/widgets/widgets_registered', 'resta_elementor_widgets' );
@@ -199,6 +233,16 @@ add_action( 'elementor/elements/categories_registered', 'resta_elementor_widget_
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Woocommerce Snippet
+ */
+require get_template_directory() . '/inc/woocommerce.php';
+
+/**
+ * Resta Typography, Color
+ */
+require get_template_directory() . '/inc/typography.php';
 
 /**
  * Custom template tags for this theme.

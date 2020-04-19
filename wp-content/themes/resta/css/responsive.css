@@ -15,6 +15,8 @@
 
     .burger-img {
         right: 0%;
+        width: 100px;
+        height: 100px;
     }
 
     .burger-img img {
@@ -62,7 +64,47 @@
     ================================================ */
 
 @media (max-width: 991.98px) {
-
+    body.body-overflow{
+        overflow: hidden;
+    }
+    .navbar-brand, .navbar-brand a {
+        max-height: inherit;
+    }
+    .site-header .menu-all-pages-container{
+        display: flex;
+        position: fixed;
+        padding: 30px 0 50px;
+        max-width: 270px;
+        width: 100%;
+        top: 0;
+        z-index: 999;
+        background: #000;
+        left: -340px;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        height: 100%;
+        overflow: scroll;
+    }
+    .resta-main-menu li ul,
+    .resta-main-menu ul ul ul{
+        padding-right: 15px;
+    }
+    .resta-main-menu {
+        overflow-x: hidden;
+    }
+    .resta-main-menu .menu-item {
+        padding: 0;
+    }
+    .resta-main-menu .menu-item a {
+        padding: 5px 25px;
+        display: block;
+    }
+    .site-header .menu-all-pages-container.has-open-menu{
+        left: 0;
+    }
     .mb-80 {
         margin-bottom: 60px;
     }
@@ -219,8 +261,8 @@
         top: 0px;
     }
     .navbar-brand, .navbar-brand a {
-        white-space: pre-wrap;
         font-size: 18px;
+        max-height: inherit;
     }
 
     .site-branding {

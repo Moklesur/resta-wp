@@ -4,6 +4,7 @@
     var $doc = $(document);
     var $body = $('body');
 
+
     /*
     *
     * ==========================================
@@ -12,35 +13,33 @@
     *
     */
 
-
-        $('.play-btn').magnificPopup({
-            type: 'iframe',
-            closeOnBgClick: false,
-            closeBtnInside: true,
-            iframe: {
-                patterns: {
-                    youtube: {
-                        index: 'youtube.com/',
-                        id: function (url) {
-                            var m = url.match(/[\\?\\&]v=([^\\?\\&]+)/);
-                            if (!m || !m[1]) return null;
-                            return m[1];
-                        },
-                        src: '//www.youtube.com/embed/%id%?autoplay=1'
+    $('.play-btn').magnificPopup({
+        type: 'iframe',
+        closeOnBgClick: false,
+        closeBtnInside: true,
+        iframe: {
+            patterns: {
+                youtube: {
+                    index: 'youtube.com/',
+                    id: function (url) {
+                        var m = url.match(/[\\?\\&]v=([^\\?\\&]+)/);
+                        if (!m || !m[1]) return null;
+                        return m[1];
                     },
-                    vimeo: {
-                        index: 'vimeo.com/',
-                        id: function (url) {
-                            var m = url.match(/(https?:\/\/)?(www.)?(player.)?vimeo.com\/([a-z]*\/)*([0-9]{6,11})[?]?.*/);
-                            if (!m || !m[5]) return null;
-                            return m[5];
-                        },
-                        src: '//player.vimeo.com/video/%id%?autoplay=1'
-                    }
+                    src: '//www.youtube.com/embed/%id%?autoplay=1'
+                },
+                vimeo: {
+                    index: 'vimeo.com/',
+                    id: function (url) {
+                        var m = url.match(/(https?:\/\/)?(www.)?(player.)?vimeo.com\/([a-z]*\/)*([0-9]{6,11})[?]?.*/);
+                        if (!m || !m[5]) return null;
+                        return m[5];
+                    },
+                    src: '//player.vimeo.com/video/%id%?autoplay=1'
                 }
             }
-        });
-
+        }
+    });
 
 
     /*
@@ -63,38 +62,30 @@
     /*
     *
     * ==========================================
-    *   Menu Sticky
+    *   Mobile Menu
+    * ==========================================
+    *
+    */
+    $body.on('click', '.nav-mobile', function (e) {
+        e.preventDefault();
+        $('body').toggleClass('body-overflow');
+        $('.menu-all-pages-container').toggleClass('has-open-menu');
+    });
+
+    /*
+    *
+    * ==========================================
+    *   Youtube Video
     * ==========================================
     *
     */
 
-    $body.bind('click', function (e) {
-        if ($(e.target).closest('.navbar-toggler').length == 0) {
-            var opened = $('.navbar-collapse').hasClass('collapse');
-
-            if (opened === true) {
-                $('.navbar-collapse').collapse('hide');
-                $(this).find('.icofont-close').addClass('icofont-navigation-menu');
-                $(this).find('.icofont-close').removeClass('fa-close');
-            }
-        }
+    $('.youtube-play-btn,.youtube-close').on( 'click', function () {
+        $(this).parents('.elementor-element').toggleClass('youtube-index');
+        $('.youtube-popup').toggleClass('has-active');
+        //$("#video-youtube")[0].src += "&autoplay=1";
     });
 
-    $body.on('click', '.navbar-toggler', function (e) {
-        e.preventDefault();
-        var dd = $(this).attr('aria-expanded');
-
-        if (dd != 'false') {
-            $(this).find('.icofont-close').addClass('icofont-navigation-menu');
-            $(this).find('.fa').removeClass('icofont-close');
-            $(this).parents('.site-header').css({backgroundColor: 'rgba(255, 255, 255, 0.10)'});
-        } else {
-            $(this).find('.fa').removeClass('icofont-navigation-menu');
-            $(this).find('.fa').addClass('icofont-close');
-            $(this).parents('.site-header').css({backgroundColor: '#000000'});
-        }
-
-    });
 
     /*
     *
@@ -105,9 +96,8 @@
     */
 
     // init Isotope
-    var $grid = $('.product-grid').isotope({
+    var $grid = $('.category-filter ul.products').isotope({
         itemSelector: '.product',
-        percentPosition: true,
     });
     // filter items on button click
     $('#filters').on('click', 'button', function () {
@@ -143,7 +133,7 @@
         }
     });
 
-    function  magnificPopupView(target) {
+    function magnificPopupView(target) {
         target.magnificPopup({
             type: 'image',
             gallery: {
@@ -166,12 +156,13 @@
             }
         });
     }
+
     var special = $('.special-feature-img').find('a'),
         about = $('.about-us-img').find('a'),
         gallery = $('.gallery-grid').find('a'),
         gallery_list = $('.gallery-list').find('a');
 
-    if (special.length > 0 || about.length > 0 || gallery.length > 0 || gallery_list.length > 0){
+    if (special.length > 0 || about.length > 0 || gallery.length > 0 || gallery_list.length > 0) {
         magnificPopupView(special);
         magnificPopupView(about);
         magnificPopupView(gallery);
@@ -195,6 +186,8 @@
             slidesToShow: 3,
             slidesToScroll: 1,
             arrows: true,
+            focusOnSelect: false,
+            accessibility: false,
             prevArrow: "<button type='button' class='slick-prev'><i class='icofont-arrow-left icofont-2x'></i></button>",
             nextArrow: "<button type='button' class='slick-next '><i class='icofont-arrow-right icofont-2x'></i></button>",
             responsive: [

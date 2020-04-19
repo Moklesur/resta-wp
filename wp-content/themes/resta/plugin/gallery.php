@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 
-class resta_Slideshow extends Widget_Base {
+class resta_Gallery extends Widget_Base {
 
     /**
      * Get widget name.
@@ -26,7 +26,7 @@ class resta_Slideshow extends Widget_Base {
      */
 
     public function get_name() {
-        return 'resta-slideshow';
+        return 'resta-Gallery';
     }
 
     /**
@@ -56,7 +56,7 @@ class resta_Slideshow extends Widget_Base {
      */
 
     public function get_icon() {
-        return 'fa fa-sliders-h';
+        return 'fa fa-glide-g';
     }
 
     /**
@@ -93,111 +93,75 @@ class resta_Slideshow extends Widget_Base {
             ]
         );
 
-        $repeater = new \Elementor\Repeater();
-
-        // Content width
-        $repeater->add_control(
-            'SliderWidth',
-            [
-                'label' => __( 'Content Width', 'resta' ),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => [ 'px', '%' ],
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 1170,
-                        'step' => 5,
-                    ],
-                    '%' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                ],
-                'default' => [
-                    'unit' => 'px',
-                    'size' => 650,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} {{CURRENT_ITEM}}' => 'max-width: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        // Content Alignment
-        $repeater->add_control(
-            'content_alignment',
-            [
-                'label' => __( 'Content Alignment', 'resta' ),
-                'type' => \Elementor\Controls_Manager::SELECT,
-                'default' => 'justify-content-center',
-                'options' => [
-                    'justify-content-start'  => __( 'Start', 'resta' ),
-                    'justify-content-center' => __( 'Middle', 'resta' ),
-                    'justify-content-end' => __( 'End', 'resta' )
-                ],
-            ]
-        );
-
         // Text Alignment
-        $repeater->add_control(
+        $this->add_control(
             'text_alignment',
             [
-                'label' => __( 'Text Alignment', 'resta' ),
+                'label' => __('Text Alignment', 'resta'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'text-left' => [
-                        'title' => __( 'Left', 'resta' ),
+                        'title' => __('Left', 'resta'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'text-center' => [
-                        'title' => __( 'Center', 'resta' ),
+                        'title' => __('Center', 'resta'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'text-right' => [
-                        'title' => __( 'Right', 'resta' ),
+                        'title' => __('Right', 'resta'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
                 'default' => 'text-center',
-                'toggle' => true
+                'toggle' => true,
             ]
         );
 
-        // Slider Image
-        $repeater->add_control(
-            'divImage',
+
+        // Pre Title
+        $this->add_control(
+            'divPreTitle',
             [
                 'type' => \Elementor\Controls_Manager::DIVIDER,
             ]
         );
-        $repeater->add_control(
-            'sliderImage',
+
+        // Pre Title
+        $this->add_control(
+            'pretitle',
             [
-                'label' => __( 'Choose Slider Image', 'resta' ),
-                'type' => \Elementor\Controls_Manager::MEDIA,
-                'description' => __( 'Recommended size of image: 1920x1000 ', 'resta' ),
-                'default' => [
-                    'url' => \Elementor\Utils::get_placeholder_image_src(),
-                ],
+                'label' => __( 'Pre Title', 'resta' ),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => __( 'We Know !', 'resta' )
+            ]
+        );
+
+        $this->add_control(
+            'pretitle_animation',
+            [
+                'label' => __( 'Animation', 'resta' ),
+                'type' => \Elementor\Controls_Manager::ANIMATION,
+                'prefix_class' => 'animated ',
             ]
         );
         // Title
-        $repeater->add_control(
+        $this->add_control(
             'divTitle',
             [
                 'type' => \Elementor\Controls_Manager::DIVIDER,
             ]
         );
-        $repeater->add_control(
+        $this->add_control(
             'title',
             [
                 'label' => __( 'Title', 'resta' ),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __( 'Grow your business.', 'resta' ),
                 'label_block' => true,
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => __( 'What You Expect From Us', 'resta' )
             ]
         );
-        $repeater->add_control(
+        $this->add_control(
             'title_animation',
             [
                 'label' => __( 'Animation', 'resta' ),
@@ -205,77 +169,31 @@ class resta_Slideshow extends Widget_Base {
                 'prefix_class' => 'animated ',
             ]
         );
-        // Content
-        $repeater->add_control(
-            'divContent',
-            [
-                'type' => \Elementor\Controls_Manager::DIVIDER,
-            ]
-        );
-        $repeater->add_control(
-            'content',
-            [
-                'label' => __( 'Content', 'resta' ),
-                'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => __( 'Having a proper appearance devices tablets more and smartphone can eportant.', 'resta' )
-            ]
-        );
-        $repeater->add_control(
-            'content_animation',
-            [
-                'label' => __( 'Animation', 'resta' ),
-                'type' => \Elementor\Controls_Manager::ANIMATION,
-                'prefix_class' => 'animated ',
-            ]
-        );
-        // Button
-        $repeater->add_control(
-            'divButton',
-            [
-                'type' => \Elementor\Controls_Manager::DIVIDER,
-            ]
-        );
-        $repeater->add_control(
-            'button_label',
-            [
-                'label' => __( 'Button Label', 'resta' ),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __( 'Get Started', 'resta' )
-            ]
-        );
-        $repeater->add_control(
-            'button_url',
-            [
-                'label' => __( 'Link', 'resta' ),
-                'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => __( 'https://www.themetim.com', 'resta' ),
-                'show_external' => true,
-                'default' => [
-                    'url' => '',
-                    'is_external' => true,
-                    'nofollow' => true
-                ],
-            ]
-        );
-        $repeater->add_control(
-            'button_animation',
-            [
-                'label' => __( 'Animation', 'resta' ),
-                'type' => \Elementor\Controls_Manager::ANIMATION,
-                'prefix_class' => 'animated ',
-            ]
-        );
-        // Repeater
+        // Title
         $this->add_control(
-            'slider_list',
+            'divParagraph',
             [
-                'label' => __( 'Add Slider', 'resta' ),
-                'type' => \Elementor\Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'title_field' => '{{{ title }}}',
+                'type' => \Elementor\Controls_Manager::DIVIDER,
             ]
         );
-
+        $this->add_control(
+            'paragraph',
+            [
+                'label' => __( 'Paragraph', 'resta' ),
+                'type' => \Elementor\Controls_Manager::TEXTAREA,
+                'default' => __( 'On the other hand, we denounce with righteous indignation and dislike men who
+                        are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire,
+                        that they cannot foresee the pain and trouble that are bound to ensue', 'resta' )
+            ]
+        );
+        $this->add_control(
+            'paragraph_animation',
+            [
+                'label' => __( 'Animation', 'resta' ),
+                'type' => \Elementor\Controls_Manager::ANIMATION,
+                'prefix_class' => 'animated ',
+            ]
+        );
         $this->end_controls_section();
 
         // Slider Settings
@@ -510,106 +428,49 @@ class resta_Slideshow extends Widget_Base {
         $settings = $this->get_settings_for_display();
 
 
-        if ( $settings['slider_list'] ) {
-
-            $autoplay = 'false';
-            if( esc_attr( $settings['autoplay'] ) === 'true' ){
-                $autoplay = 'true';
-            }
-            $fade = 'false';
-            if( esc_attr( $settings['fade'] ) === 'true' ){
-                $fade = 'true';
-            }
-            $infinite = 'false';
-            if( esc_attr( $settings['infinite'] ) === 'true' ){
-                $infinite = 'true';
-            }
-            $adaptiveHeight = 'false';
-            if( esc_attr( $settings['adaptiveHeight'] ) === 'true' ){
-                $adaptiveHeight = 'true';
-            }
-            $arrows = 'false';
-            if( esc_attr( $settings['arrows'] ) === 'true' ){
-                $arrows = 'true';
-            }
-            $dot = 'false';
-            if( esc_attr( $settings['dot'] ) === 'true' ){
-                $dot = 'true';
-            }
-            $speed = '5000';
-            if( esc_attr( $settings['speed']) ){
-                $speed = esc_attr( $settings['speed'] );
-            }
-
             ?>
-            <div class="bb-slideshow" data-slick='{"autoplay": <?php echo esc_attr( $autoplay );?>, "arrows": <?php echo esc_attr( $arrows ); ?>, "dots": <?php echo esc_attr( $dot ); ?>, "fade": <?php echo esc_attr( $fade ); ?>, "infinite": <?php echo esc_attr( $infinite ); ?>, "speed": <?php echo esc_attr( $speed ); ?>, "adaptiveHeight": <?php echo esc_attr( $adaptiveHeight ); ?> }'>
-                <?php
 
-                foreach ( $settings['slider_list'] as $item ) {
+        <section class="gallery-about m--192">
+            <div class="container-fluid no-gutters p-0">
+                <div class="row gallery-slider">
 
-                    // Variable
-                    $title_animation = $item['title_animation'];
-                    $content_animation = $item['content_animation'];
-                    $button_animation = $item['button_animation'];
-                    $textAlignment = $item['text_alignment'];
-                    $contentAlignment = $item['content_alignment'];
-                    $sliderImageURL = $item['sliderImage']['url'];
-                    $title = $item['title'];
-                    $content = $item['content'];
-                    $button_label = $item['button_label'];
-                    $button_url = $item['button_url']['url'];
-                    $target = $settings['website_link']['is_external'] ? ' target="_blank"' : '';
-                    $nofollow = $settings['website_link']['nofollow'] ? ' rel="nofollow"' : '';
-                    ?>
-                    <div class="bb-slideshow-items slideshow-items-<?php echo esc_attr( $item['_id'] ); ?>">
-                        <div class="position-relative">
+                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/gallery1.png"><img
+                                src="img/gallery/1.jpg" alt="">
+                            <figcaption class="g-overlay">
+                                <i class="icofont-search-1"></i>
+                            </figcaption>
+                        </a>
 
-                            <?php
-                            if ( ! empty( $sliderImageURL ) ) {
-                                ?>
-                                <img class="bb-slider-img img-fluid m-auto" src="<?php echo esc_url( $sliderImageURL ); ?>" alt="<?php echo Control_Media::get_image_alt( $item['sliderImage'] ); ?>">
-                                <?php
-                            }
-                            ?>
-                            <div class="d-flex <?php echo $sliderImageURL ? ' has-bb-slider-content' : 'bb-slider-content';  ?>">
-                                <div class="container d-flex align-items-center <?php esc_attr_e( $contentAlignment . ' ' . $textAlignment ); ?>">
-                                    <div class="row">
-                                        <div class="col-12 elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>">
-                                            <?php
-                                            if ( ! empty( $title ) ) {
-                                                ?>
-                                                <h2 class="bb-slider-title animated<?php echo esc_attr( $title_animation ); ?>"><?php esc_html_e( $title ); ?></h2>
-                                                <?php
-                                            }
-                                            if ( ! empty( $content ) ) {
-                                                ?>
-                                                <p class="bb-slider-content animated <?php echo esc_attr( $content_animation ); ?>">
-                                                    <?php echo esc_html($content); ?>
-                                                </p>
-                                                <?php
-                                            }
-                                            if ( ! empty( $button_label ) ) {
-                                                ?>
-                                                <a class="mt-4 bb-slider-btn btn animated <?php echo esc_attr( $button_animation ); ?>" href="<?php echo esc_url( $button_url ); ?>" <?php echo $target. ' ' .$nofollow; ?>><?php esc_html_e( $button_label ); ?></a>
-                                                <?php
-
-                                            }
-                                            ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php
-                }
-                ?>
+                    </figure>
+                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/2.jpg"><img
+                                src="img/gallery/2.jpg" alt="">
+                            <figcaption class="g-overlay">
+                                <i class="icofont-search-1"></i>
+                            </figcaption></a>
+                    </figure>
+                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/3.jpg"><img
+                                src="img/gallery/3.jpg" alt="">   <figcaption class="g-overlay"> <i class="icofont-search-1"></i></figcaption></a>
+                    </figure>
+                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/4.jpg"><img
+                                src="img/gallery/4.jpg" alt=""> <figcaption class="g-overlay"> <i class="icofont-search-1"></i></figcaption> </a>
+                    </figure>
+                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/5.jpg"><img
+                                src="img/gallery/5.jpg" alt=""> <figcaption class="g-overlay"> <i class="icofont-search-1"></i></figcaption> </a>
+                    </figure>
+                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/6.jpg"><img
+                                src="img/gallery/6.jpg" alt=""> <figcaption class="g-overlay"> <i class="icofont-search-1"></i></figcaption></a>
+                    </figure>
+                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/7.jpg"><img
+                                src="img/gallery/7.jpg" alt=""> <figcaption class="g-overlay"> <i class="icofont-search-1"></i></figcaption></a>
+                    </figure>
+                </div>
             </div>
-            <?php
+        </section>
+        <?php
 
-        }
+
 
     }
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new resta_Slideshow() );
+Plugin::instance()->widgets_manager->register_widget_type( new resta_Gallery() );
