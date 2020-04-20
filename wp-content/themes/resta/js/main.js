@@ -160,13 +160,14 @@
     var special = $('.special-feature-img').find('a'),
         about = $('.about-us-img').find('a'),
         gallery = $('.gallery-grid').find('a'),
-        gallery_list = $('.gallery-list').find('a');
-
+        gallery_list = $('.gallery-list').find('a'),
+        resta_gallery_grid = $('.resta-gallery-grid').find('a');
     if (special.length > 0 || about.length > 0 || gallery.length > 0 || gallery_list.length > 0) {
         magnificPopupView(special);
         magnificPopupView(about);
         magnificPopupView(gallery);
         magnificPopupView(gallery_list);
+        magnificPopupView(resta_gallery_grid);
     }
 
     /*
@@ -235,6 +236,53 @@
             infinite: true,
             speed: 300,
             slidesToShow: 4,
+            slidesToScroll: 1,
+            arrows: false,
+            prevArrow: "<button type='button' class='slick-prev'><i class='icofont-arrow-left icofont-2x'></i></button>",
+            nextArrow: "<button type='button' class='slick-next '><i class='icofont-arrow-right icofont-2x'></i></button>",
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        centerMode: false,
+                        centerPadding: '0',
+                    }
+                }
+
+            ]
+        });
+    }
+    /*
+        *
+        * ==========================================
+        *  gallery-slider
+        * ==========================================
+        *
+        */
+
+    var gallery_slider= $('.gallery-slider');
+    if (gallery_slider.length > 0) {
+        gallery_slider.slick({
+            dots: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow:5,
             slidesToScroll: 1,
             arrows: false,
             prevArrow: "<button type='button' class='slick-prev'><i class='icofont-arrow-left icofont-2x'></i></button>",

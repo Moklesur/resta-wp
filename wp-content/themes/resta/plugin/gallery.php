@@ -41,7 +41,7 @@ class resta_Gallery extends Widget_Base {
      */
 
     public function get_title() {
-        return __( 'Slideshow', 'resta' );
+        return __( 'Rest Gallery', 'resta' );
     }
 
     /**
@@ -92,117 +92,110 @@ class resta_Gallery extends Widget_Base {
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
-
-        // Text Alignment
         $this->add_control(
-            'text_alignment',
+            'g_slider_enable',
             [
-                'label' => __('Text Alignment', 'resta'),
-                'type' => \Elementor\Controls_Manager::CHOOSE,
-                'options' => [
-                    'text-left' => [
-                        'title' => __('Left', 'resta'),
-                        'icon' => 'fa fa-align-left',
-                    ],
-                    'text-center' => [
-                        'title' => __('Center', 'resta'),
-                        'icon' => 'fa fa-align-center',
-                    ],
-                    'text-right' => [
-                        'title' => __('Right', 'resta'),
-                        'icon' => 'fa fa-align-right',
-                    ],
-                ],
-                'default' => 'text-center',
-                'toggle' => true,
+                'label' => __( 'Gallery Slider Enable', 'resta' ),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'default' => 'yes'
             ]
         );
-
-
-        // Pre Title
-        $this->add_control(
-            'divPreTitle',
+        $repeater = new \Elementor\Repeater();
+        // Slider Image
+        $repeater->add_control(
+            'divImage',
             [
                 'type' => \Elementor\Controls_Manager::DIVIDER,
             ]
         );
 
-        // Pre Title
-        $this->add_control(
-            'pretitle',
-            [
-                'label' => __( 'Pre Title', 'resta' ),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __( 'We Know !', 'resta' )
-            ]
-        );
-
-        $this->add_control(
-            'pretitle_animation',
-            [
-                'label' => __( 'Animation', 'resta' ),
-                'type' => \Elementor\Controls_Manager::ANIMATION,
-                'prefix_class' => 'animated ',
-            ]
-        );
-        // Title
-        $this->add_control(
-            'divTitle',
-            [
-                'type' => \Elementor\Controls_Manager::DIVIDER,
-            ]
-        );
-        $this->add_control(
+        $repeater->add_control(
             'title',
             [
-                'label' => __( 'Title', 'resta' ),
-                'label_block' => true,
+                'label' => __('Gallery Image Title', 'resta'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __( 'What You Expect From Us', 'resta' )
+                'default' => __('Pizza', 'resta'),
+                'label_block' => true,
             ]
         );
-        $this->add_control(
-            'title_animation',
+        $repeater->add_control(
+            'g_sliderImage',
             [
-                'label' => __( 'Animation', 'resta' ),
-                'type' => \Elementor\Controls_Manager::ANIMATION,
-                'prefix_class' => 'animated ',
+                'label' => __( 'Choose Slider Image', 'resta' ),
+                'type' => \Elementor\Controls_Manager::MEDIA,
+                'description' => __( 'Recommended size of image: 1920x1000 ', 'resta' ),
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
             ]
         );
-        // Title
+        // Repeater
         $this->add_control(
-            'divParagraph',
+            'gallery_list',
             [
-                'type' => \Elementor\Controls_Manager::DIVIDER,
-            ]
-        );
-        $this->add_control(
-            'paragraph',
-            [
-                'label' => __( 'Paragraph', 'resta' ),
-                'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => __( 'On the other hand, we denounce with righteous indignation and dislike men who
-                        are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire,
-                        that they cannot foresee the pain and trouble that are bound to ensue', 'resta' )
-            ]
-        );
-        $this->add_control(
-            'paragraph_animation',
-            [
-                'label' => __( 'Animation', 'resta' ),
-                'type' => \Elementor\Controls_Manager::ANIMATION,
-                'prefix_class' => 'animated ',
+                'label' => __( 'Add New Image', 'resta' ),
+                'type' => \Elementor\Controls_Manager::REPEATER,
+                'fields' => $repeater->get_controls(),
+                'title_field' => '{{{ title }}}',
             ]
         );
         $this->end_controls_section();
 
-        // Slider Settings
-
+        // STYLE Settings
         $this->start_controls_section(
-            'resta_slider_settings',
+            'resta_gellary_style_section',
+            [
+                'label' => __( 'Style', 'resta' ),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        //Title Style
+        $this->add_control(
+            'title_style',
+            [
+                'label' => __( 'Title', 'resta' ),
+                'type' => \Elementor\Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'title_typography',
+                'label' => __( 'Typography', 'resta' ),
+                'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} h3',
+            ]
+        );
+        $this->add_control(
+            'title_color',
+            [
+                'label' => __( 'Text Color', 'resta' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} h3' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_control(
+            'title_color',
+            [
+                'label' => __( 'Background Color', 'resta' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} h3' => 'background-color: {{VALUE}}',
+                ],
+            ]
+        );
+        // Slider Settings
+        //Title Style
+        $this->add_control(
+            'slider_style',
             [
                 'label' => __( 'Slider Settings', 'resta' ),
-                'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+                'type' => \Elementor\Controls_Manager::HEADING,
+                'separator' => 'before',
             ]
         );
         //Autoplay
@@ -217,18 +210,7 @@ class resta_Gallery extends Widget_Base {
                 'default' => 'true',
             ]
         );
-        //Fade
-        $this->add_control(
-            'fade',
-            [
-                'label' => __( 'Fade', 'resta' ),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __( 'True', 'resta' ),
-                'label_off' => __( 'False', 'resta' ),
-                'return_value' => 'true',
-                'default' => 'true',
-            ]
-        );
+
         //Infinite
         $this->add_control(
             'infinite',
@@ -292,126 +274,6 @@ class resta_Gallery extends Widget_Base {
         );
 
         $this->end_controls_section();
-
-        // STYLE Settings
-        $this->start_controls_section(
-            'resta_slideshow_style_section',
-            [
-                'label' => __( 'Style', 'resta' ),
-                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        //Title Style
-        $this->add_control(
-            'title_style',
-            [
-                'label' => __( 'Title', 'resta' ),
-                'type' => \Elementor\Controls_Manager::HEADING,
-                'separator' => 'before',
-            ]
-        );
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'title_typography',
-                'label' => __( 'Typography', 'resta' ),
-                'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}} .bb-slider-title',
-            ]
-        );
-        $this->add_control(
-            'title_color',
-            [
-                'label' => __( 'Text Color', 'resta' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .bb-slider-title' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
-        //Content Style
-        $this->add_control(
-            'content_style',
-            [
-                'label' => __( 'Content', 'resta' ),
-                'type' => \Elementor\Controls_Manager::HEADING,
-                'separator' => 'before',
-            ]
-        );
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'content_typography',
-                'label' => __( 'Typography', 'resta' ),
-                'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}} .bb-slider-content',
-            ]
-        );
-        $this->add_control(
-            'content_color',
-            [
-                'label' => __( 'Text Color', 'resta' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'scheme' => [
-                    'type' => \Elementor\Scheme_Color::get_type(),
-                    'value' => \Elementor\Scheme_Color::COLOR_1,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .bb-slider-content' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
-        //Button Style
-        $this->add_control(
-            'button_style',
-            [
-                'label' => __( 'Button', 'resta' ),
-                'type' => \Elementor\Controls_Manager::HEADING,
-                'separator' => 'before',
-            ]
-        );
-        $this->add_control(
-            'button_color',
-            [
-                'label' => __( 'Text Color', 'resta' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'scheme' => [
-                    'type' => \Elementor\Scheme_Color::get_type(),
-                    'value' => \Elementor\Scheme_Color::COLOR_1,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .bb-slider-btn' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
-        $this->add_group_control(
-            Group_Control_Background::get_type(),
-            [
-                'name' => 'background',
-                'label' => __( 'Background', 'resta' ),
-                'types' => [ 'classic', 'gradient' ],
-                'selector' => '{{WRAPPER}} .bb-slider-btn',
-            ]
-        );
-        $this->add_group_control(
-            Group_Control_Border::get_type(),
-            [
-                'name' => 'border',
-                'label' => __( 'Border', 'resta' ),
-                'selector' => '{{WRAPPER}} .bb-slider-btn',
-            ]
-        );
-        $this->add_group_control(
-            Group_Control_Box_Shadow::get_type(),
-            [
-                'name' => 'button_shadow',
-                'label' => __( 'Shadow', 'resta' ),
-                'selector' => '{{WRAPPER}} .bb-slider-btn',
-            ]
-        );
-
-        $this->end_controls_section();
     }
 
     /**
@@ -426,48 +288,63 @@ class resta_Gallery extends Widget_Base {
     protected function render()
     {
         $settings = $this->get_settings_for_display();
+//        echo "<pre>";
+//        var_dump($settings);
 
+        if ( $settings['gallery_list'] ) {
 
+            $autoplay = 'false';
+            if( esc_attr( $settings['autoplay'] ) === 'true' ){
+                $autoplay = 'true';
+            }
+            $infinite = 'false';
+            if( esc_attr( $settings['infinite'] ) === 'true' ){
+                $infinite = 'true';
+            }
+            $adaptiveHeight = 'false';
+            if( esc_attr( $settings['adaptiveHeight'] ) === 'true' ){
+                $adaptiveHeight = 'true';
+            }
+            $arrows = 'false';
+            if( esc_attr( $settings['arrows'] ) === 'true' ){
+                $arrows = 'true';
+            }
+            $dot = 'false';
+            if( esc_attr( $settings['dot'] ) === 'true' ){
+                $dot = 'true';
+            }
+            $speed = '5000';
+            if( esc_attr( $settings['speed']) ){
+                $speed = esc_attr( $settings['speed'] );
+            }
             ?>
+            <section class="resta-gallery">
+                <div class="container-fluid no-gutters ">
+                    <div class="row <?php echo !empty($settings['g_slider_enable'] === 'yes') ? esc_html('gallery-slider') : null; ?> resta-gallery-grid" data-slick='{"autoplay": <?php echo esc_attr( $autoplay );?>, "arrows": <?php echo esc_attr( $arrows ); ?>, "dots": <?php echo esc_attr( $dot ); ?>, "infinite": <?php echo esc_attr( $infinite ); ?>, "speed": <?php echo esc_attr( $speed ); ?>, "adaptiveHeight": <?php echo esc_attr( $adaptiveHeight ); ?> }'>
+            <?php
+            foreach ( $settings['gallery_list'] as $item ) {
+                $g_sliderImageURL = $item['g_sliderImage']['url'];
+                $title = $item['title'];
 
-        <section class="gallery-about m--192">
-            <div class="container-fluid no-gutters p-0">
-                <div class="row gallery-slider">
+                ?>
+                <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item">
+                    <a href="<?php echo esc_url($g_sliderImageURL);?>"><img
+                                src="<?php echo esc_url($g_sliderImageURL);?>" alt="<?php echo esc_html($title);?>">
+                        <figcaption class="g-overlay">
+                            <i class="icofont-search-1"></i>
+                            <h3 class="g-title"><?php echo esc_html($title);?></h3>
+                        </figcaption>
+                    </a>
+                </figure>
 
-                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/gallery1.png"><img
-                                src="img/gallery/1.jpg" alt="">
-                            <figcaption class="g-overlay">
-                                <i class="icofont-search-1"></i>
-                            </figcaption>
-                        </a>
-
-                    </figure>
-                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/2.jpg"><img
-                                src="img/gallery/2.jpg" alt="">
-                            <figcaption class="g-overlay">
-                                <i class="icofont-search-1"></i>
-                            </figcaption></a>
-                    </figure>
-                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/3.jpg"><img
-                                src="img/gallery/3.jpg" alt="">   <figcaption class="g-overlay"> <i class="icofont-search-1"></i></figcaption></a>
-                    </figure>
-                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/4.jpg"><img
-                                src="img/gallery/4.jpg" alt=""> <figcaption class="g-overlay"> <i class="icofont-search-1"></i></figcaption> </a>
-                    </figure>
-                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/5.jpg"><img
-                                src="img/gallery/5.jpg" alt=""> <figcaption class="g-overlay"> <i class="icofont-search-1"></i></figcaption> </a>
-                    </figure>
-                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/6.jpg"><img
-                                src="img/gallery/6.jpg" alt=""> <figcaption class="g-overlay"> <i class="icofont-search-1"></i></figcaption></a>
-                    </figure>
-                    <figure class="col-lg-3 col-md-4 col-sm-6 p-0 g-item"><a href="img/gallery/7.jpg"><img
-                                src="img/gallery/7.jpg" alt=""> <figcaption class="g-overlay"> <i class="icofont-search-1"></i></figcaption></a>
-                    </figure>
+                <?php
+            }
+            ?>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <?php
-
+            </section>
+            <?php
+        }
 
 
     }
