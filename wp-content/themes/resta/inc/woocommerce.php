@@ -2,14 +2,6 @@
 if ( ! class_exists( 'WooCommerce' ) ) {
     return;
 }
-/**
- * WC Support
- */
-add_action( 'after_setup_theme', 'resta_wc_gallery_zoom' );
-function resta_wc_gallery_zoom() {
-    add_theme_support( 'wc-product-gallery-lightbox' );
-    add_theme_support( 'wc-product-gallery-zoom' );
-}
 
 // Remove - Breadcrumb
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
@@ -109,6 +101,80 @@ function resta_loop_price_cart_start_div(){
 function resta_loop_price_cart_end_div(){
     echo "</div>";
 }
+
+/**************************
+ * Product Page
+ **************************/
+/**
+ *  Quantity Increase Decrease
+ */
+
+// Qty Plus
+add_action( 'woocommerce_before_add_to_cart_quantity', 'resta_display_quantity_plus' );
+function resta_display_quantity_plus() {
+    ?>
+    <div class="resta-qty-wrapper d-flex align-items-center mt-30 mb-30">
+        <p class="mb-0 mr-4"><?php echo esc_html( 'Quantity' ); ?></p>
+        <div class="resta-qty d-flex align-items-center">
+        <button type="button" class="plus" ><i class="icofont-plus"></i></button>
+    <?php
+}
+   // Qty Minus
+   add_action( 'woocommerce_after_add_to_cart_quantity', 'resta_display_quantity_minus' );
+        function resta_display_quantity_minus() {
+         ?>
+         <button type="button" class="minus"><i class="icofont-minus"></i></button>
+        </div>
+    </div>
+    <?php
+}
+
+// Trigger jQuery script
+add_action( 'wp_footer', 'resta_add_cart_quantity_plus_minus' );
+function resta_add_cart_quantity_plus_minus() {
+    // Only run this on the single product page
+    if ( ! is_product() ) return;
+    ?>
+    <script type="text/javascript">
+
+        jQuery(document).ready(function($){
+
+            $('.resta-qty-wrapper').on( 'click', 'button.plus, button.minus', function() {
+
+                // Get current quantity values
+                var qty = $( this ).closest( '.resta-qty-wrapper' ).find( '.qty' );
+                var val   = parseFloat(qty.val());
+                var max = parseFloat(qty.attr( 'max' ));
+                var min = parseFloat(qty.attr( 'min' ));
+                var step = parseFloat(qty.attr( 'step' ));
+
+                // Change the value if plus or minus
+                if ( $( this ).is( '.plus' ) ) {
+                    if ( max && ( max <= val ) ) {
+                        qty.val( max );
+                        console.log('max');
+                    } else {
+                        console.log('else max');
+                        qty.val( val + step );
+                    }
+                } else {
+                    if ( min && ( min >= val ) ) {
+                        qty.val( min );
+                        console.log('min');
+                    } else if ( val > 1 ) {
+                        qty.val( val - step );
+                        console.log('else min');
+                    }
+                }
+
+            });
+
+        });
+
+    </script>
+    <?php
+}
+
 
 /**************************
  * Shop & Archive Page

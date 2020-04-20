@@ -1480,7 +1480,7 @@ function resta_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'page_title_padding', array(
-        'default'           => '85',
+        'default'           => '55',
         'sanitize_callback' => 'absint',
     ) );
     $wp_customize->add_control( 'page_title_padding', array(

@@ -12,13 +12,12 @@ function resta_breadcrumbs( $args = array() ) {
 
     global $post;
     $defaults  = array(
-        'separator_icon'      => '&#8725;',
         'breadcrumbs_id'      => 'breadcrumb',
         'breadcrumbs_classes' => 'breadcrumb-trail breadcrumb',
         'home_title'          => esc_html__( 'Home', 'resta' )
     );
     $args      = apply_filters( 'resta_breadcrumbs_args', wp_parse_args( $args, $defaults ) );
-    $separator = '<span class="pl-2 pr-2">' . esc_html( $args['separator_icon'] ) . '</span>';
+    $separator = '<span class="pl-2 pr-2"><i class="icofont-minus"></i></span>';
 
     /***** Begin Markup *****/
 
