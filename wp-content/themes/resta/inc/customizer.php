@@ -1299,7 +1299,7 @@ function resta_customize_register( $wp_customize ) {
         )
     );
     $wp_customize->add_setting( 'body_font_size', array(
-        'default'           => '18',
+        'default'           => 14,
         'sanitize_callback' => 'absint',
     ) );
     $wp_customize->add_control( 'body_font_size', array(
@@ -1311,7 +1311,7 @@ function resta_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'body_font_name',
         array(
-            'default' => 'Source+Sans+Pro:300,400,700',
+            'default' => 'Poppins:300,500,800',
             'sanitize_callback'     => 'resta_sanitize_text',
         )
     );
@@ -1326,7 +1326,7 @@ function resta_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'body_font_family',
         array(
-            'default' => '\'Source Sans Pro\', sans-serif',
+            'default' => '"Poppins", sans-serif',
             'sanitize_callback'     => 'resta_sanitize_text',
         )
     );
@@ -1352,7 +1352,7 @@ function resta_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'heading_color',
         array(
-            'default'           => '#333',
+            'default'           => '#000',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -1368,7 +1368,7 @@ function resta_customize_register( $wp_customize ) {
     );
 
     $wp_customize->add_setting('heading_font_name', array(
-        'default'        => 'Nunito:300,400',
+        'default'        => 'Playfair+Display:300,700,800',
         'sanitize_callback'     => 'resta_sanitize_text',
     ));
     $wp_customize->add_control( 'heading_font_name', array(
@@ -1378,7 +1378,7 @@ function resta_customize_register( $wp_customize ) {
 
     ));
     $wp_customize->add_setting('heading_font_family', array(
-        'default'        => '\'Nunito\', sans-serif',
+        'default'        => '"Playfair Display", serif',
         'sanitize_callback'     => 'resta_sanitize_text',
     ));
     $wp_customize->add_control( 'heading_font_family', array(
@@ -1388,12 +1388,139 @@ function resta_customize_register( $wp_customize ) {
 
     ));
     $wp_customize->add_setting( 'heading_font_weight', array(
-        'default'           => '300',
+        'default'           => 700,
         'sanitize_callback' => 'absint',
     ) );
     $wp_customize->add_control( 'heading_font_weight', array(
         'label' => __( 'Heading Font Weight', 'resta' ),
         'type' => 'text',
+        'section' => 'heading_font'
+    ) );
+
+    /**
+     * resta Divider
+     */
+
+    $wp_customize->add_control( new resta_divider( $wp_customize, 'heading_h1', array(
+            'label' => __('Heading H1', 'resta'),
+            'section' => 'heading_font',
+            'settings' => 'resta_options[divider]'
+        ) )
+    );
+
+    $wp_customize->add_setting( 'heading_font_h1', array(
+        'default'           => 36,
+        'sanitize_callback' => 'absint',
+    ) );
+    $wp_customize->add_control( 'heading_font_h1', array(
+        'label' => __( 'Font Size', 'resta' ),
+        'type' => 'number',
+        'section' => 'heading_font'
+    ) );
+
+
+    /**
+     * resta Divider
+     */
+
+    $wp_customize->add_control( new resta_divider( $wp_customize, 'heading_h2', array(
+            'label' => __('Heading H2', 'resta'),
+            'section' => 'heading_font',
+            'settings' => 'resta_options[divider]'
+        ) )
+    );
+
+    $wp_customize->add_setting( 'heading_font_h2', array(
+        'default'           => 30,
+        'sanitize_callback' => 'absint',
+    ) );
+    $wp_customize->add_control( 'heading_font_h2', array(
+        'label' => __( 'Font Size', 'resta' ),
+        'type' => 'number',
+        'section' => 'heading_font'
+    ) );
+
+    /**
+     * resta Divider
+     */
+
+    $wp_customize->add_control( new resta_divider( $wp_customize, 'heading_h3', array(
+            'label' => __('Heading H3', 'resta'),
+            'section' => 'heading_font',
+            'settings' => 'resta_options[divider]'
+        ) )
+    );
+
+    $wp_customize->add_setting( 'heading_font_h3', array(
+        'default'           => 24,
+        'sanitize_callback' => 'absint',
+    ) );
+    $wp_customize->add_control( 'heading_font_h3', array(
+        'label' => __( 'Font Size', 'resta' ),
+        'type' => 'number',
+        'section' => 'heading_font'
+    ) );
+
+    /**
+     * resta Divider
+     */
+
+    $wp_customize->add_control( new resta_divider( $wp_customize, 'heading_h4', array(
+            'label' => __('Heading H4', 'resta'),
+            'section' => 'heading_font',
+            'settings' => 'resta_options[divider]'
+        ) )
+    );
+
+    $wp_customize->add_setting( 'heading_font_h4', array(
+        'default'           => 18,
+        'sanitize_callback' => 'absint',
+    ) );
+    $wp_customize->add_control( 'heading_font_h4', array(
+        'label' => __( 'Font Size', 'resta' ),
+        'type' => 'number',
+        'section' => 'heading_font'
+    ) );
+
+    /**
+     * resta Divider
+     */
+
+    $wp_customize->add_control( new resta_divider( $wp_customize, 'heading_h5', array(
+            'label' => __('Heading H5', 'resta'),
+            'section' => 'heading_font',
+            'settings' => 'resta_options[divider]'
+        ) )
+    );
+
+    $wp_customize->add_setting( 'heading_font_h5', array(
+        'default'           => 16,
+        'sanitize_callback' => 'absint',
+    ) );
+    $wp_customize->add_control( 'heading_font_h5', array(
+        'label' => __( 'Font Size', 'resta' ),
+        'type' => 'number',
+        'section' => 'heading_font'
+    ) );
+
+    /**
+     * resta Divider
+     */
+
+    $wp_customize->add_control( new resta_divider( $wp_customize, 'heading_h6', array(
+            'label' => __('Heading H6', 'resta'),
+            'section' => 'heading_font',
+            'settings' => 'resta_options[divider]'
+        ) )
+    );
+
+    $wp_customize->add_setting( 'heading_font_h6', array(
+        'default'           => 14,
+        'sanitize_callback' => 'absint',
+    ) );
+    $wp_customize->add_control( 'heading_font_h6', array(
+        'label' => __( 'Font Size', 'resta' ),
+        'type' => 'number',
         'section' => 'heading_font'
     ) );
 

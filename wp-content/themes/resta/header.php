@@ -109,7 +109,7 @@
                         ?>
                         <a href="<?php echo wc_get_cart_url(); ?>" class="mr-3 d-inline-block mini-cart">
                             <i class="icofont-cart text-white"></i>
-                            <span class="count"><?php echo sprintf ( _n( ' %d', ' %d', WC()->cart->get_cart_contents_count(), 'ushop' ), WC()->cart->get_cart_contents_count() ); ?></span>
+                            <span class="count-product"><?php echo sprintf ( _n( ' %d', ' %d', WC()->cart->get_cart_contents_count(), 'ushop' ), WC()->cart->get_cart_contents_count() ); ?></span>
                         </a>
                         <?php
                     endif;
