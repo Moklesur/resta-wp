@@ -96,7 +96,14 @@ a.text-orange:hover, a.text-orange:focus {
 .font-weight-extra-bold {
     font-weight: 800 !important;
 }
-
+.page-breadcrumb span {
+    font-size: 13px;
+    letter-spacing: .2px;
+}
+.page-breadcrumb h2 {
+    font-size: 36px;
+    font-weight: normal;
+}
 /*
 *
 * ==========================================
@@ -122,34 +129,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 65px;
-    line-height: 1.154;
-    font-weight: 800;
+    font-size: 36px;
 }
 
 h2 {
-    font-size: 54px;
-    line-height: 1.204;
+    font-size: 30px;
 }
 
 h3 {
-    font-size: 35px;
-    line-height: 0.771;
+    font-size: 24px;
 }
 
 h4 {
-    font-size: 25px;
-    line-height: 1.4;
+    font-size: 18px;
 }
 
 h5 {
-    font-size: 22px;
-    line-height: 1.227;
+    font-size: 16px;
 }
 
 h6 {
-    font-size: 20px;
-    line-height: 1.71;
+    font-size: 14px;
 }
 
 p {
@@ -171,10 +171,6 @@ a, button, img, input, span {
     transition: all .3s ease 0s;
 }
 
-*:focus {
-    outline: none !important;
-}
-
 a:focus {
     color: inherit;
     outline: none;
@@ -187,17 +183,20 @@ a:hover {
     transition: all .3s ease 0s;
 }
 
-button, input[type="submit"] {
+button,
+input[type="submit"] {
     cursor: pointer;
 }
 
-b, strong {
-    font-weight: 700;
-}
-
-.btn, .rtl-btn, .wp-block-button__link, input[type='submit'], .wpcf7-form-control.wpcf7-submit {
+.btn, .rtl-btn, .wp-block-button__link, input[type='submit'], .wpcf7-form-control.wpcf7-submit ,
+.button, button,
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit.disabled, .woocommerce #respond input#submit:disabled, .woocommerce #respond input#submit:disabled[disabled], .woocommerce a.button.disabled, .woocommerce a.button:disabled, .woocommerce a.button:disabled[disabled], .woocommerce button.button.disabled, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled], .woocommerce input.button.disabled, .woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled]{
     border-radius: 2px;
-    padding: 28px;
+    padding: 15px 28px;
     font-size: 14px;
     line-height: 14px;
     font-family: "Poppins", sans-serif;
@@ -209,6 +208,12 @@ b, strong {
     transition: .5s all ease-out;
 }
 
+.woocommerce #respond input#submit.disabled:hover, .woocommerce #respond input#submit:disabled:hover, .woocommerce #respond input#submit:disabled[disabled]:hover, .woocommerce a.button.disabled:hover, .woocommerce a.button:disabled:hover, .woocommerce a.button:disabled[disabled]:hover, .woocommerce button.button.disabled:hover, .woocommerce button.button:disabled:hover, .woocommerce button.button:disabled[disabled]:hover, .woocommerce input.button.disabled:hover, .woocommerce input.button:disabled:hover, .woocommerce input.button:disabled[disabled]:hover
+,.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.button:hover, button:hover,
 .btn:hover, .rtl-btn:hover, .wp-block-button__link:hover, input[type='submit']:hover, .wpcf7-form-control.wpcf7-submit:hover, .btn:focus, .rtl-btn:focus, .wp-block-button__link:focus, input[type='submit']:focus, .wpcf7-form-control.wpcf7-submit:focus {
     border: 2px solid #222222;
     box-shadow: none;
@@ -257,7 +262,8 @@ b, strong {
     text-transform: uppercase;
 }
 
-.comments-area .submit:hover, .comments-area .submit:focus {
+.comments-area .submit:hover,
+.comments-area .submit:focus {
     border: 1px solid #222222;
     box-shadow: none;
     color: #ffffff;
@@ -284,6 +290,37 @@ label {
 img {
     height: auto;
     max-width: 100%;
+}
+
+.form-control,
+textarea,
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=tel],
+input[type=password],
+input[type=number],
+select {
+    border: 1px solid  rgb(224, 225, 225);
+    border-radius: 4px;
+    height: inherit;
+    padding: 8px 15px;
+    outline: none;
+}
+.form-control:focus,
+textarea:focus,
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=tel]:focus,
+input[type=password]:focus,
+input[type=number]:focus,
+select:focus {
+    border: 1px solid   #f96a0e;
+}
+button,
+button:focus{
+    outline: none;
 }
 
 /*
@@ -449,30 +486,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     margin-bottom: 30px;
 }
 
-input[type=text], input[type=search], .form-control {
-    background: #ffffff;
-    box-shadow: none;
-    padding: 20px 15px;
-    height: 50px;
-    width: 100%;
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 26px;
-    border: 1px solid #ffffff;
-    box-sizing: border-box;
-    color: #626262;
-    border-radius: 2px;
-}
-
-input[type=text]:focus, input[type=search]:focus, .form-control:focus {
-    background: #ffffff;
-    border: 1px solid #f96a0e;
-    outline: none;
-    box-shadow: none;
-}
-
 input[type=text]::placeholder, input[type=search]::placeholder, .form-control::placeholder,
 input[type=text]::-webkit-input-placeholder, input[type=search]::-webkit-input-placeholder, .form-control::-webkit-input-placeholder,
 input[type=text]::-moz-placeholder, input[type=search]::-moz-placeholder, .form-control::-moz-placeholder,
@@ -484,8 +497,8 @@ input[type=text]::-ms-input-placeholder, input[type=search]::-ms-input-placehold
     width: auto;
 }
 
-input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
@@ -498,7 +511,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 select {
     width: 100%;
     background: transparent;
-    border: 0px solid #eceff8;
+    border: 1px solid #eceff8;
     box-shadow: none;
     font-size: 14px;
     color: #333;
@@ -1324,7 +1337,7 @@ input[type='password'] {
     color: #f96a0e;
 }
 
-.top-bar ul li {
+.top-bar ul li  {
     font-size: 14px;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -1425,13 +1438,11 @@ input[type='password'] {
     width: 2px;
     background-color: rgba(255, 255, 255, 0.251);
 }
-
-.mini-cart {
+.mini-cart{
     position: relative;
     font-size: 20px;
 }
-
-.count {
+.count{
     position: absolute;
     top: 0px;
     right: -6px;
@@ -1446,21 +1457,18 @@ input[type='password'] {
     line-height: 15px;
     border-radius: 50%;
 }
-
-@media only screen and (min-width: 991.98px) {
-    .menu-all-pages-container {
+@media only screen and (min-width: 991.98px){
+    .menu-all-pages-container{
         margin: 0 auto;
     }
-
-    .resta-main-menu {
+    .resta-main-menu{
         display: -ms-flexbox;
         display: flex;
         -ms-flex-direction: row;
         flex-direction: row;
     }
-
     .resta-main-menu li ul,
-    .resta-main-menu ul ul ul {
+    .resta-main-menu ul ul ul{
         min-width: 190px;
         max-width: 100%;
         position: absolute;
@@ -1722,7 +1730,7 @@ input[type='password'] {
 /*
 *
 * ==========================================
-*   9. Product Loop style
+*   9. Product style ( WooCommerce )
 * ==========================================
 *
 */
@@ -1746,7 +1754,8 @@ input[type='password'] {
 }
 
 .woocommerce ul.products li.product .resta-product-loop h2.woocommerce-loop-product__title,
-.woocommerce ul.products li.product .resta-product-loop .price {
+.woocommerce ul.products li.product .resta-product-loop .price,
+.woocommerce div.product p.price, .woocommerce div.product span.price{
     font-size: 22px;
     font-family: "Playfair Display", serif;
     font-weight: 800;
@@ -1761,7 +1770,8 @@ input[type='password'] {
     margin-bottom: 0;
 }
 
-.resta-product-loop ins {
+.resta-product-loop ins,
+.woocommerce div.product p.price ins, .woocommerce div.product span.price ins{
     text-decoration: none;
 }
 
@@ -1795,6 +1805,7 @@ input[type='password'] {
     display: flex;
     width: 100%;
     align-items: center;
+    z-index: 10;
 }
 
 .add-to-cart-btn,
@@ -1834,11 +1845,214 @@ input[type='password'] {
 .woocommerce ul.columns-4 li.last, .woocommerce-page ul.columns-4 li.last {
     margin-right: 0;
 }
+.woocommerce ul.products li.product > a{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.woocommerce-products-header__title{
+    font-size: 24px;
+    margin-top: 20px;
+}
+.woocommerce .woocommerce-result-count{
+    font-size: 16px;
+    margin-top: 15px;
+}
+.woocommerce .woocommerce-ordering {
+    margin: 0 0 2.5em;
+}
+.woocommerce-ordering select{
+    border-width: 1px;
+    padding: 7px 12px
+}
+.woocommerce-page ul.products{
+    margin-top: 20px;
+}
+.woocommerce span.onsale {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    font-weight: normal;
+    line-height: 50px;
+    font-size: 13px;
+    letter-spacing: .5px;
+}
+.woocommerce-cart table.cart td.actions .coupon .input-text,
+.woocommerce-checkout table.cart td.actions .coupon .input-text {
+    width: auto;
+    padding: 13px 15px;
+}
+.woocommerce button.button{
+    border-radius: 35px;
+    font-weight: normal;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .2px;
+}
+.woocommerce #respond input#submit.disabled, .woocommerce #respond input#submit:disabled, .woocommerce #respond input#submit:disabled[disabled], .woocommerce a.button.disabled, .woocommerce a.button:disabled, .woocommerce a.button:disabled[disabled], .woocommerce button.button.disabled, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled], .woocommerce input.button.disabled, .woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled]{
+    color: #fff;
+}
+#add_payment_method .wc-proceed-to-checkout a.checkout-button, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button, .woocommerce-checkout .wc-proceed-to-checkout a.checkout-button{
+    border-radius: 35px;
+    font-weight: normal;
+}
+.woocommerce .col2-set, .woocommerce-page .col2-set{
+    margin: 0 -15px;
+}
+.woocommerce .col2-set .col-1,
+.woocommerce-page .col2-set .col-1,
+.woocommerce .col2-set .col-2,
+.woocommerce-page .col2-set .col-2{
+    width: 100%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
 
+h3#order_review_heading {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment {
+    border-radius: 0;
+    margin-top: 50px;
+}
+.woocommerce #payment #place_order, .woocommerce-page #payment #place_order {
+    margin-top: 10px;
+}
+.woocommerce form .form-row-first, .woocommerce form .form-row-last, .woocommerce-page form .form-row-first, .woocommerce-page form .form-row-last {
+    width: 50%;
+}
+.woocommerce-input-wrapper{
+    width: 100%;
+}
+
+.variations_button.woocommerce-variation-add-to-cart-disabled .resta-qty-wrapper{
+    display: none !important;
+}
+.woocommerce div.product form.cart .variations label {
+    font-weight: normal;
+    margin-bottom: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .2px;
+}
+.woocommerce div.product form.cart .variations td,
+.woocommerce div.product form.cart .variations th {
+    vertical-align: middle;
+    display: block;
+}
+.woocommerce div.product form.cart tr{
+    margin-bottom: 15px;
+    display: block;
+}
+.woocommerce div.product form.cart .variations {
+    margin: 15px 0 0;
+}
+.woocommerce div.product p.stock {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .2px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.woocommerce div.product form.cart .variations select {
+    margin-right: 0;
+}
+.woocommerce .product_meta {
+    border-top: 1px solid #eee;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+.woocommerce .product_meta > span{
+    display: block;
+    font-size: 14px;
+    letter-spacing: .2px;
+    font-weight: normal;
+}
+.woocommerce .product_meta > span>span{
+    margin-left: 10px;
+    font-weight: 300;
+}
+.woocommerce .product_meta > span a{
+    margin-left: 10px;
+    font-weight: 300;
+}
+.woocommerce .quantity .qty {
+    width: 80px;
+    border: 0;
+    -webkit-appearance: none;
+    margin: 0;
+}
+.resta-qty {
+    border: 1px solid #eee;
+    border-radius: 35px;
+    padding: 0 6px;
+}
+.resta-qty button {
+    outline: none;
+    border: 0;
+    padding: 7px 12px;
+    border-radius: 50%;
+    font-size: 13px;
+}
+.woocommerce-product-gallery__wrapper .woocommerce-product-gallery__image:first-child{
+    margin-bottom: 10px;
+}
+.woocommerce div.product div.images img {
+    margin: 0 auto;
+    object-fit: cover;
+    padding: 0 5px;
+}
+.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary,
+.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images{
+    width: 49%;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs::before,
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active::before,
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active::after,
+.woocommerce div.product .woocommerce-tabs ul.tabs li::before,
+.woocommerce div.product .woocommerce-tabs ul.tabs li::after{
+    display: none;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    border-radius: 0;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+    font-weight: normal;
+    background: #f9f9f9;
+    padding: 8px 15px;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+    background: #f96a0e;
+    color: #fff;
+}
+.related.products{
+    display: block;
+    margin-top: 70px;
+}
+.related.products h2{
+    margin-bottom: 30px;
+}
 /*
 *
 * ==========================================
-*   10. Product Filter
+*   10. Product Filter ( wooCommerce )
 * ==========================================
 *
 */
@@ -2594,6 +2808,7 @@ input[type='password'] {
 *
 */
 .footer-area {
+    margin-top: 50px;
     position: relative;
     background-repeat: no-repeat;
     background-position: center;

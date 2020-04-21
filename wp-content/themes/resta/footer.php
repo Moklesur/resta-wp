@@ -38,7 +38,7 @@ $footer_columns = get_theme_mod( 'footer_columns', '4' );
     <!--        /.footer-bottom start-->
     <div class="footer-bottom">
         <div class="row copy-right-text align-items-center">
-            <div class="col-10 m-auto text-center font-weight-bold text-uppercase">
+            <div class="col-10 m-auto text-center">
                 <a href="<?php echo esc_url( __( 'https://www.themetim.com/', 'resta' ) ); ?>">
                     <?php echo esc_html( get_theme_mod('copyright', 'Resta By ThemeTim' ) ); ?>
                 </a>

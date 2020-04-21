@@ -83,6 +83,8 @@ if ( ! function_exists( 'resta_setup' ) ) :
 
 	// WooCommerce Support
     add_theme_support( 'woocommerce' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-zoom' );
 
 endif;
 add_action( 'after_setup_theme', 'resta_setup' );
@@ -143,6 +145,11 @@ add_action( 'widgets_init', 'resta_widgets_init' );
 require get_template_directory() . '/plugin/social.php';
 
 /**
+ * Breadcrumb
+ */
+require get_template_directory() . '/inc/breadcrumb.php';
+
+/**
  * Enqueue scripts and styles.
  */
 function resta_scripts() {
@@ -169,7 +176,7 @@ function resta_scripts() {
     wp_enqueue_script( 'jquery-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '4.4.1', true );
     // Main JS
     wp_enqueue_script( 'resta-elementor-slider', get_template_directory_uri() . '/js/elementor-slider.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
-    wp_enqueue_script( 'resta-main', get_template_directory_uri() . '/js/main.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
+    //wp_enqueue_script( 'resta-main', get_template_directory_uri() . '/js/main.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
 
 	wp_enqueue_script( 'resta-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
