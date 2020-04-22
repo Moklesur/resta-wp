@@ -19,7 +19,14 @@ get_header();
                         while ( have_posts() ) :
                             the_post();
 
-                            get_template_part( 'template-parts/content', get_post_type() );
+                            get_template_part( 'template-parts/single-content', get_post_type() );
+
+                            ?>
+
+                        <div class="col-12">
+
+
+                        <?php
 
                             the_post_navigation();
 
@@ -30,6 +37,7 @@ get_header();
 
                         endwhile; // End of the loop.
                         ?>
+                        </div>
                     </div>
                 </div>
                 <?php

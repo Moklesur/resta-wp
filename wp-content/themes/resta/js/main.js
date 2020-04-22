@@ -162,6 +162,7 @@
         gallery = $('.gallery-grid').find('a'),
         gallery_list = $('.gallery-list').find('a'),
         resta_gallery_grid = $('.resta-gallery-grid').find('a');
+
     if (special.length > 0 || about.length > 0 || gallery.length > 0 || gallery_list.length > 0) {
         magnificPopupView(special);
         magnificPopupView(about);
@@ -169,6 +170,7 @@
         magnificPopupView(gallery_list);
         magnificPopupView(resta_gallery_grid);
     }
+
 
     /*
     *
