@@ -93,7 +93,7 @@
                     $resta_description = get_bloginfo( 'description', 'display' );
                     if ( $resta_description || is_customize_preview() ) :
                         ?>
-                        <p class="site-description"><?php echo $resta_description; /* WPCS: xss ok. */ ?></p>
+                        <p class="site-description"><?php echo esc_html( $resta_description ); /* WPCS: xss ok. */ ?></p>
                     <?php endif; ?>
                 </div><!-- .site-branding -->
                     <?php
@@ -109,7 +109,7 @@
                         ?>
                         <a href="<?php echo wc_get_cart_url(); ?>" class="mr-3 d-inline-block mini-cart">
                             <i class="icofont-cart text-white"></i>
-                            <span class="count-product"><?php echo sprintf ( _n( ' %d', ' %d', WC()->cart->get_cart_contents_count(), 'ushop' ), WC()->cart->get_cart_contents_count() ); ?></span>
+                            <span class="count-product"><?php echo sprintf ( _n( ' %d', ' %d', WC()->cart->get_cart_contents_count(), 'resta' ), WC()->cart->get_cart_contents_count() ); ?></span>
                         </a>
                         <?php
                     endif;

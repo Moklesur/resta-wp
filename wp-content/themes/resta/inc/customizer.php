@@ -835,7 +835,7 @@ function resta_customize_register( $wp_customize ) {
             'sanitize_callback' => 'esc_url_raw',
         ) );
         $wp_customize->add_control( $item['id'], array(
-            'label' => __( $item['label'], 'resta' ),
+            'label' =>  esc_html( $item['label'] ),
             'type' => 'url',
             'section' => 'social_settings',
             'settings' => $item['id']
@@ -1006,7 +1006,7 @@ function resta_customize_register( $wp_customize ) {
             $wp_customize,
             'footer_logo',
             array(
-                'label'      => __( 'Logo', 'theme_name' ),
+                'label'      => __( 'Logo', 'resta' ),
                 'section'    => 'footer_content',
                 'settings'   => 'footer_logo'
             )
@@ -1026,7 +1026,7 @@ function resta_customize_register( $wp_customize ) {
             $wp_customize,
             'footer_background_image',
             array(
-                'label'      => __( 'Background Image', 'theme_name' ),
+                'label'      => __( 'Background Image', 'resta' ),
                 'section'    => 'footer_content',
                 'settings'   => 'footer_background_image'
             )
@@ -1529,7 +1529,7 @@ function resta_customize_register( $wp_customize ) {
      *********************************************/
 
     $wp_customize->add_section( 'page_title_panel', array(
-        'title'          => __( 'Page Title', 'boka' ),
+        'title'          => __( 'Page Title', 'resta' ),
         'priority'       => 50
     ) );
 
@@ -1538,7 +1538,7 @@ function resta_customize_register( $wp_customize ) {
         'sanitize_callback' => 'boka_sanitize_checkbox',
     ) );
     $wp_customize->add_control( 'enable_page_title', array(
-        'label' => __( 'Enable Page Title?', 'boka' ),
+        'label' => __( 'Enable Page Title?', 'resta' ),
         'type' => 'checkbox',
         'section' => 'page_title_panel'
     ) );
@@ -1555,7 +1555,7 @@ function resta_customize_register( $wp_customize ) {
             $wp_customize,
             'page_title_background_color',
             array(
-                'label'         => __('Background Color', 'boka'),
+                'label'         => __('Background Color', 'resta'),
                 'section' => 'page_title_panel'
             )
         )
@@ -1573,7 +1573,7 @@ function resta_customize_register( $wp_customize ) {
             $wp_customize,
             'page_title_text_color',
             array(
-                'label'         => __('Text Color', 'boka'),
+                'label'         => __('Text Color', 'resta'),
                 'section' => 'page_title_panel'
             )
         )
@@ -1589,7 +1589,7 @@ function resta_customize_register( $wp_customize ) {
             $wp_customize,
             'page_title_background_image',
             array(
-                'label'          => __( 'Upload Background Image', 'boka' ),
+                'label'          => __( 'Upload Background Image', 'resta' ),
                 'type'           => 'image',
                 'section'        => 'page_title_panel',
             )
@@ -1601,7 +1601,7 @@ function resta_customize_register( $wp_customize ) {
         'sanitize_callback' => 'absint',
     ) );
     $wp_customize->add_control( 'page_title_font_size', array(
-        'label' => __( 'Font Size', 'boka' ),
+        'label' => __( 'Font Size', 'resta' ),
         'type' => 'number',
         'section' => 'page_title_panel'
     ) );
@@ -1611,7 +1611,7 @@ function resta_customize_register( $wp_customize ) {
         'sanitize_callback' => 'absint',
     ) );
     $wp_customize->add_control( 'page_title_padding', array(
-        'label' => __( 'Padding Top/Bottom', 'boka' ),
+        'label' => __( 'Padding Top/Bottom', 'resta' ),
         'type' => 'number',
         'section' => 'page_title_panel'
     ) );

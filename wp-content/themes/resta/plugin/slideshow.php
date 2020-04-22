@@ -571,14 +571,14 @@ class resta_Slideshow extends Widget_Base {
                                 <?php
                             }
                             ?>
-                            <div class="d-flex <?php echo $sliderImageURL ? ' has-bb-slider-content' : 'bb-slider-content';  ?>">
-                                <div class="container d-flex align-items-center <?php esc_attr_e( $contentAlignment . ' ' . $textAlignment ); ?>">
+                            <div class="d-flex <?php echo esc_attr( $sliderImageURL ? ' has-bb-slider-content' : 'bb-slider-content' );  ?>">
+                                <div class="container d-flex align-items-center <?php echo esc_attr( $contentAlignment ); ?> <?php echo esc_attr( $textAlignment ); ?>">
                                     <div class="row">
                                         <div class="col-12 elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>">
                                             <?php
                                             if ( ! empty( $title ) ) {
                                                 ?>
-                                                <h2 class="bb-slider-title animated<?php echo esc_attr( $title_animation ); ?>"><?php esc_html_e( $title ); ?></h2>
+                                                <h2 class="bb-slider-title animated<?php echo esc_attr( $title_animation ); ?>"><?php echo esc_html( $title ); ?></h2>
                                                 <?php
                                             }
                                             if ( ! empty( $content ) ) {
@@ -590,7 +590,7 @@ class resta_Slideshow extends Widget_Base {
                                             }
                                             if ( ! empty( $button_label ) ) {
                                                 ?>
-                                                <a class="mt-4 bb-slider-btn btn animated <?php echo esc_attr( $button_animation ); ?>" href="<?php echo esc_url( $button_url ); ?>" <?php echo $target. ' ' .$nofollow; ?>><?php esc_html_e( $button_label ); ?></a>
+                                                <a class="mt-4 bb-slider-btn btn animated <?php echo esc_attr( $button_animation ); ?>" href="<?php echo esc_url( $button_url ); ?>" <?php echo esc_attr( $target ); ?><?php echo esc_attr( $nofollow ); ?>><?php echo esc_html( $button_label ); ?></a>
                                                 <?php
 
                                             }
