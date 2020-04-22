@@ -21,54 +21,68 @@ $class[] = 'col-lg-4 col-sm-6 col-12 blog-item';
     }
 
     ?>
-
-    <div class="blog-thumb mb-30 align-content-end h-100<?php echo esc_attr( $noThumbs ); ?>" <?php if( has_post_thumbnail() ){ ?>style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url() ); ?>')"<?php } ?>>
-        <header class="content">
-
+        <figure class="blog-style-one">
             <?php
-
-            if ( 'post' === get_post_type() ) :
-
-                resta_posted_on();
-
-            endif;
-
-            if ( is_singular() ) :
-                the_title( '<h1 class="font-weight-bold mb-40 blog-title">', '</h1>' );
-            else :
-                the_title( '<h4 class="font-weight-bold mb-40 blog-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-            endif; ?>
-
-
-
-            <div class="d-flex justify-content-between">
+            if (!empty(has_post_thumbnail())):
+            ?>
+            <a href="<?php the_permalink(); ?>" class="blog-thumbnail">
                 <?php
-
-                if ( 'post' === get_post_type() ) :
-                    ?>
-                    <ul class="author-nfo">
-                        <li>
-                            <?php
-                            resta_posted_by();
-                            ?>
-                        </li>
-                    </ul>
-                <?php
-                endif;?>
-
-<!--                <ul class="comment-nfo list-inline">-->
-<!--                    <li class="list-inline-item"><a href=""><i class="icofont-user mr-2 text-orange"></i>68</a></li>-->
-<!--                    <li class="list-inline-item"><a href=""><i class="icofont-eye-alt mr-2 text-orange"></i>68</a></li>-->
-<!--                </ul>-->
-            </div>
-        </header>
-
-        <footer>
-            <a href="<?php echo esc_url( get_the_permalink()); ?>" class="btn more-btn">
-                <?php esc_html_e( 'Read more', 'resta' ); ?>
-                <span><i class="icofont-arrow-right"></i></span>
+                the_post_thumbnail();
+                ?>
             </a>
-        </footer>
-    </div>
+            <?php
+          endif;
+            ?>
+            <figcaption class="content">
+                <header class="mb-20">
+                    <?php
 
+                    if ( 'post' === get_post_type() ) :
+
+                        resta_posted_on();
+
+                    endif;
+
+                    if ( is_singular() ) :
+                        the_title( '<h1 class="font-weight-bold mb-30 blog-title">', '</h1>' );
+                    else :
+                        the_title( '<h4 class="font-weight-bold mb-30 blog-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+                    endif; ?>
+
+
+                    <nav class="d-flex justify-content-between">
+
+                        <?php
+
+                        if ( 'post' === get_post_type() ) :
+                            ?>
+                            <ul class="author-nfo list-unstyled m-0">
+                                <li>
+                                    <?php
+                                    resta_posted_by();
+                                    ?>
+                                </li>
+                            </ul>
+                        <?php
+                        endif;?>
+
+                        <ul class="comment-nfo list-inline m-0">
+                            <li class="list-inline-item"><a href=""><i
+                                            class="icofont-user mr-2 text-orange"></i>68</a></li>
+                            <li class="list-inline-item"><a href="<?php echo esc_url( get_the_permalink()); ?>"><i
+                                            class="icofont-eye-alt mr-2 text-orange"></i><?php echo gt_get_post_view(); ?></a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <div class="description"><?php the_excerpt(); ?></div>
+
+                <footer>
+                    <a href="<?php echo esc_url( get_the_permalink()); ?>" class="btn learn-more">
+                        <?php esc_html_e( 'Read more', 'resta' ); ?>
+                        <span><i class="icofont-arrow-right"></i></span>
+                    </a>
+                </footer>
+            </figcaption>
+        </figure>
 </article><!-- #post-<?php the_ID(); ?> -->

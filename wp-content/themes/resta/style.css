@@ -2687,6 +2687,67 @@ h3#order_review_heading {
     width: 2px;
     background-color: rgba(255, 255, 255, 0.251);
 }
+
+/*
+*
+* --------------------------------
+* blog style one
+* --------------------------------
+*
+*/
+.blog-style-one{
+    background-color: #ffffff;
+    box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.08);
+}
+.blog-style-one .content{
+    padding: 30px 15px;
+    border: 2px solid #ffffff;
+    transition: .5s all;
+}
+.blog-style-one .blog-thumbnail {
+    overflow: hidden;
+    display: block;
+}
+.blog-style-one .blog-thumbnail img {
+    filter: brightness(90%);
+    -webkit-filter: brightness(90%);
+    transition: all 0.8s ease-in-out 0s;
+}
+.blog-style-one:hover .blog-thumbnail img {
+    filter: brightness(120%);
+    -webkit-filter: brightness(120%);
+    transform: scale(1.1);
+}
+
+.blog-style-one:hover .content{
+    border: 2px solid #f96a0e;
+    transition: .5s all;
+}
+
+.learn-more {
+    padding: 20px 15px;
+}
+
+.learn-more span {
+    position: relative;
+    margin-left: 15px;
+    padding-left: 15px;
+}
+
+.learn-more span:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -6px;
+    height: 35px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.251);
+}
+.description{
+    margin-bottom: 40px;
+}
+
+
 /*
 *
 * --------------------------------
