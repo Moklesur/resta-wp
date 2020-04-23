@@ -3,9 +3,9 @@
 Contributors: themetim
 Requires at least: 4.5
 Tested up to: 5.2.2
-Requires PHP: 5.4
+Requires PHP: 5.5
 Stable tag: 1.0
-Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, translation-ready, theme-options, threaded-comments, custom-logo, footer-widgets, custom-header, featured-image-header, full-width-template, left-sidebar, right-sidebar
+Tags: e-commerce,blog, custom-background, custom-colors, custom-logo, custom-menu, translation-ready, theme-options, threaded-comments, custom-logo, footer-widgets, custom-header, featured-image-header, full-width-template, left-sidebar, right-sidebar
 
 == License ==
 
@@ -59,10 +59,6 @@ Does this theme support any plugins?
   license   GPL-2.0+
   Thomas Griffin, Gary Jones, Juliette Reinders Folmer
   Copyright (c) 2011, Thomas Griffin
-
-* Popper
-  Copyright (C) Federico Zivolo 2019
-  Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
 
 * slick
   Version: 1.8.0
