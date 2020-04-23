@@ -145,16 +145,16 @@ function resta_typography_color( $color ) {
 
     $body_font_family = get_theme_mod('body_font_family');
     if ( $body_font_family !='' ) {
-        //$color .= "body{ font-family:" . $body_font_family . ";}";
+        $color .= "body{ font-family:" . $body_font_family . ";}";
     }else{
-        //$color .= "body{ font-family: 'Source Sans Pro', sans-serif;}";
+        $color .= "body{ font-family: 'Source Sans Pro', sans-serif;}";
     }
 
     $heading_font_family = get_theme_mod('heading_font_family');
     if ( $heading_font_family !='' ) {
-        //$color .= "h1,h2,h3,h4,h5,h6,.h1, .h2, .h3, h1, h2, h3{ font-family:" . $heading_font_family . ";}";
+        $color .= "h1,h2,h3,h4,h5,h6,.h1, .h2, .h3, h1, h2, h3{ font-family:" . $heading_font_family . ";}";
     }else{
-        //$color .= "h1,h2,h3,h4,h5,h6,.h1, .h2, .h3, h1, h2, h3{ font-family: 'Nunito', sans-serif;}";
+        $color .= "h1,h2,h3,h4,h5,h6,.h1, .h2, .h3, h1, h2, h3{ font-family: 'Nunito', sans-serif;}";
     }
 
     /**
@@ -165,18 +165,25 @@ function resta_typography_color( $color ) {
     $body_font_size = get_theme_mod( 'body_font_size', '14' );
     $body_font_weight = get_theme_mod( 'body_font_weight', '300' );
 
-    $color .= "body { color:" . esc_attr($body_text_color) . "; font-weight:" . esc_attr($body_font_weight) ."; font-size: " . esc_attr($body_font_size) . "px;} ";
+    $color .= "body { 
+        color:" . esc_attr($body_text_color) . "; 
+        font-weight:" . esc_attr($body_font_weight) ."; 
+        font-size: " . esc_attr($body_font_size) . "px;
+    } ";
 
     /**
-     * Heading
+     * Heading/Title
      */
 
-    $heading_color = get_theme_mod( 'heading_color', '#000' );
-    $heading_font_weight = get_theme_mod( 'heading_font_weight', '700' );
     $color .= "h1, h2, h3, h4, h5, h6,h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{ 
-        color:" . esc_attr($heading_color) . "; 
-        font-weight:" . esc_attr($heading_font_weight) .";
+        color:" . esc_attr( get_theme_mod( 'heading_title_color', '#222222' ) ) . "; 
+        font-weight:" . esc_attr( get_theme_mod( 'heading_font_weight', '700' ) ) .";
     } ";
+
+    /**
+     * Heading/Title
+     * Font Size
+     */
 
     if ( get_theme_mod( 'heading_font_h1', 36 ) ){
         $color .= "h1,.h1{ font-size:" . absint( get_theme_mod( 'heading_font_h1', 36 ) ) . "px} ";
@@ -197,12 +204,43 @@ function resta_typography_color( $color ) {
         $color .= "h6,.h6{ font-size:" . absint( get_theme_mod( 'heading_font_h6', 14 ) ) . "px} ";
     }
 
-    if ( get_theme_mod( 'link_color' ) ){
-        $color .= "a{ color:" . esc_attr( get_theme_mod( 'link_color' ) ) . "} ";
-    }
+    /**
+     * Link Color
+     */
 
-    $link_hover_color = get_theme_mod( 'link_hover_color', '#2939b4' );
-    $color .= "a:hover,a:focus,.site-info a:hover,.woocommerce ul.products li.product .price,.woo-widget a,.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{ color:" . esc_attr($link_hover_color) . "} ";
+    $color .= "a { 
+        color:" . esc_attr( get_theme_mod( 'link_color', '#f96a0e' ) ) . "
+    } ";
+
+    $color .= "a:hover,a:focus,.site-info a:hover,.woocommerce ul.products li.product .price,.woo-widget a,.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover { 
+        color:" . esc_attr( get_theme_mod( 'link_hover_color', '#000' ) ) . "
+    } ";
+
+    /**
+     * Button
+     */
+    $color .= ".woocommerce-page #payment #place_order,#add_payment_method .wc-proceed-to-checkout a.checkout-button, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button, .woocommerce-checkout .wc-proceed-to-checkout a.checkout-button,.woocommerce div.product form.cart .button,.resta-qty button,#scroll,.add-to-cart-btn, .woocommerce ul.products li.product .resta-loop-price-cart a.button,.btn, .rtl-btn, .wp-block-button__link, input[type='submit'], .wpcf7-form-control.wpcf7-submit, .button, button, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.disabled, .woocommerce #respond input#submit:disabled, .woocommerce #respond input#submit:disabled[disabled], .woocommerce a.button.disabled, .woocommerce a.button:disabled, .woocommerce a.button:disabled[disabled], .woocommerce button.button.disabled, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled], .woocommerce input.button.disabled, .woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled] { 
+        background-color:" . esc_attr( get_theme_mod( 'button_bg_color', '#f96a0e' ) ) . ";
+        color:" . esc_attr( get_theme_mod( 'button_text_color', '#fff' ) ) . ";
+        border-color:" . esc_attr( get_theme_mod( 'button_border_color', '#f96a0e' ) ) . ";
+    } ";
+
+    /**
+     * Button Hover
+     */
+    $color .= ".woocommerce-page #payment #place_order:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover,.woocommerce div.product form.cart .button:hover,.resta-qty button:hover,#scroll:hover,.add-to-cart-btn:hover, .woocommerce ul.products li.product .resta-loop-price-cart a.button:hover,.woocommerce #respond input#submit.disabled:hover, .woocommerce #respond input#submit:disabled:hover, .woocommerce #respond input#submit:disabled[disabled]:hover, .woocommerce a.button.disabled:hover, .woocommerce a.button:disabled:hover, .woocommerce a.button:disabled[disabled]:hover, .woocommerce button.button.disabled:hover, .woocommerce button.button:disabled:hover, .woocommerce button.button:disabled[disabled]:hover, .woocommerce input.button.disabled:hover, .woocommerce input.button:disabled:hover, .woocommerce input.button:disabled[disabled]:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .button:hover, button:hover, .btn:hover, .rtl-btn:hover, .wp-block-button__link:hover, input[type='submit']:hover, .wpcf7-form-control.wpcf7-submit:hover, .btn:focus, .rtl-btn:focus, .wp-block-button__link:focus, input[type='submit']:focus, .wpcf7-form-control.wpcf7-submit:focus { 
+        background-color:" . esc_attr( get_theme_mod( 'button_hover_bg_color', '#222222' ) ) . ";
+        color:" . esc_attr( get_theme_mod( 'button_hover_text_color', '#fff' ) ) . ";
+        border-color:" . esc_attr( get_theme_mod( 'button_hover_border_color', '#222222' ) ) . ";
+    } ";
+
+
+    /**
+     * Border Color
+     */
+    $color .= ".select2-hidden-accessible,.woocommerce form .form-row .input-text, .woocommerce-page form .form-row .input-text,.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea,.form-control, textarea, input[type=text], input[type=email], input[type=url], input[type=tel], input[type=password], input[type=number], select { 
+        border-color:" . esc_attr( get_theme_mod( 'border_color', '#eceff8' ) ) . "
+    } ";
 
     /**
      * Page Title

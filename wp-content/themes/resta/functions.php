@@ -154,12 +154,17 @@ require get_template_directory() . '/inc/breadcrumb.php';
  */
 function resta_scripts() {
 
-    wp_enqueue_style('resta-body-fonts', '//fonts.googleapis.com/css?family=Playball:400');
+    // Font Family
+    wp_enqueue_style('resta-heading-2-fonts', '//fonts.googleapis.com/css?family=Playball:400');
     if ( get_theme_mod('body_font_name') ) {
         wp_enqueue_style( 'resta-body-fonts', '//fonts.googleapis.com/css?family=' . esc_attr( get_theme_mod( 'body_font_name' ) ) );
+    }else{
+        wp_enqueue_style('resta-body-fonts', '//fonts.googleapis.com/css?family=Playfair+Display:300,700,800');
     }
     if ( get_theme_mod('heading_font_name') ) {
         wp_enqueue_style( 'resta-heading-fonts', '//fonts.googleapis.com/css?family=' . esc_attr( get_theme_mod( 'heading_font_name' ) ) );
+    }else{
+        wp_enqueue_style('resta-heading-fonts', '//fonts.googleapis.com/css?family=Poppins:300,500,800');
     }
 
     // Plugin CSS

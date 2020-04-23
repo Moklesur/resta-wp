@@ -216,7 +216,7 @@ function resta_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'header_bg_color',
         array(
-            'default'           => '#000000',
+            'default'           => '#222222222222',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -1070,7 +1070,7 @@ function resta_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'footer_bg_color',
         array(
-            'default'           => '#000',
+            'default'           => '#222222',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -1218,6 +1218,75 @@ function resta_customize_register( $wp_customize ) {
             )
         )
     );
+    /**
+     * resta Divider
+     */
+
+    $wp_customize->add_control( new resta_divider( $wp_customize, 'body_color_divider', array(
+            'label' => __('Body Color', 'resta'),
+            'section' => 'colors',
+            'settings' => 'resta_options[divider]',
+            'priority'       => 5
+        ) )
+    );
+    // Body Color
+    $wp_customize->add_setting(
+        'bg_text_color',
+        array(
+            'default'           => '#626262',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'bg_text_color',
+            array(
+                'label'         => __('Body Font Color', 'resta'),
+                'section'       => 'colors'
+            )
+        )
+    );
+    /**
+     * resta Divider
+     */
+
+    $wp_customize->add_control( new resta_divider( $wp_customize, 'heading_color_divider', array(
+            'label' => __('Title/Heading Color', 'resta'),
+            'section' => 'colors',
+            'settings' => 'resta_options[divider]'
+        ) )
+    );
+    // Title Color
+    $wp_customize->add_setting(
+        'heading_title_color',
+        array(
+            'default'           => '#222222',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'heading_title_color',
+            array(
+                'label'         => __('Title/Heading Color', 'resta'),
+                'description'       => __('h1, h2, h3, h4, h5, h6', 'resta'),
+                'section'       => 'colors',
+                'settings'      => 'heading_title_color'
+            )
+        )
+    );
+    /**
+     * resta Divider
+     */
+
+    $wp_customize->add_control( new resta_divider( $wp_customize, 'link_color_divider', array(
+            'label' => __('Link Color', 'resta'),
+            'section' => 'colors',
+            'settings' => 'resta_options[divider]'
+        ) )
+    );
     // Link Color
     $wp_customize->add_setting(
         'link_color',
@@ -1241,7 +1310,7 @@ function resta_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'link_hover_color',
         array(
-            'default'           => '#000',
+            'default'           => '#222222',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -1253,6 +1322,169 @@ function resta_customize_register( $wp_customize ) {
                 'label'         => __('Link Hover Color', 'resta'),
                 'section'       => 'colors',
                 'settings'      => 'link_hover_color'
+            )
+        )
+    );
+    /**
+     * resta Divider
+     */
+
+    $wp_customize->add_control( new resta_divider( $wp_customize, 'button_color_divider', array(
+            'label' => __('Button Color', 'resta'),
+            'section' => 'colors',
+            'settings' => 'resta_options[divider]'
+        ) )
+    );
+    //Button Text Color
+    $wp_customize->add_setting(
+        'button_text_color',
+        array(
+            'default'           => '#fff',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'button_text_color',
+            array(
+                'label'         => __('Text Color', 'resta'),
+                'section'       => 'colors',
+                'settings'      => 'button_text_color'
+            )
+        )
+    );
+    //Button Text Color
+    $wp_customize->add_setting(
+        'button_bg_color',
+        array(
+            'default'           => '#f96a0e',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'button_bg_color',
+            array(
+                'label'         => __('Text Color', 'resta'),
+                'section'       => 'colors',
+                'settings'      => 'button_bg_color'
+            )
+        )
+    );
+    //Button border Color
+    $wp_customize->add_setting(
+        'button_border_color',
+        array(
+            'default'           => '#f96a0e',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'button_border_color',
+            array(
+                'label'         => __('Border Color', 'resta'),
+                'section'       => 'colors',
+                'settings'      => 'button_border_color'
+            )
+        )
+    );
+    /**
+     * resta Divider
+     */
+
+    $wp_customize->add_control( new resta_divider( $wp_customize, 'button_hover_color_divider', array(
+            'label' => __('Button Hover Color', 'resta'),
+            'section' => 'colors',
+            'settings' => 'resta_options[divider]'
+        ) )
+    );
+    //Button hover Text Color
+    $wp_customize->add_setting(
+        'button_hover_text_color',
+        array(
+            'default'           => '#fff',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'button_hover_text_color',
+            array(
+                'label'         => __('Text Color', 'resta'),
+                'section'       => 'colors',
+                'settings'      => 'button_hover_text_color'
+            )
+        )
+    );
+    //Button hover BG Color
+    $wp_customize->add_setting(
+        'button_hover_bg_color',
+        array(
+            'default'           => '#222222',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'button_hover_bg_color',
+            array(
+                'label'         => __('BG Color', 'resta'),
+                'section'       => 'colors',
+                'settings'      => 'button_hover_bg_color'
+            )
+        )
+    );
+    //Button hover Border Color
+    $wp_customize->add_setting(
+        'button_hover_border_color',
+        array(
+            'default'           => '#222222',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'button_hover_border_color',
+            array(
+                'label'         => __('border Color', 'resta'),
+                'section'       => 'colors',
+                'settings'      => 'button_hover_border_color'
+            )
+        )
+    );
+    /**
+     * resta Divider
+     */
+
+    $wp_customize->add_control( new resta_divider( $wp_customize, 'border_color_divider', array(
+            'label' => __('Border Color', 'resta'),
+            'section' => 'colors',
+            'settings' => 'resta_options[divider]'
+        ) )
+    );
+    //Border Color
+    $wp_customize->add_setting(
+        'border_color',
+        array(
+            'default'           => '#eceff8',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'border_color',
+            array(
+                'label'         => __('Border Color', 'resta'),
+                'section'       => 'colors',
+                'settings'      => 'border_color'
             )
         )
     );
@@ -1281,23 +1513,6 @@ function resta_customize_register( $wp_customize ) {
     ) );
 
     /********************* Body Font ************************/
-    $wp_customize->add_setting(
-        'bg_text_color',
-        array(
-            'default'           => '#626262',
-            'sanitize_callback' => 'sanitize_hex_color',
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'bg_text_color',
-            array(
-                'label'         => __('Body Font Color', 'resta'),
-                'section'       => 'body_font'
-            )
-        )
-    );
     $wp_customize->add_setting( 'body_font_size', array(
         'default'           => 14,
         'sanitize_callback' => 'absint',
@@ -1349,24 +1564,6 @@ function resta_customize_register( $wp_customize ) {
     ) );
 
     /********************* Heading Font ************************/
-    $wp_customize->add_setting(
-        'heading_color',
-        array(
-            'default'           => '#000',
-            'sanitize_callback' => 'sanitize_hex_color',
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'heading_color',
-            array(
-                'label'         => __('Heading Color', 'resta'),
-                'section'       => 'heading_font'
-            )
-        )
-    );
-
     $wp_customize->add_setting('heading_font_name', array(
         'default'        => 'Playfair+Display:300,700,800',
         'sanitize_callback'     => 'resta_sanitize_text',
@@ -1564,7 +1761,7 @@ function resta_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'page_title_text_color',
         array(
-            'default'           => '#000',
+            'default'           => '#222222',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
