@@ -16,7 +16,7 @@ function resta_typography_color( $color ) {
 
     $color .= ".social-list li > a:hover,.widget-menu li > a:hover, .menu li > a:hover,.top-bar ul li:hover,.text-orange,.top-bar ul li i,.woocommerce ul.products li.product .button,.widget-area .search-form .search-submit,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span,.woocommerce div.product form.cart .button,.woocommerce #review_form #respond .form-submit input,.woocommerce input.button , .woocommerce-cart .wc-proceed-to-checkout a.checkout-button,.woocommerce #payment #place_order ,.wpcf7-submit{ color: " . esc_attr($primary_color) . "; } ";
 
-    $color .= ".woocommerce span.onsale,.special-offer:before,.subscribe-form button,#scroll,.count,.breadcrumb,.cart-icon>a>span,.woocommerce .widget_price_filter .ui-slider .ui-slider-range,.woocommerce ul.products li.product .onsale,button,input[type=submit],.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle .icon-bar,.woocommerce nav.woocommerce-pagination ul li span.current,.footer-main,.camera_wrap .slider-button .btn,.search-cart .badge,.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover,.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover,.woocommerce ul.products li.product .button,.widget-area .search-form .search-submit,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span,.woocommerce div.product form.cart .button,.woocommerce #review_form #respond .form-submit input,.woocommerce input.button , .woocommerce-cart .wc-proceed-to-checkout a.checkout-button,.woocommerce #payment #place_order ,.wpcf7-submit,.btn{ background-color:" . esc_attr($primary_color) . "; } ";
+    $color .= ".woocommerce span.onsale,.special-offer:before,.subscribe-form button,#scroll,.breadcrumb,.cart-icon>a>span,.woocommerce .widget_price_filter .ui-slider .ui-slider-range,.woocommerce ul.products li.product .onsale,button,input[type=submit],.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle .icon-bar,.woocommerce nav.woocommerce-pagination ul li span.current,.footer-main,.camera_wrap .slider-button .btn,.search-cart .badge,.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover,.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover,.woocommerce ul.products li.product .button,.widget-area .search-form .search-submit,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span,.woocommerce div.product form.cart .button,.woocommerce #review_form #respond .form-submit input,.woocommerce input.button , .woocommerce-cart .wc-proceed-to-checkout a.checkout-button,.woocommerce #payment #place_order ,.wpcf7-submit,.btn{ background-color:" . esc_attr($primary_color) . "; } ";
 
     $color .= ".chef-item:hover,.social-list li > a:hover,#filters li .button:hover, #filters li .button.is-checked,.resta-main-menu > .menu-item > a:hover, .resta-main-menu > .menu-item > a:focus,button,input[type=submit],.navbar-default .navbar-toggle,.woocommerce nav.woocommerce-pagination ul li span.current,.wpcf7 .wpcf7-submit,.widget-area .search-form .search-field,.service-url,.camera_wrap .slider-button .btn,.search-cart .badge,.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover,.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover,.woocommerce ul.products li.product .button,.widget-area .search-form .search-submit,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span,.woocommerce div.product form.cart .button,.woocommerce #review_form #respond .form-submit input,.woocommerce input.button , .woocommerce-cart .wc-proceed-to-checkout a.checkout-button,.woocommerce #payment #place_order ,.btn{ border-color: " . esc_attr($primary_color) . "; } ";
 
@@ -171,9 +171,31 @@ function resta_typography_color( $color ) {
      * Heading
      */
 
-    $heading_color = get_theme_mod( 'heading_color', '#333' );
+    $heading_color = get_theme_mod( 'heading_color', '#000' );
     $heading_font_weight = get_theme_mod( 'heading_font_weight', '700' );
-    $color .= "h1, h2, h3, h4, h5, h6,h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{ color:" . esc_attr($heading_color) . "; font-weight:" . esc_attr($heading_font_weight) .";} ";
+    $color .= "h1, h2, h3, h4, h5, h6,h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{ 
+        color:" . esc_attr($heading_color) . "; 
+        font-weight:" . esc_attr($heading_font_weight) .";
+    } ";
+
+    if ( get_theme_mod( 'heading_font_h1', 36 ) ){
+        $color .= "h1,.h1{ font-size:" . absint( get_theme_mod( 'heading_font_h1', 36 ) ) . "px} ";
+    }
+    if ( get_theme_mod( 'heading_font_h2', 30 ) ){
+        $color .= "h2,.h2{ font-size:" . absint( get_theme_mod( 'heading_font_h2', 30 ) ) . "px} ";
+    }
+    if ( get_theme_mod( 'heading_font_h3', 24 ) ){
+        $color .= "h3,.h3{ font-size:" . absint( get_theme_mod( 'heading_font_h3', 24 ) ) . "px} ";
+    }
+    if ( get_theme_mod( 'heading_font_h4', 18) ){
+        $color .= "h4,.h4{ font-size:" . absint( get_theme_mod( 'heading_font_h4', 18 ) ) . "px} ";
+    }
+    if ( get_theme_mod( 'heading_font_h5', 16) ){
+        $color .= "h5,.h5{ font-size:" . absint( get_theme_mod( 'heading_font_h5', 16 ) ) . "px} ";
+    }
+    if ( get_theme_mod( 'heading_font_h6', 14) ){
+        $color .= "h6,.h6{ font-size:" . absint( get_theme_mod( 'heading_font_h6', 14 ) ) . "px} ";
+    }
 
     if ( get_theme_mod( 'link_color' ) ){
         $color .= "a{ color:" . esc_attr( get_theme_mod( 'link_color' ) ) . "} ";

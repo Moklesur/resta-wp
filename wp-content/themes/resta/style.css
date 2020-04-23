@@ -1442,7 +1442,7 @@ input[type='password'] {
     position: relative;
     font-size: 20px;
 }
-.count{
+.count-product{
     position: absolute;
     top: 0px;
     right: -6px;
@@ -2892,8 +2892,21 @@ h3#order_review_heading {
     color: #ffffff;
 }
 
+.footer-area ul {
+    padding: 0;
+    list-style: none;
+}
+.footer-area  .count {
+    float: right;
+}
 .footer-area p {
     color: #b6b6b6;
+}
+.footer-area h4{
+    font-size: 24px;
+}
+.footer-area .resta-social-widget{
+    margin-top: 30px;
 }
 
 .footer-logo {
@@ -2906,11 +2919,11 @@ h3#order_review_heading {
     text-align: center;
 }
 
-.widget-menu li, .menu li {
+.widget-area li, .menu li {
     margin-bottom: 20px;
 }
 
-.widget-menu li > a, .menu li > a {
+.widget-area li > a, .menu li > a {
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-size: 14px;
@@ -2920,32 +2933,32 @@ h3#order_review_heading {
     font-weight: 500;
 }
 
-.widget-menu li > a:hover, .menu li > a:hover {
+.widget-area li > a:hover, .menu li > a:hover {
     color: #f96a0e;
 }
 
-.gallery-list a {
+.footer-area .gallery-item a {
     display: inline-block;
     margin-right: 13px;
     margin-bottom: 13px;
     position: relative;
 }
 
-.gallery-list a:last-child {
+.footer-area .gallery-item a:last-child {
     margin-right: 0;
 }
 
-.gallery-list a img {
+.footer-area .gallery-item a img {
     border-radius: 5px;
     height: 70px;
     width: 70px;
 }
 
-.gallery-list a:hover .overlay-icon {
+.footer-area .gallery-item a:hover .overlay-icon {
     opacity: 1;
 }
 
-.gallery-list .overlay-icon {
+.footer-area .gallery-item .overlay-icon {
     position: absolute;
     width: 100%;
     height: 100%;

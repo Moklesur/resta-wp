@@ -152,7 +152,7 @@ class resta_Team extends Widget_Base {
         $repeater->add_control(
             'icon1',
             [
-                'label' => __( 'Icon', 'text-domain' ),
+                'label' => __( 'Icon', 'resta' ),
                 'type' => \Elementor\Controls_Manager::ICONS
             ]
         );
@@ -174,7 +174,7 @@ class resta_Team extends Widget_Base {
         $repeater->add_control(
             'icon2',
             [
-                'label' => __( 'Icon', 'text-domain' ),
+                'label' => __( 'Icon', 'resta' ),
                 'type' => \Elementor\Controls_Manager::ICONS
             ]
         );
@@ -196,7 +196,7 @@ class resta_Team extends Widget_Base {
         $repeater->add_control(
             'icon3',
             [
-                'label' => __( 'Icon', 'text-domain' ),
+                'label' => __( 'Icon', 'resta' ),
                 'type' => \Elementor\Controls_Manager::ICONS
             ]
         );
@@ -319,7 +319,7 @@ class resta_Team extends Widget_Base {
             [
                 'label' => __( 'Image Dimension', 'resta' ),
                 'type' => \Elementor\Controls_Manager::IMAGE_DIMENSIONS,
-                'description' => __( 'Crop the original image size to any custom size. Set custom width or height to keep the original size ratio.', 'plugin-name' ),
+                'description' => __( 'Crop the original image size to any custom size. Set custom width or height to keep the original size ratio.', 'resta' ),
                 'default' => [
                     'width' => '158',
                     'height' => '158',

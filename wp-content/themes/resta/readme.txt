@@ -55,7 +55,7 @@ Does this theme support any plugins?
 
 * TGM
   TGM-Plugin http://tgmpluginactivation.com/
-  2.6.1 for parent theme boka for publication on WordPress.org
+  2.6.1 for parent theme resta for publication on WordPress.org
   license   GPL-2.0+
   Thomas Griffin, Gary Jones, Juliette Reinders Folmer
   Copyright (c) 2011, Thomas Griffin

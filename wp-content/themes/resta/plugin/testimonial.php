@@ -662,7 +662,7 @@ class resta_testimonial extends Widget_Base
                                         <?php
                                         if ( ! empty( $description ) ) {
                                             ?>
-                                            <figcaption class="<?php esc_attr_e( $textAlignment ); ?>">
+                                            <figcaption class="<?php echo esc_attr( $textAlignment ); ?>">
                                                 <p class="description animated <?php echo esc_attr( $description_animation ); ?>"> <?php echo esc_html($description); ?></p>
                                             </figcaption>
                                             <?php
@@ -670,7 +670,7 @@ class resta_testimonial extends Widget_Base
                                         ?>
 
                                     </figure>
-                                    <footer class="<?php esc_attr_e( $textAlignment ); ?>">
+                                    <footer class="<?php echo esc_attr( $textAlignment ); ?>">
                                         <h4 class="mb-30 client-name animated <?php echo esc_attr( $name_animation ); ?>"><?php echo esc_html( $name); ?></h4>
                                         <aside class="d-flex justify-content-between">
                                             <p class="m-0 designation animated<?php echo esc_attr( $designation_animation ); ?>"><?php echo esc_html( $designation); ?></p>
@@ -683,7 +683,7 @@ class resta_testimonial extends Widget_Base
                                                         $active_class='active';
                                                     endif;
                                                     ?>
-                                                    <li class="list-inline-item <?php echo $active_class; ?>"><i class="icofont-star"></i></li>
+                                                    <li class="list-inline-item <?php echo esc_attr( $active_class ); ?>"><i class="icofont-star"></i></li>
                                                 <?php  }
                                                 ?>
                                             </ul>
