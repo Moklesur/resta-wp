@@ -22,7 +22,7 @@ class resta_Social extends WP_Widget {
         if ( !isset( $args['widget_id'] ) ) {
             $args['widget_id'] = $this->id;
         }
-        echo $args['before_widget'];
+        echo esc_attr($args['before_widget']);
 
         ?>
         <ul class="social-list list-inline">
@@ -30,7 +30,7 @@ class resta_Social extends WP_Widget {
         </ul>
         <?php
 
-        echo $args['after_widget'];
+        echo esc_attr($args['after_widget']);
     }
     public function update( $new_instance, $old_instance ) {
         $instance = $old_instance;

@@ -2747,14 +2747,78 @@ h3#order_review_heading {
     margin-bottom: 40px;
 }
 
-
 /*
 *
 * --------------------------------
-* 17. Video With Text
+* single blog page
 * --------------------------------
 *
 */
+.wp-block-quote.is-style-large{
+    border-left: 3px solid #f96a0e;
+}
+.navigation .nav-links .nav-previous{
+    display: inline-block;
+    font-weight: 700;
+}
+.navigation .nav-links .nav-next{
+    float: right;
+    display: inline-block;
+    font-weight: 700;
+}
+.comments-title{
+    margin-bottom: 30px;
+}
+.comment-author.vcard{
+    margin-bottom: 7px;
+}
+.comment-author.vcard img{
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.comment-author.vcard b,fn{
+    font-weight: 700;
+}
+ol.comment-list{
+    padding: 0;
+    margin-bottom: 20px;
+}
+.comment-body{
+    margin-bottom: 20px;
+}
+.widget_search input[type='search']{
+    background: #ffffff;
+    box-shadow: none;
+    padding: 20px 15px;
+    height: 50px;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    color: #626262;
+    border-radius: 2px;
+}
+.widget ul{
+    list-style: none;
+    padding: 0;
+}
+.widget ul>li{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f96a0e;
+}
+
+    /*
+    *
+    * --------------------------------
+    * 17. Video With Text
+    * --------------------------------
+    *
+    */
 
 .video_with_text{
     position: relative;

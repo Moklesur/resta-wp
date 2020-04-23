@@ -277,7 +277,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 /**
  * TGM Plugin activation.
  */
-require_once dirname( __FILE__ ) . '/inc/class-tgm-plugin-activation.php';
+require_once get_template_directory(). '/inc/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'resta_active_plugins' );
 

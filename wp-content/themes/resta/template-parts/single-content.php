@@ -22,7 +22,7 @@ $class[] = 'col-lg-12 col-sm-12 col-12';
 
     ?>
 
-    <figure class="blog-style-one">
+    <figure class="single-blog-post">
         <a href="<?php the_permalink(); ?>" class="blog-thumbnail mb-30 d-block">
             <?php the_post_thumbnail(); ?>
         </a>
@@ -45,7 +45,7 @@ $class[] = 'col-lg-12 col-sm-12 col-12';
 
                     if ('post' === get_post_type()) :
                         ?>
-                        <ul class="author-nfo">
+                        <ul class="author-nfo list-unstyled m-0">
                             <li>
                                 <?php
                                 resta_posted_by();
@@ -54,13 +54,12 @@ $class[] = 'col-lg-12 col-sm-12 col-12';
                         </ul>
                     <?php
                     endif; ?>
-<!--                    -->
-<!--                    <ul class="comment-nfo list-inline">-->
-<!--                        <li class="list-inline-item"><a href=""><i-->
-<!--                                        class="icofont-user mr-2 text-orange"></i>68</a></li>-->
-<!--                        <li class="list-inline-item"><a href=""><i-->
-<!--                                        class="icofont-eye-alt mr-2 text-orange"></i>68</a></li>-->
-<!--                    </ul>-->
+                    <ul class="comment-nfo list-inline m-0">
+                        <li class="list-inline-item"><a href=""><i
+                                        class="icofont-user mr-2 text-orange"></i>68</a></li>
+                        <li class="list-inline-item"><a href="<?php echo esc_url( get_the_permalink()); ?>"><i
+                                        class="icofont-eye-alt mr-2 text-orange"></i><?php echo gt_get_post_view(); ?></a></li>
+                    </ul>
                 </nav>
             </header>
 
