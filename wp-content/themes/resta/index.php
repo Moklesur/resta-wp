@@ -32,7 +32,6 @@ get_header();
                     /* Start the Loop */
                     while ( have_posts() ) :
                         the_post();
-                        gt_set_post_view();
 
                         /*
                          * Include the Post-Type-specific template for the content.

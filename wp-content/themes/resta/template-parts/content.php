@@ -36,13 +36,6 @@ $class[] = 'col-lg-4 col-sm-6 col-12 blog-item';
             <figcaption class="content">
                 <header class="mb-20">
                     <?php
-
-                    if ( 'post' === get_post_type() ) :
-
-                        resta_posted_on();
-
-                    endif;
-
                     if ( is_singular() ) :
                         the_title( '<h1 class="font-weight-bold mb-30 blog-title">', '</h1>' );
                     else :
@@ -64,14 +57,15 @@ $class[] = 'col-lg-4 col-sm-6 col-12 blog-item';
                                 </li>
                             </ul>
                         <?php
-                        endif;?>
+                        endif;
 
-                        <ul class="comment-nfo list-inline m-0">
-                            <li class="list-inline-item"><a href=""><i
-                                            class="icofont-user mr-2 text-orange"></i>68</a></li>
-                            <li class="list-inline-item"><a href="<?php echo esc_url( get_the_permalink()); ?>"><i
-                                            class="icofont-eye-alt mr-2 text-orange"></i><?php echo gt_get_post_view(); ?></a></li>
-                        </ul>
+                        if ( 'post' === get_post_type() ) :
+
+                        resta_posted_on();
+
+                        endif;
+                        ?>
+
                     </nav>
                 </header>
 
