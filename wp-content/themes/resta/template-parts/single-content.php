@@ -54,12 +54,7 @@ $class[] = 'col-lg-12 col-sm-12 col-12';
                         </ul>
                     <?php
                     endif; ?>
-                    <ul class="comment-nfo list-inline m-0">
-                        <li class="list-inline-item"><a href=""><i
-                                        class="icofont-user mr-2 text-orange"></i>68</a></li>
-                        <li class="list-inline-item"><a href="<?php echo esc_url( get_the_permalink()); ?>"><i
-                                        class="icofont-eye-alt mr-2 text-orange"></i><?php echo gt_get_post_view(); ?></a></li>
-                    </ul>
+                  
                 </nav>
             </header>
 
