@@ -2687,13 +2687,138 @@ h3#order_review_heading {
     width: 2px;
     background-color: rgba(255, 255, 255, 0.251);
 }
+
 /*
 *
 * --------------------------------
-* 17. Video With Text
+* blog style one
 * --------------------------------
 *
 */
+.blog-style-one{
+    background-color: #ffffff;
+    box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.08);
+}
+.blog-style-one .content{
+    padding: 30px 15px;
+    border: 2px solid #ffffff;
+    transition: .5s all;
+}
+.blog-style-one .blog-thumbnail {
+    overflow: hidden;
+    display: block;
+}
+.blog-style-one .blog-thumbnail img {
+    filter: brightness(90%);
+    -webkit-filter: brightness(90%);
+    transition: all 0.8s ease-in-out 0s;
+}
+.blog-style-one:hover .blog-thumbnail img {
+    filter: brightness(120%);
+    -webkit-filter: brightness(120%);
+    transform: scale(1.1);
+}
+
+.blog-style-one:hover .content{
+    border: 2px solid #f96a0e;
+    transition: .5s all;
+}
+
+.learn-more {
+    padding: 20px 15px;
+}
+
+.learn-more span {
+    position: relative;
+    margin-left: 15px;
+    padding-left: 15px;
+}
+
+.learn-more span:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -6px;
+    height: 35px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.251);
+}
+.description{
+    margin-bottom: 40px;
+}
+
+/*
+*
+* --------------------------------
+* single blog page
+* --------------------------------
+*
+*/
+.wp-block-quote.is-style-large{
+    border-left: 3px solid #f96a0e;
+}
+.navigation .nav-links .nav-previous{
+    display: inline-block;
+    font-weight: 700;
+}
+.navigation .nav-links .nav-next{
+    float: right;
+    display: inline-block;
+    font-weight: 700;
+}
+.comments-title{
+    margin-bottom: 30px;
+}
+.comment-author.vcard{
+    margin-bottom: 7px;
+}
+.comment-author.vcard img{
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.comment-author.vcard b,fn{
+    font-weight: 700;
+}
+ol.comment-list{
+    padding: 0;
+    margin-bottom: 20px;
+}
+.comment-body{
+    margin-bottom: 20px;
+}
+.widget_search input[type='search']{
+    background: #ffffff;
+    box-shadow: none;
+    padding: 20px 15px;
+    height: 50px;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    color: #626262;
+    border-radius: 2px;
+}
+.widget ul{
+    list-style: none;
+    padding: 0;
+}
+.widget ul>li{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f96a0e;
+}
+
+    /*
+    *
+    * --------------------------------
+    * 17. Video With Text
+    * --------------------------------
+    *
+    */
 
 .video_with_text{
     position: relative;
