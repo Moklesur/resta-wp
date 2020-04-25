@@ -881,7 +881,7 @@ function resta_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'blog_layout',
         array(
-            'default'           => 'default',
+            'default'           => 'blog-wide',
             'sanitize_callback' => 'resta_blog_layout_sanitize',
         )
     );
@@ -894,77 +894,60 @@ function resta_customize_register( $wp_customize ) {
             'section'     => 'blog_layout_settings',
             'choices' => array(
                 'default'    => __( 'Default ( Sidebar )', 'resta' ),
-                'blog-wide'     => __( 'Full Width', 'resta' ),
-                'masonry'     => __( 'Masonry ( Two Columns )', 'resta' )
+                'blog-wide'     => __( 'Full Width', 'resta' )
             ),
         )
     );
     /********************* Blog Meta ************************/
     $wp_customize->add_setting( 'meta_index_enable', array(
-        'default'           => false,
+        'default'           => true,
         'sanitize_callback' => 'resta_sanitize_checkbox',
     ) );
     $wp_customize->add_control( 'meta_index_enable', array(
-        'label' => __( 'Show/Hide Blog Posts Meta', 'resta' ),
+        'label' => __( 'Enable Blog Posts Meta?', 'resta' ),
         'type' => 'checkbox',
         'section' => 'blog_meta',
         'priority'       => 20
     ) );
 
     $wp_customize->add_setting( 'meta_single_enable', array(
-        'default'           => false,
+        'default'           => true,
         'sanitize_callback' => 'resta_sanitize_checkbox',
     ) );
     $wp_customize->add_control( 'meta_single_enable', array(
-        'label' => __( 'Show/Hide Single Posts Meta', 'resta' ),
+        'label' => __( 'Enable Single Posts Meta?', 'resta' ),
         'type' => 'checkbox',
         'section' => 'blog_meta',
         'priority'       => 20
     ) );
     /********************* Excerpt length ************************/
     $wp_customize->add_setting( 'excerpt_content_enable', array(
-        'default'           => false,
+        'default'           => true,
         'sanitize_callback' => 'resta_sanitize_checkbox',
     ) );
     $wp_customize->add_control( 'excerpt_content_enable', array(
-        'label' => __( 'Show/Hide Post Excerpts', 'resta' ),
+        'label' => __( 'Enable Post Excerpts?', 'resta' ),
         'type' => 'checkbox',
         'section' => 'blog_content_excerpt'
     ) );
-    $wp_customize->add_setting( 'excerpt_lenght', array(
-        'default'           => '45',
-        'sanitize_callback' => 'absint',
-    ) );
-    $wp_customize->add_control( 'excerpt_lenght', array(
-        'type'        => 'number',
-        'section'     => 'blog_content_excerpt',
-        'settings' => 'excerpt_lenght',
-        'label'       => __('Excerpt length', 'resta'),
-        'description' => __('Default: 45 words', 'resta'),
-        'input_attrs' => array(
-            'min'   => 10,
-            'max'   => 200,
-            'step'  => 5,
-        ),
-    ) );
     /********************* Featured Image ************************/
     $wp_customize->add_setting( 'featured_image_index_enable', array(
-        'default'           => false,
+        'default'           => true,
         'sanitize_callback' => 'resta_sanitize_checkbox',
     ) );
     $wp_customize->add_control( 'featured_image_index_enable', array(
-        'label' => __( 'Show/Hide Blog Posts Featured Image', 'resta' ),
+        'label' => __( 'Enable Blog Posts Featured Image?', 'resta' ),
         'type' => 'checkbox',
         'section' => 'blog_featured_image',
         'priority'       => 30
     ) );
 
     $wp_customize->add_setting( 'featured_image_single_enable', array(
-        'default'           => false,
+        'default'           => true,
         'sanitize_callback' => 'resta_sanitize_checkbox',
     ) );
     $wp_customize->add_control( 'featured_image_single_enable', array(
-        'label' => __( 'Show/Hide Single Posts Featured Image', 'resta' ),
+        'label' => __( 'Enable Single Posts Featured Image?', 'resta' ),
         'type' => 'checkbox',
         'section' => 'blog_featured_image',
         'priority'       => 30
@@ -1966,8 +1949,7 @@ function resta_layout_sanitize( $input ) {
 function resta_blog_layout_sanitize( $input ) {
     $valid = array(
         'default'    => __( 'Default ( Sidebar )', 'resta' ),
-        'blog-wide'     => __( 'Full Width', 'resta' ),
-        'masonry'     => __( 'Masonry ( Two Columns )', 'resta' )
+        'blog-wide'     => __( 'Full Width', 'resta' )
     );
 
     if ( array_key_exists( $input, $valid ) ) {

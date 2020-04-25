@@ -116,14 +116,14 @@ function resta_display_quantity_plus() {
     <div class="resta-qty-wrapper d-flex align-items-center mt-30 mb-30">
         <p class="mb-0 mr-4"><?php echo esc_html( 'Quantity' ); ?></p>
         <div class="resta-qty d-flex align-items-center">
-        <button type="button" class="plus" ><i class="icofont-plus"></i></button>
-    <?php
-}
-   // Qty Minus
-   add_action( 'woocommerce_after_add_to_cart_quantity', 'resta_display_quantity_minus' );
-        function resta_display_quantity_minus() {
-         ?>
-         <button type="button" class="minus"><i class="icofont-minus"></i></button>
+            <button type="button" class="plus" ><i class="icofont-plus"></i></button>
+            <?php
+            }
+            // Qty Minus
+            add_action( 'woocommerce_after_add_to_cart_quantity', 'resta_display_quantity_minus' );
+            function resta_display_quantity_minus() {
+            ?>
+            <button type="button" class="minus"><i class="icofont-minus"></i></button>
         </div>
     </div>
     <?php
@@ -174,7 +174,6 @@ function resta_add_cart_quantity_plus_minus() {
     </script>
     <?php
 }
-
 
 /**************************
  * Shop & Archive Page
