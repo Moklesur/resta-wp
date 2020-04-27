@@ -516,38 +516,75 @@ msgid "Big Banner"
 msgstr ""
 
 #: plugin/big-banner.php:92
+#: plugin/call-to-action.php:92
+#: plugin/gallery.php:91
+#: plugin/heading.php:92
+#: plugin/hero-banner:91
 msgid "Setting"
 msgstr ""
 
 #: plugin/big-banner.php:140 plugin/big-banner.php:366
+#: plugin/call-to-action.php:158
+#: plugin/gallery.php:157
+#: plugin/heading.php:109 plugin/heading.php:185
+#: plugin/hero-banner:125
 msgid "Title"
 msgstr ""
 
+#: plugin/call-to-action.php:100
+msgid "Text Alignment"
+msgstr ""
+
+#: plugin/call-to-action.php:104
+msgid "Left"
+msgstr ""
+
+#: plugin/call-to-action.php:108
+msgid "Center"
+msgstr ""
+
+#: plugin/call-to-action.php:112
+msgid "Right"
+msgstr ""
+
 #: plugin/big-banner.php:375 plugin/big-banner.php:404
+#: plugin/call-to-action.php:257 plugin/call-to-action.php:288 plugin/call-to-action.php:317
+#: plugin/gallery.php:166
+#: plugin/heading.php:150 plugin/heading.php:194
 msgid "Typography"
 msgstr ""
 
 #: plugin/big-banner.php:383 plugin/big-banner.php:412
+#: plugin/call-to-action.php:265 plugin/call-to-action.php:296 plugin/call-to-action.php:325 plugin/call-to-action.php:345
+#: plugin/gallery.php:174
+#: plugin/heading.php:202
 msgid "Text Color"
 msgstr ""
 
 #: plugin/big-banner.php:446 plugin/big-banner.php:478
+#: plugin/heading.php:138
 msgid "Color"
 msgstr ""
 
 #: plugin/big-banner.php:149
+#: plugin/call-to-action.php:182
+#: plugin/hero-banner:136
 msgid "Paragraph"
 msgstr ""
 
 #: plugin/big-banner.php:459 plugin/big-banner.php:491
+#: plugin/call-to-action.php:377
 msgid "Box Shadow"
 msgstr ""
 
 #: plugin/big-banner.php:395
+#: plugin/call-to-action.php:308
 msgid "Content"
 msgstr ""
 
 #: plugin/big-banner.php:105 plugin/big-banner.php:435 plugin/big-banner.php:467
+#: plugin/gallery.php:184
+#: plugin/heading.php:248
 msgid "BG Color"
 msgstr ""
 
@@ -587,6 +624,14 @@ msgstr ""
 msgid "Image Background Color"
 msgstr ""
 
+#: plugin/call-to-action.php:360
+msgid "Background"
+msgstr ""
+
+#: plugin/call-to-action.php:369
+msgid "Border"
+msgstr ""
+
 #: plugin/big-banner.php:229
 msgid "Height & Width"
 msgstr ""
@@ -600,7 +645,17 @@ msgid "Icons"
 msgstr ""
 
 #: plugin/big-banner.php:267 plugin/big-banner.php:302
+#: plugin/call-to-action.php:205 plugin/call-to-action.php:337
+#: plugin/hero-banner:144
 msgid "Button Text"
+msgstr ""
+
+#: plugin/call-to-action.php:207
+msgid "View All Menu"
+msgstr ""
+
+#: plugin/call-to-action.php:214
+msgid "Link"
 msgstr ""
 
 #: plugin/big-banner.php:269
@@ -608,19 +663,148 @@ msgid "Google Play"
 msgstr ""
 
 #: plugin/big-banner.php:275 plugin/big-banner.php:310
+#: plugin/hero-banner:153
 msgid "Button URL"
 msgstr ""
 
 #: plugin/big-banner.php:277 plugin/big-banner.php:312
+#: plugin/call-to-action.php:216
+#: plugin/hero-banner:155
 msgid "https://your-link.com"
 msgstr ""
 
 #: plugin/big-banner.php:327
+#: plugin/call-to-action.php:239
+#: plugin/gallery.php:148
+#: plugin/heading.php:121
+#: plugin/hero-banner:170
 msgid "Style"
 msgstr ""
 
 #: plugin/big-banner.php:335
 msgid "Padding"
+msgstr ""
+
+#: plugin/call-to-action.php:44
+msgid "Call TO Action"
+msgstr ""
+
+#: plugin/call-to-action.php:134 plugin/call-to-action.php:248 plugin/call-to-action.php:279
+#: plugin/heading.php:100 plugin/heading.php:130
+#: plugin/hero-banner:116 plugin/hero-banner:179
+msgid "Pre Title"
+msgstr ""
+
+#: plugin/call-to-action.php:136
+msgid "We Know !"
+msgstr ""
+
+#: plugin/call-to-action.php:143 plugin/call-to-action.php:167 plugin/call-to-action.php:189 plugin/call-to-action.php:228
+msgid "Animation"
+msgstr ""
+
+#: plugin/call-to-action.php:161
+msgid "What You Expect From Us"
+msgstr ""
+
+#: plugin/gallery:44
+msgid "Rest Gallery"
+msgstr ""
+
+#: plugin/gallery:98
+msgid "Gallery Slider Enable"
+msgstr ""
+
+#: plugin/gallery:115
+msgid "Gallery Image Title"
+msgstr ""
+
+#: plugin/gallery:117
+msgid "Pizza"
+msgstr ""
+
+#: plugin/gallery:124
+msgid "Choose Slider Image"
+msgstr ""
+
+#: plugin/gallery:126
+msgid "Recommended size of image: 1920x1000"
+msgstr ""
+
+#: plugin/gallery:136
+msgid "Add New Image"
+msgstr ""
+
+#: plugin/gallery:196
+msgid "Slider Settings"
+msgstr ""
+
+#: plugin/gallery:205
+msgid "Autoplay"
+msgstr ""
+
+#: plugin/gallery:218
+msgid "Infinite"
+msgstr ""
+
+#: plugin/gallery:230
+msgid "Adaptive Height"
+msgstr ""
+
+#: plugin/gallery:242
+msgid "Arrows"
+msgstr ""
+
+#: plugin/gallery:254
+msgid "Dots"
+msgstr ""
+
+#: plugin/gallery:267
+msgid "Speed"
+msgstr ""
+
+#: plugin/heading:44
+msgid "Heading"
+msgstr ""
+
+#: plugin/heading:159 plugin/heading:214
+msgid "Margin"
+msgstr ""
+
+#: plugin/heading:239
+msgid "Title Shape"
+msgstr ""
+
+#: plugin/heading:260
+msgid "Border Radius"
+msgstr ""
+
+#: plugin/hero-banner:44
+msgid "Height"
+msgstr ""
+
+#: plugin/hero-banner:44
+msgid "Hero Banner"
+msgstr ""
+
+#: plugin/hero-banner:99
+msgid "Select BG Image"
+msgstr ""
+
+#: plugin/hero-banner:118
+msgid "Welcome To Resta."
+msgstr ""
+
+#: plugin/hero-banner:128
+msgid "HTML span tag support"
+msgstr ""
+
+#: plugin/hero-banner:129
+msgid "We provide best food for our customers."
+msgstr ""
+
+#: plugin/hero-banner:146
+msgid "Book a Table"
 msgstr ""
 
 #. Theme Name of the plugin/theme

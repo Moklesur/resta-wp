@@ -245,7 +245,7 @@ class resta_Heading extends Widget_Base {
         $this->add_control(
             'title_shape_color',
             [
-                'label' => __( 'background Color', 'resta' ),
+                'label' => __( 'BG Color', 'resta' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '#f96a0e',
                 'selectors' => [

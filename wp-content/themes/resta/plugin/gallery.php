@@ -181,7 +181,7 @@ class resta_Gallery extends Widget_Base {
         $this->add_control(
             'title_color',
             [
-                'label' => __( 'Background Color', 'resta' ),
+                'label' => __( 'BG Color', 'resta' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} h3' => 'background-color: {{VALUE}}',

@@ -180,10 +180,7 @@ class resta_Call_To_Action extends Widget_Base {
             'paragraph',
             [
                 'label' => __( 'Paragraph', 'resta' ),
-                'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => __( 'On the other hand, we denounce with righteous indignation and dislike men who
-                        are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire,
-                        that they cannot foresee the pain and trouble that are bound to ensue', 'resta' )
+                'type' => \Elementor\Controls_Manager::TEXTAREA
             ]
         );
         $this->add_control(
@@ -377,7 +374,7 @@ class resta_Call_To_Action extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'button_shadow',
-                'label' => __( 'Shadow', 'resta' ),
+                'label' => __( 'Box Shadow', 'resta' ),
                 'selector' => '{{WRAPPER}} .btn',
             ]
         );

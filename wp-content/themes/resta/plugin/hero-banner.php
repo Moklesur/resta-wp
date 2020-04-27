@@ -134,8 +134,7 @@ class resta_heroBanner extends Widget_Base {
             'paragraph',
             [
                 'label' => __( 'Paragraph', 'resta' ),
-                'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => __( 'Consectetur adipiscing elit, eiusmod tempor incididunt magna aliqu aenim ad minim veniam nostrud exercitat aliquip commodo consequat.', 'resta' )
+                'type' => \Elementor\Controls_Manager::TEXTAREA
             ]
         );
         // Button Text
@@ -188,7 +187,7 @@ class resta_heroBanner extends Widget_Base {
                 'name' => 'pre_title_typography',
                 'label' => __( 'Typography', 'resta' ),
                 'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}}  h5',
+                'selector' => '{{WRAPPER}} h5',
             ]
         );
         $this->add_control(

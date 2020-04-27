@@ -220,7 +220,6 @@ function resta_elementor_widgets() {
         if ( class_exists( 'WooCommerce' ) ) {
             require get_template_directory() . '/plugin/product-category-tab.php';
         }
-        //require get_template_directory() . '/plugin/gallery.php';
     }
 }
 add_action( 'elementor/widgets/widgets_registered', 'resta_elementor_widgets' );
